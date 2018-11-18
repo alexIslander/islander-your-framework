@@ -3,6 +3,22 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
 The pupose of this repository, to have a base project to develope Angular projects.
+
+# Getting Started - Local Development
+
+## Installation
+To get started locally, follow these instructions:
+
+0. Do neccessary installations. See instructions /[NodeJs](https://nodejs.org/en/download/), [Git](https://git-scm.com/downloads), IDE([WebStorm](https://www.jetbrains.com/webstorm/download/#section=windows), [VsCode](https://code.visualstudio.com/download), etc.)/
+1. If you haven't done it already, [make a fork of this repo](https://github.com/alexIslander/islander-your-framework).
+2. [Clone](https://help.github.com/articles/cloning-a-repository/) to your local computer using `git`.
+3. Import into your IDE [How to WebStorm](https://www.jetbrains.com/help/phpstorm/importing-project-from-existing-source-code.html),  [How to vscode](https://code.visualstudio.com/docs/editor/versioncontrol).
+4. Run 'npm install'.
+5. Run 'ng serve'.
+6. Open your browser on http://localhost:4200/. You are done!
+
+
+## Details
 This project contains the followings:
 - angular-cli based project
 - angular material template
