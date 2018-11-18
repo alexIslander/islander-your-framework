@@ -1,0 +1,16 @@
+<section class="snackbar-overlay" *ngIf="waitForUserInput"></section>
+<section id="custom-snack-bar">
+  <div class="ui-g">
+    <div class="ui-g-1">
+      <i class="snack-bar-icon {{ contentStyle }} fa {{ iconParam }}"></i>
+    </div>
+    <div class="ui-g-10 snack-bar-message-content">
+      {{ messageContent }}
+    </div>
+    <div class="ui-g-1">
+      <span *ngIf="snackBarAction">
+        <button mat-button type="button" class="mat-button {{ contentStyle }}" (click)="buttonAction()">{{snackBarAction}}</button>
+      </span>
+    </div>
+  </div>
+</section>

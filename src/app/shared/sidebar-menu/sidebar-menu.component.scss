@@ -1,0 +1,129 @@
+@import '../../../global-variables.scss';
+
+$sidebar-width: 350px;
+$sidebar-icon-size: 26px;
+$sidebar-top-indent: -16px;
+$material-box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12); // Coming from angular material
+
+#sidebar-container {
+  display: block;
+  & > #drawer-container {
+    display: block;
+    position: relative;
+    & > .container {
+      position: fixed;
+      z-index: 10;
+      height: 100vh;
+      width: $sidebar-width;
+      background-color: transparent;
+      left: 0;
+      margin-top: $sidebar-top-indent;
+      pointer-events: none;
+
+      &.open {
+        pointer-events: all;
+      }
+
+      & #sidenav {
+        background: transparent;
+      }
+
+      & #fr-sidebar {
+        height: 100%;
+        width: 95%;
+        background-color: $table-bg-stripe;
+        box-shadow: $material-box-shadow;
+        &>div:last-child {
+          border-bottom-color: $fr-dark-gray;
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+        }
+      }
+    }
+  }
+}
+
+#sidebar-collapsed {
+  display: block;
+  position: fixed;
+  z-index: 5;
+  background-color: $table-bg-stripe;
+  box-shadow: $material-box-shadow;
+  height: 100vh;
+  width: $sidebar-collapsed-width;
+  left: 0;
+  margin-top: $sidebar-top-indent;
+  &.open {
+    margin-left: -50px;
+    width: 0px;
+  }
+}
+
+:host ::ng-deep #sidebar-toggle-button {
+  z-index: 20;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  & > button {
+    min-width: $sidebar-collapsed-width;
+    max-width: $sidebar-collapsed-width;
+    font-size: 14pt;
+  }
+}
+
+.sidebar-link {
+  & > a {
+    color: $fr-black;
+    &:focus,
+    &:hover,
+    &:active,
+    &:visited {
+      color: $fr-black;
+    }
+  }
+}
+
+.sidebar-button {
+  max-width: $sidebar-width !important;
+  min-width: $sidebar-width !important;
+  max-height: $sidebar-icon-size * 2 !important;
+  min-height: $sidebar-icon-size * 2 !important;
+  text-align: left;
+}
+
+:host ::ng-deep .sidebar-button-small {
+  max-width: $sidebar-collapsed-width;
+  min-width: $sidebar-collapsed-width;
+  & .sidebar-icon {
+    text-align: center !important;
+    font-size: 20px !important;
+    padding-left: 0px !important;
+    padding-bottom: 3px !important;
+  }
+}
+
+:host ::ng-deep button.sidebar-button {
+  &>.mat-button-ripple,
+  &>.mat-button-focus-overlay {
+    width: 95% !important;
+  }
+}
+
+:host ::ng-deep section.sidebar-collapse-button > button {
+  min-width: 100%;
+  max-width: 100%;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  margin-top: -43px;
+  margin-bottom: 75px;
+  margin-left: -16px;
+  font-size: 26px;
+}
+
+.sidebar-icon {
+  font-size: $sidebar-icon-size !important;
+  padding-left: 15px !important;
+  padding-right:  15px !important;
+}

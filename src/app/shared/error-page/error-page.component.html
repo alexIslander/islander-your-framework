@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h1>{{ errorTitle | getTextByKey }}</h1>
+    </div>
+    <h3>{{ errorDetails | getTextByKey }}</h3>
+    <button id="back-button" mat-button class="custom-button" (click)="goBack()" >
+      {{'backButtonLabel' | getTextByKey }}
+    </button>
+  </mat-card-content>
+</mat-card>

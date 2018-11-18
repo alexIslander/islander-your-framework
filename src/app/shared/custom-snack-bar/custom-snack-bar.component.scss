@@ -1,0 +1,54 @@
+@import './../../../global-variables.scss';
+
+#custom-snack-bar {
+  .mat-button {
+    float: right;
+    font-size: 1.0em;
+    position: relative;
+    height: 100%;
+  }
+
+  .snack-bar-icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+  }
+  .snack-bar-icon:before {
+    margin-top: 5px !important;
+    margin-right: 5px;
+    padding-left: 10px;
+    font-size: 1.25em;
+  }
+
+  .snack-bar-message-content {
+    padding-top: 17px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .error-bar {
+    color: $fr-pink;
+  }
+
+  .success-bar {
+    color: $fr-green;
+  }
+
+  .warning-bar {
+    color: $fr-orange;
+  }
+
+}
+
+.snackbar-overlay {
+  position: absolute;
+  width: 1000vw;
+  height: 1000vh;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.25);
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  margin-top: -1000px;
+  margin-left: -1000px;
+}

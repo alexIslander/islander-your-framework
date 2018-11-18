@@ -1,0 +1,27 @@
+// Variables
+
+$fr-black: #000000;
+$fr-dark-gray: #7c878f;
+$fr-dark-blue: #200195;
+$fr-light-blue: #55a8df;
+$fr-orange: #f39417;
+$fr-pink: #e91e64;
+$fr-green: #41ae64;
+
+$mat-btn-hover: rgba(0,0,0,.12);
+
+$navbar-header-color: $fr-dark-blue;
+$logo-height: 55px;
+$logo-width: 198px;
+$navbar-height: 80px;
+
+$border-gray: lighten($fr-dark-gray, 25%);
+
+$btn-text: $fr-black;
+
+$table-bg: white;
+$table-bg-hover: darken($table-bg, 3%);
+$table-bg-stripe: #FAFAFA;
+$table-bg-stripe-hover: darken($table-bg-stripe, 3%);
+
+$sidebar-collapsed-width: 50px;

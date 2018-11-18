@@ -1,0 +1,15 @@
+<mat-toolbar id="navbar">
+    <span >
+        <button id="header-hamburgermenu-button" mat-button [matMenuTriggerFor]="menu" class="header-button"><i class="fa fa-bars"></i></button>
+        <mat-menu #menu="matMenu">
+          <a class="router-link-btn" [routerLink]="elem.url" *ngFor="let elem of headerMenu">
+            <button mat-menu-item (click)="onMenuElemClick(elem.headerTitle)">
+              {{ elem.name | getTextByKey }}
+            </button>
+          </a>
+        </mat-menu>
+    </span>
+  <span id="header-title">{{ headerText | getTextByKey }}</span>
+  <span class="logo-container"><img src="{{imgUrl}}" class="header-logo" /></span>
+  <!--TODO place for logout button-->
+</mat-toolbar>

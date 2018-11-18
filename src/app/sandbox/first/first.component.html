@@ -1,0 +1,14 @@
+<h1>First component works</h1>
+<div>
+  <p>Data read from: {{ sourceUrl }}</p>
+
+  <pre>{{ todo.id }}</pre>
+  <pre>{{ todo.userId }}</pre>
+  <pre>{{ todo.title }}</pre>
+  <pre>{{ todo.completed }}</pre>
+</div>
+<div id="first-comp-button" class="input-group-btn">
+  <button type="button" class="custom-button" mat-button (click)="onDialogOpen($event)">
+    {{'okButtonLabel' | getTextByKey}}
+  </button>
+</div>
