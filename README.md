@@ -9,7 +9,7 @@ The pupose of this repository, to have a base project to develope Angular projec
 ## Installation
 To get started locally, follow these instructions:
 
-0. Do neccessary installations. See instructions /[NodeJs](https://nodejs.org/en/download/), [Git](https://git-scm.com/downloads), IDE([WebStorm](https://www.jetbrains.com/webstorm/download/#section=windows), [VsCode](https://code.visualstudio.com/download), etc.)/
+0. Do neccessary installations. See instructions /[NodeJs](https://nodejs.org/en/download/), [Angular CLI](https://github.com/angular/angular-cli), [Git](https://git-scm.com/downloads), IDE([WebStorm](https://www.jetbrains.com/webstorm/download/#section=windows), [VsCode](https://code.visualstudio.com/download), etc.)/
 1. If you haven't done it already, [make a fork of this repo](https://github.com/alexIslander/islander-your-framework).
 2. [Clone](https://help.github.com/articles/cloning-a-repository/) to your local computer using `git`.
 3. Import into your IDE [How to WebStorm](https://www.jetbrains.com/help/phpstorm/importing-project-from-existing-source-code.html),  [How to vscode](https://code.visualstudio.com/docs/editor/versioncontrol).
