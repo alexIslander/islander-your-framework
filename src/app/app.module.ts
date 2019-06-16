@@ -8,9 +8,10 @@ import {SiteHeaderService} from './shared/services/site-header.service';
 import {ErrorNotifierService} from './shared/services/error-notifier.service';
 import {FrameworkLoaderService} from './shared/services/framework-loader.service';
 import {NotificationService} from './shared/services/notification.service';
-import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from "./app-routing";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -19,14 +20,16 @@ import {AppRoutingModule} from "./app-routing";
   imports: [
     BrowserModule,
     SandboxModule,
+    BrowserAnimationsModule,
+    RouterModule,
     AppRoutingModule,
     SharedModule,
     HttpClientModule
   ],
-  schemas: [
-    NO_ERRORS_SCHEMA,
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
+  // schemas: [
+  //   NO_ERRORS_SCHEMA,
+  //   CUSTOM_ELEMENTS_SCHEMA
+  // ],
   providers: [
     SiteHeaderService,
     {

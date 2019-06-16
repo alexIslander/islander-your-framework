@@ -23,8 +23,7 @@ import {RouterModule} from "@angular/router";
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    // RouterModule,
-    // Routing,
+    RouterModule,
     AppMaterialModule
   ],
   declarations: [

@@ -1,18 +1,23 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {RouteUrls} from './route-urls';
 import {RouterModule, Routes} from '@angular/router';
 import {ErrorPageComponent} from './shared/error-page/error-page.component';
 import {SecondComponent} from './sandbox/second/second.component';
 import {SandboxDashboardComponent} from './sandbox/dashboard/dashboard.component';
 import {SandboxHomeComponent} from './sandbox/home/home.component';
-import {FirstComponent} from './sandbox/first/first.component';
-import {SandboxRoutingModule} from "./sandbox/sandbox-routing.module";
+import {FirstComponent} from "./sandbox/first/first.component";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home, pathMatch: 'full'},
   {
     path: RouteUrls.sandboxPage.root,
-    loadChildren: '.sandbox/sandbox.module#SandboxModule'
+    // loadChildren: '.sandbox/sandbox.module#SandboxModule'
+    children: [
+      { path: '', redirectTo: RouteUrls.sandboxPage.home, pathMatch: 'full'},
+      { path: RouteUrls.sandboxPage.home, component: SandboxHomeComponent },
+      { path: RouteUrls.sandboxPage.first, component: FirstComponent },
+      { path: RouteUrls.sandboxPage.second, component: SecondComponent }
+    ]
   },
   // {
   //   path: RouteUrls.xxxPage.root,
@@ -26,7 +31,8 @@ const appRoutes: Routes = [
       { path: RouteUrls.xxxPage.second, component: SecondComponent }
     ]
   },
-  { path: '**', redirectTo: RouteUrls.errorPage },
+  { path: '**', redirectTo: RouteUrls.errorPage }
+  ,
   { path: RouteUrls.errorPage, component: ErrorPageComponent }
 ];
 

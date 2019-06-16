@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { SandboxHomeComponent } from './home/home.component';
 import { SandboxDashboardComponent } from './dashboard/dashboard.component';
-import {RouterModule} from '@angular/router';
 import {AppMaterialModule} from '../shared/app-material/app-material.module';
 import {SharedModule} from '../shared/shared.module';
 import {SandboxDashboardService} from './service/impl/SandboxDashboardService';
@@ -45,6 +44,15 @@ import {SandboxRoutingModule} from "./sandbox-routing.module";
       useFactory: firstComponentServiceUseFactory,
       deps: [HttpClient, AnyApiHttpHelperService]
     }
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+  exports: [
+    SandboxDashboardComponent
+  ],
+  entryComponents: [
+    SandboxDashboardComponent
   ]
 })
 export class SandboxModule { }
