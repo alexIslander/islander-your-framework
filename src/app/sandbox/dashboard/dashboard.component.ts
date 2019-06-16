@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RouteUrls} from '../../shared/utils/route-urls';
+import {RouteUrls} from '../../route-urls';
 
 @Component({
   selector: 'app-dashboard',

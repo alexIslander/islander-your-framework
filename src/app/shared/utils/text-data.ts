@@ -38,5 +38,9 @@ export const TextData = {
   'sidebarMenuDashboard': 'Home',
   'sidebarMenuFirst': 'First',
   'sidebarMenuSecond': 'Second',
-  'sanBoxDialogTitle': 'Example dialog'
+  'sanBoxDialogTitle': 'Example dialog',
+
+  // sandBox module:
+  'xxxModulePageTitle': 'xxx',
+  'xxxModulePageHeader': 'XXX UI'
 };

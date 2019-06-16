@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GetTextByKeyPipe } from './utils/get-text-by-key.pipe';
 import { ToDatePipe } from './utils/to-date.pipe';
 import { ToDateTimePipe } from './utils/to-date-time.pipe';
-import {Routing} from '../app-routing';
+// import {Routing} from '../app-routing';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
@@ -15,6 +15,7 @@ import { ConfirmationWindowComponent } from './confirmation-window/confirmation-
 import { LoaderComponent } from './loader/loader.component';
 import { AutoCompleteComponent } from './autocomplete/autocomplete.component';
 import { BaseDialogViewComponentComponent } from './base-dialog-view-component/base-dialog-view-component.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { BaseDialogViewComponentComponent } from './base-dialog-view-component/b
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    Routing,
+    // RouterModule,
+    // Routing,
     AppMaterialModule
   ],
   declarations: [

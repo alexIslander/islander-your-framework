@@ -1,6 +1,5 @@
 import {ErrorHandler, Injectable, Injector} from '@angular/core';
 import {Router} from '@angular/router';
-import {RouteUrls} from '../utils/route-urls';
 import {NotificationService} from './notification.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Error} from 'tslint/lib/error';
@@ -45,7 +44,7 @@ export class ErrorNotifierService implements ErrorHandler {
     } else {
       console.error(error.message, error);
       notificationService.notifyByRawText(`${error.message}`);
-      router.navigate([RouteUrls.errorPage],
+      router.navigate(['error-page'],
         {queryParams: {errorCode: '404', errorDetails: 'errorPageDefaultMessage'}}
       );
     }

@@ -10,6 +10,7 @@ import {FrameworkLoaderService} from './shared/services/framework-loader.service
 import {NotificationService} from './shared/services/notification.service';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from "./app-routing";
 
 @NgModule({
   declarations: [
@@ -17,9 +18,9 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    RouterModule,
-    SharedModule,
     SandboxModule,
+    AppRoutingModule,
+    SharedModule,
     HttpClientModule
   ],
   schemas: [

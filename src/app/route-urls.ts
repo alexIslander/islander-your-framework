@@ -6,5 +6,10 @@ export const RouteUrls = {
     home: 'home',
     first: 'first',
     second: 'second'
+  },
+  xxxPage: {
+    root: 'xxx',
+    home: 'home',
+    second: 'second'
   }
 };
