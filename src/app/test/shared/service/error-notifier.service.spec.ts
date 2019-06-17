@@ -4,7 +4,7 @@ import { ErrorNotifierService } from '../../../shared/services/error-notifier.se
 import {Injector} from '@angular/core';
 import {Router} from '@angular/router';
 import {NotificationService} from '../../../shared/services/notification.service';
-import {RouteUrls} from '../../../shared/utils/route-urls';
+import {RouteUrls} from "../../../route-urls";
 
 describe('ErrorNotifierService', () => {
 

@@ -1,8 +1,6 @@
-import { of } from 'rxjs';
 import { initContext, TestContext } from '../../test-context';
 import { SiteHeaderComponent } from '../../../shared/site-header/site-header.component';
 
-import { Routing } from '../../../app-routing';
 import { SidebarMenuComponent } from '../../../shared/sidebar-menu/sidebar-menu.component';
 
 import { APP_BASE_HREF } from '@angular/common';
@@ -12,6 +10,7 @@ import {FirstComponent} from '../../../sandbox/first/first.component';
 import {SandboxDashboardComponent} from '../../../sandbox/dashboard/dashboard.component';
 import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
 import {SecondComponent} from '../../../sandbox/second/second.component';
+import {Router} from "@angular/router";
 
 describe('SiteHeaderComponent', () => {
 
@@ -22,7 +21,7 @@ describe('SiteHeaderComponent', () => {
   type Context = TestContext<SiteHeaderComponent>;
   initContext(SiteHeaderComponent, {
     imports: [
-      Routing
+
     ],
     declarations: [
       SidebarMenuComponent,
@@ -34,7 +33,8 @@ describe('SiteHeaderComponent', () => {
     ],
     providers: [
       SiteHeaderService,
-      { provide: APP_BASE_HREF, useValue : '/' }
+      { provide: APP_BASE_HREF, useValue : '/' },
+      {provide: Router, useValue: mockRouter}
     ]
   });
 

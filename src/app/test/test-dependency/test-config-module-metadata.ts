@@ -20,7 +20,7 @@ export const TestConfigModuleMetadata: TestModuleMetadata = {
     ReactiveFormsModule,
     PerfectScrollbarModule,
     HttpClientModule,
-    // RouterModule // TODO - put it back when routing is imlemented
+    RouterModule // TODO - put it back when routing is imlemented
   ],
   declarations: [
     GetTextByKeyPipe,
