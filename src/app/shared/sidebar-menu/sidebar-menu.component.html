@@ -4,7 +4,7 @@
       <mat-sidenav id="sidenav" #sidenav mode="side" [(opened)]="opened">
         <section id="fr-sidebar">
           <div class="sidebar-link" *ngFor="let elem of sidebarMenu">
-            <a [routerLink]="elem.url">
+            <a [routerLink]="'/' + elem.url">
               <button mat-button class="sidebar-button" (click)="onToggleClick(false)" type="button">
                 <i class="fa {{elem.icon}} sidebar-icon" aria-hidden="true"></i>
                 {{elem.name | getTextByKey}}
@@ -23,7 +23,7 @@
 </section>
 <section id="sidebar-collapsed" [ngClass]="{'open': opened}">
   <div class="sidebar-link" *ngFor="let elem of sidebarMenu">
-    <a [routerLink]="elem.url">
+    <a [routerLink]="'/' + elem.url">
       <button mat-button class="sidebar-button-small" matTooltip="{{elem.name | getTextByKey}}" [matTooltipPosition]="'right'" type="button">
         <i class="fa {{elem.icon}} sidebar-icon" aria-hidden="true"></i>
       </button>

@@ -4,7 +4,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {HttpClientModule} from '@angular/common/http';
-import {RouterModule} from '@angular/router';
 import {GetTextByKeyPipe} from '../../shared/utils/get-text-by-key.pipe';
 import {ToDatePipe} from '../../shared/utils/to-date.pipe';
 import {ToDateTimePipe} from '../../shared/utils/to-date-time.pipe';
@@ -19,8 +18,7 @@ export const TestConfigModuleMetadata: TestModuleMetadata = {
     FormsModule,
     ReactiveFormsModule,
     PerfectScrollbarModule,
-    HttpClientModule,
-    RouterModule // TODO - put it back when routing is imlemented
+    HttpClientModule
   ],
   declarations: [
     GetTextByKeyPipe,

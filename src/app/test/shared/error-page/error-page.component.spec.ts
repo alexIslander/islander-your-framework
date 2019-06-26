@@ -6,11 +6,12 @@ import {APP_BASE_HREF, Location, LocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MockActivatedRoute} from '../../MockActivatedRoute';
 
-import {SandboxDashboardComponent} from '../../../sandbox/dashboard/dashboard.component';
+import {SandboxDashboardComponent} from '../../../sandbox/dashboard/sandbox-dashboard.component';
 import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
 import {FirstComponent} from '../../../sandbox/first/first.component';
 import {SecondComponent} from '../../../sandbox/second/second.component';
-import {AppRoutingModule} from "../../../app-routing";
+import {appRoutes} from "../../../app-routing";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('ErrorPageComponent', () => {
 
@@ -22,7 +23,7 @@ describe('ErrorPageComponent', () => {
 
   type Context = TestContext<ErrorPageComponent>;
   initContext(ErrorPageComponent, {
-    imports: [ ],
+    imports: [ RouterTestingModule.withRoutes(appRoutes)],
     declarations: [
       SandboxDashboardComponent,
       SandboxHomeComponent,

@@ -3,15 +3,15 @@ import {RouteUrls} from './route-urls';
 import {RouterModule, Routes} from '@angular/router';
 import {ErrorPageComponent} from './shared/error-page/error-page.component';
 import {SecondComponent} from './sandbox/second/second.component';
-import {SandboxDashboardComponent} from './sandbox/dashboard/dashboard.component';
+import {SandboxDashboardComponent} from './sandbox/dashboard/sandbox-dashboard.component';
 import {SandboxHomeComponent} from './sandbox/home/home.component';
 import {FirstComponent} from "./sandbox/first/first.component";
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   { path: '', redirectTo: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home, pathMatch: 'full'},
   {
     path: RouteUrls.sandboxPage.root,
-    // loadChildren: '.sandbox/sandbox.module#SandboxModule'
+    // loadChildren: './sandbox/sandbox.module#SandboxModule'
     children: [
       { path: '', redirectTo: RouteUrls.sandboxPage.home, pathMatch: 'full'},
       { path: RouteUrls.sandboxPage.home, component: SandboxHomeComponent },

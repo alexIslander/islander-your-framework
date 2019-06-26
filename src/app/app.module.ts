@@ -9,27 +9,24 @@ import {ErrorNotifierService} from './shared/services/error-notifier.service';
 import {FrameworkLoaderService} from './shared/services/framework-loader.service';
 import {NotificationService} from './shared/services/notification.service';
 import {HttpClientModule} from '@angular/common/http';
-import {AppRoutingModule} from "./app-routing";
+import {appRoutes, AppRoutingModule} from "./app-routing";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule} from "@angular/router";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     SandboxModule,
     BrowserAnimationsModule,
-    RouterModule,
+    RouterModule.forRoot(appRoutes),
     AppRoutingModule,
     SharedModule,
     HttpClientModule
   ],
-  // schemas: [
-  //   NO_ERRORS_SCHEMA,
-  //   CUSTOM_ELEMENTS_SCHEMA
-  // ],
   providers: [
     SiteHeaderService,
     {

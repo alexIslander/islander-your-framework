@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { SandboxHomeComponent } from './home/home.component';
-import { SandboxDashboardComponent } from './dashboard/dashboard.component';
+import { SandboxDashboardComponent } from './dashboard/sandbox-dashboard.component';
 import {AppMaterialModule} from '../shared/app-material/app-material.module';
 import {SharedModule} from '../shared/shared.module';
 import {SandboxDashboardService} from './service/impl/SandboxDashboardService';
@@ -49,7 +49,11 @@ import {SandboxRoutingModule} from "./sandbox-routing.module";
     CUSTOM_ELEMENTS_SCHEMA
   ],
   exports: [
-    SandboxDashboardComponent
+    SandboxDashboardComponent,
+    SandboxHomeComponent,
+    FirstComponent,
+    SecondComponent,
+    ThirdComponent
   ],
   entryComponents: [
     SandboxDashboardComponent
