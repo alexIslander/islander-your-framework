@@ -1,10 +1,10 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ErrorNotifierService } from '../../../shared/services/error-notifier.service';
+import { ErrorNotifierService } from '../../../shared/service/error-notifier.service';
 import {Injector} from '@angular/core';
 import {Router} from '@angular/router';
-import {NotificationService} from '../../../shared/services/notification.service';
-import {RouteUrls} from "../../../route-urls";
+import {NotificationService} from '../../../shared/service/notification.service';
+import {RouteUrls} from '../../../route-urls';
 
 describe('ErrorNotifierService', () => {
 

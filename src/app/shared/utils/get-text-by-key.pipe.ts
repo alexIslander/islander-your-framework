@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {TextData} from './text-data';
+import {SharedTextData} from '../shared-text-data';
 
 @Pipe({
   name: 'getTextByKey'
@@ -7,7 +7,7 @@ import {TextData} from './text-data';
 export class GetTextByKeyPipe implements PipeTransform {
 
   transform(key: string, ...args: string[]): string {
-    let text = TextData[key];
+    let text = SharedTextData[key];
     if (args && args.length > 0) {
       for (let i = 0; i < args.length; i++) {
         text = text.replace('#' + (i + 1) + '#', args[i]);

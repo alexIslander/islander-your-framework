@@ -1,4 +1,4 @@
-export const TextData = {
+export const SharedTextData = {
   'yesButtonLabel': 'Yes',
   'noButtonLabel': 'No',
   'okButtonLabel': 'Ok',

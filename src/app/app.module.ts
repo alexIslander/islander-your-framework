@@ -4,15 +4,15 @@ import {CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule, NO_ERRORS_SCHEMA} from '
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { SandboxModule } from './sandbox/sandbox.module';
-import {SiteHeaderService} from './shared/services/site-header.service';
-import {ErrorNotifierService} from './shared/services/error-notifier.service';
-import {FrameworkLoaderService} from './shared/services/framework-loader.service';
-import {NotificationService} from './shared/services/notification.service';
+import {SiteHeaderService} from './shared/service/site-header.service';
+import {ErrorNotifierService} from './shared/service/error-notifier.service';
+import {FrameworkLoaderService} from './shared/service/framework-loader.service';
+import {NotificationService} from './shared/service/notification.service';
 import {HttpClientModule} from '@angular/common/http';
-import {appRoutes, AppRoutingModule} from "./app-routing";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {RouterModule} from "@angular/router";
-import {CommonModule} from "@angular/common";
+import {appRoutes, AppRoutingModule} from './app-routing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [

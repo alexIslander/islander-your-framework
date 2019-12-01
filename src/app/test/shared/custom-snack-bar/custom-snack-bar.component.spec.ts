@@ -23,7 +23,6 @@ describe('CustomSnackBarComponent', () => {
       ]
   });
 
-
   it('should create', function(this: Context) {
     expect(this.component).toBeTruthy();
   });

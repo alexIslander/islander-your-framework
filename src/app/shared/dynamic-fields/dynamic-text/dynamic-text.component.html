@@ -1,0 +1,14 @@
+<div [formGroup]="formGroupParam">
+<mat-form-field>
+    <input (keydown)="onKeyEvent($event)" (click)="performAction(config.action)" [required]="validator.isFieldRequired(this.formGroupParam ,config.inputDefinition)"
+           matInput [type]="config.inputType" [formControlName]="config.inputDefinition"
+           placeholder="{{config.inputLabelDefinition|getTextByKey}}" />
+    <span mat-button *ngIf="validator.showRemoveIcon(this.formGroupParam ,config.inputDefinition)"
+          matSuffix mat-icon-button aria-label="Clear" (click)="resetController(config.inputDefinition); onSendDeletion()">
+          <mat-icon class="fa mat-icon material-icons mat-icon-no-color ng-star-inserted fa-times"></mat-icon>
+        </span>
+  </mat-form-field>
+  <ng-container
+    *ngTemplateOutlet="tooltipTemplate; context: {entry: config.tooltipInfo}">
+  </ng-container>
+</div>

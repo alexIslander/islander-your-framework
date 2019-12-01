@@ -1,0 +1,23 @@
+.full-width-table {
+  width: 100%;
+}
+
+.table-icon-button {
+  font-size: 18px;
+  min-width: 0;
+}
+
+.mat-cell p {
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-cell {
+  flex: 1;
+  min-width: 0;
+}
+
+mat-row.mat-row.activated {
+  font-weight: bold;
+}

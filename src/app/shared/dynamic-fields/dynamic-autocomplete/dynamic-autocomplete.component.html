@@ -1,0 +1,14 @@
+<div [formGroup]="formGroupParam">
+  <gb-autocomplete
+    [options]="config.options"
+    [allowInputDelete]="true"
+    [formGroupParam]="this.formGroupParam.get(config.inputDefinition)"
+    (selectionEvent)="onSendSelection($event)"
+    [displayTitle]="config.inputLabelDefinition | getTextByKey"
+    (deletionEvent)="onSendDeletion()"
+    [required]="validator.isFieldRequired(this.formGroupParam, config.inputDefinition)">
+  </gb-autocomplete>
+  <ng-container
+    *ngTemplateOutlet="tooltipTemplate; context: {entry: config.tooltipInfo}">
+  </ng-container>
+</div>

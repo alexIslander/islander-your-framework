@@ -2,7 +2,7 @@ import {Injectable, NgZone} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {GetTextByKeyPipe} from './get-text-by-key.pipe';
 import {CustomSnackBarComponent} from '../custom-snack-bar/custom-snack-bar.component';
-import {FrameworkLoaderService} from '../services/framework-loader.service';
+import {FrameworkLoaderService} from '../service/framework-loader.service';
 
 @Injectable({
   providedIn: 'root'

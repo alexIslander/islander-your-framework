@@ -9,7 +9,7 @@ import {ToDatePipe} from '../../shared/utils/to-date.pipe';
 import {ToDateTimePipe} from '../../shared/utils/to-date-time.pipe';
 import {DateFormatterUtil} from '../../shared/utils/date-formatter.util';
 import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
-import {FrameworkLoaderService} from '../../shared/services/framework-loader.service';
+import {FrameworkLoaderService} from '../../shared/service/framework-loader.service';
 
 export const TestConfigModuleMetadata: TestModuleMetadata = {
   imports: [

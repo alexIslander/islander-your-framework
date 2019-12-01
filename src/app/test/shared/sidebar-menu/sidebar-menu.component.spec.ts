@@ -1,7 +1,6 @@
 import {initContext, TestContext} from '../../test-context';
 import {SidebarMenuComponent} from '../../../shared/sidebar-menu/sidebar-menu.component';
 
-
 describe('SidebarMenuComponent', () => {
 
   const mockRouter = {

@@ -1,0 +1,82 @@
+<mat-table [dataSource]="dataSource" class="full-width-table" matSort aria-label="Elements">
+  <ng-container [matColumnDef]="cols.columnDef" *ngFor="let cols of columnDefinitions">
+    <ng-container *ngIf="cols.columnDef ==='select';then select else columns"></ng-container>
+    <ng-template #select>
+      <mat-header-cell *matHeaderCellDef class="mat-column-025">
+        <mat-checkbox color="primary"
+                      (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row" class="mat-column-025">
+        <mat-checkbox color="primary"
+                      (click)="$event.stopPropagation()"
+                      (change)="$event ? onRowClick(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)"
+                      *ngIf="selectionCondition === undefined || row[selectionCondition]"
+                      [disabled]="selectionCondition !== undefined && !row[selectionCondition]">
+        </mat-checkbox>
+      </mat-cell>
+    </ng-template>
+    <ng-template #columns>
+      <ng-container *ngIf="cols.columnDef ==='actions';then actions else nonActions"></ng-container>
+      <ng-template #nonActions>
+        <mat-header-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matHeaderCellDef mat-sort-header
+                         [disabled]="!cols.sortable">
+          {{cols.columnTitleTextKey | getTextByKey}}
+        </mat-header-cell>
+        <mat-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matCellDef="let element">
+          <p *ngIf="cols.dataType === 'date'" matTooltip="{{ cols.tooltip ? cols.cell(element):''}}">{{cols.cell(element) | toDate }} </p>
+          <p *ngIf="cols.dataType !== 'date'"matTooltip="{{ cols.tooltip ? cols.cell(element):''}}">{{cols.cell(element)}}</p>
+        </mat-cell>
+      </ng-template>
+      <ng-template #actions>
+        <mat-header-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matHeaderCellDef mat-sort-header
+                         [disabled]="!cols.sortable">
+          {{cols.columnTitleTextKey | getTextByKey}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}">
+          <span *ngFor="let elementAction of cols.cell(element)">
+            <span *ngFor="let action of cols.actionDetails">
+              <span *ngIf="elementAction === action.type">
+                <button *ngIf="action.icon && action.label" mat-button class="table-icon-button"
+                        (click)="$event.stopPropagation(); onActionClick(action.type, element)"
+                        matTooltip="{{ action.label | getTextByKey }}">
+                  <em class="{{action.icon}}"></em>
+                </button>
+                <button *ngIf="action.icon && !action.label" mat-button class="table-icon-button"
+                        (click)="$event.stopPropagation(); onActionClick(action.type, element)">
+                  <em class="{{action.icon}}"></em>
+                </button>
+                <button *ngIf="action.text && action.label" mat-button class="mat-button-small"
+                        (click)="$event.stopPropagation(); onActionClick(action.type, element)"
+                        matTooltip="{{ action.label | getTextByKey }}">
+                  <span>{{action.text | getTextByKey}}</span>
+                </button>
+                <button *ngIf="action.text && !action.label" mat-button class="mat-button-small"
+                        (click)="$event.stopPropagation(); onActionClick(action.type, element)">
+                  <span>{{action.text | getTextByKey}}</span>
+                </button>
+              </span>
+            </span>
+          </span>
+        </mat-cell>
+      </ng-template>
+    </ng-template>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)"></mat-row>
+</mat-table>
+<div class="no-data" *ngIf="(dataSource === undefined || dataSource.data === undefined) || dataSource.data.length < 1">
+  {{ 'noDataToDisplay' | getTextByKey }}
+</div>
+<mat-paginator #paginator
+               [length]="dataSource === undefined || dataSource.data === undefined ? 0 : dataSource.data.length"
+               [pageIndex]="0"
+               [hidePageSize] = "(dataSource === undefined || dataSource.data === undefined) || dataSource.data.length < 1"
+               [pageSize]="defaultPageSize"
+               [pageSizeOptions]="paginatorPageSizes">
+</mat-paginator>

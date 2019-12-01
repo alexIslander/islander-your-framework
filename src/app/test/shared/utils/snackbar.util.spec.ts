@@ -2,7 +2,7 @@ import { inject, TestBed } from '@angular/core/testing';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { GetTextByKeyPipe } from '../../../shared/utils/get-text-by-key.pipe';
 import {SnackbarUtil} from '../../../shared/utils/snackbar.util';
-import {FrameworkLoaderService} from '../../../shared/services/framework-loader.service';
+import {FrameworkLoaderService} from '../../../shared/service/framework-loader.service';
 
 describe('SnackbarUtil', () => {
 

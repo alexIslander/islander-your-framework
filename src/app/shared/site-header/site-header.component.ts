@@ -1,10 +1,11 @@
-import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {SiteHeaderService} from '../services/site-header.service';
+import {SiteHeaderService} from '../service/site-header.service';
 import {componentDestroyed} from 'ng2-rx-componentdestroyed';
 import { takeUntil } from 'rxjs/operators';
-import {isNullOrUndefined} from 'util';
-import {HeaderMenuItem} from "../dto/HeaderMenuItem";
+
+import {has} from '../service/common-function.service';
+import {HeaderMenuItem} from '../dto/HeaderMenuItem.js';
 
 @Component({
   selector: 'app-common-site-header',
@@ -28,16 +29,16 @@ export class SiteHeaderComponent implements OnInit, OnDestroy {
       .subscribe(
         (urlPath) => {
           const menuItem = this.headerMenu.find(hm => urlPath.includes(hm.url));
-          this.headerText = !isNullOrUndefined(menuItem) ? menuItem.headerTitle : this.default;
+          this.headerText = has(menuItem) ? menuItem.headerTitle : this.default;
         }
       );
   }
 
   ngOnInit(): void {
-    if (!isNullOrUndefined(this.items)) {
+    if (has(this.items)) {
       this.headerMenu = this.items;
       const item = this.headerMenu.find(m => this.router.config[0].redirectTo === m.url);
-      this.headerText = !isNullOrUndefined(item) ? item.headerTitle : this.default;
+      this.headerText = has(item) ? item.headerTitle : this.default;
     }
   }
 

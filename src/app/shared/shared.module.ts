@@ -15,7 +15,17 @@ import { ConfirmationWindowComponent } from './confirmation-window/confirmation-
 import { LoaderComponent } from './loader/loader.component';
 import { AutoCompleteComponent } from './autocomplete/autocomplete.component';
 import { BaseDialogViewComponentComponent } from './base-dialog-view-component/base-dialog-view-component.component';
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
+import { DynamicTextComponent } from './dynamic-fields/dynamic-text/dynamic-text.component';
+import { DynamicOptionComponent } from './dynamic-fields/dynamic-option/dynamic-option.component';
+import { DynamicToggleComponent } from './dynamic-fields/dynamic-toggle/dynamic-toggle.component';
+import { DynamicRadioGroupComponent } from './dynamic-fields/dynamic-radio-group/dynamic-radio-group.component';
+import { DynamicCheckboxComponent } from './dynamic-fields/dynamic-checkbox/dynamic-checkbox.component';
+import { DynamicUploadComponent } from './dynamic-fields/dynamic-upload/dynamic-upload.component';
+import { DynamicAutocompleteComponent } from './dynamic-fields/dynamic-autocomplete/dynamic-autocomplete.component';
+import {DynamicTableWithSelectionComponent} from './component/dynamic-table-with-selection/dynamic-table-with-selection.component';
+import {DynamicTableComponent} from './dynamic-table/dynamic-table.component';
+import {ClipboardModule} from 'ngx-clipboard';
 
 @NgModule({
   imports: [
@@ -24,7 +34,8 @@ import {RouterModule} from "@angular/router";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule,
-    AppMaterialModule
+    AppMaterialModule,
+    ClipboardModule
   ],
   declarations: [
     GetTextByKeyPipe,
@@ -37,8 +48,16 @@ import {RouterModule} from "@angular/router";
     ConfirmationWindowComponent,
     LoaderComponent,
     AutoCompleteComponent,
-    AutoCompleteComponent,
-    BaseDialogViewComponentComponent
+    BaseDialogViewComponentComponent,
+    DynamicTextComponent,
+    DynamicOptionComponent,
+    DynamicToggleComponent,
+    DynamicRadioGroupComponent,
+    DynamicCheckboxComponent,
+    DynamicUploadComponent,
+    DynamicAutocompleteComponent,
+    DynamicTableComponent,
+    DynamicTableWithSelectionComponent
   ],
   exports: [
     SiteHeaderComponent,
@@ -50,7 +69,16 @@ import {RouterModule} from "@angular/router";
     ToDatePipe,
     ToDateTimePipe,
     LoaderComponent,
-    AutoCompleteComponent
+    AutoCompleteComponent,
+    DynamicTextComponent,
+    DynamicOptionComponent,
+    DynamicToggleComponent,
+    DynamicRadioGroupComponent,
+    DynamicCheckboxComponent,
+    DynamicUploadComponent,
+    DynamicAutocompleteComponent,
+    DynamicTableComponent,
+    DynamicTableWithSelectionComponent
   ],
   providers: [
     GetTextByKeyPipe,
@@ -60,7 +88,14 @@ import {RouterModule} from "@angular/router";
   entryComponents: [
     CustomSnackBarComponent,
     ConfirmationWindowComponent,
-    BaseDialogViewComponentComponent
+    BaseDialogViewComponentComponent,
+    DynamicTextComponent,
+    DynamicOptionComponent,
+    DynamicToggleComponent,
+    DynamicRadioGroupComponent,
+    DynamicCheckboxComponent,
+    DynamicUploadComponent,
+    DynamicAutocompleteComponent
   ],
   schemas: [
     NO_ERRORS_SCHEMA,

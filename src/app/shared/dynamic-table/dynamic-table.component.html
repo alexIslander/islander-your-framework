@@ -1,0 +1,40 @@
+<mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+  <ng-container [matColumnDef]="cols.columnDef" *ngFor="let cols of columnDefinitions">
+    <ng-container *ngIf="cols.columnDef ==='actions';then actions else nonActions"></ng-container>
+    <ng-template #nonActions>
+      <mat-header-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matHeaderCellDef mat-sort-header [disabled]="!cols.sortable">
+        {{cols.columnTitleTextKey | getTextByKey}}
+      </mat-header-cell>
+      <mat-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matCellDef="let element">
+            <p matTooltip="{{ cols.tooltip ? cols.cell(element):''}}">{{cols.cell(element)}}</p>
+      </mat-cell>
+    </ng-template>
+    <ng-template #actions>
+      <mat-header-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matHeaderCellDef mat-sort-header [disabled]="!cols.sortable">
+        {{cols.columnTitleTextKey | getTextByKey}}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span *ngFor="let action of cols.actionDetails">
+          <button mat-button class="table-icon-button"
+                  (click)="$event.stopPropagation(); onActionClick(action.type, element)"
+                  matTooltip="{{ getActionLabel(action.label, element) | getTextByKey }}">
+            <em class="{{ getActionIcon(action.icon, element)}}"></em>
+          </button>
+        </span>
+      </mat-cell>
+    </ng-template>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)" [ngClass]="isActiveRow(row)"></mat-row>
+</mat-table>
+<div class="no-data" *ngIf="dataSource.data.length < 1">
+  {{ 'noDataToDisplay' | getTextByKey }}
+</div>
+<mat-paginator #paginator
+               [length]="dataSource.data.length"
+               [pageIndex]="0"
+               [hidePageSize] = "dataSource.data.length < 1"
+               [pageSize]="defaultPageSize"
+               [pageSizeOptions]="paginatorPageSizes">
+</mat-paginator>
+

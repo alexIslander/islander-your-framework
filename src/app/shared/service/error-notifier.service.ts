@@ -3,8 +3,8 @@ import {Router} from '@angular/router';
 import {NotificationService} from './notification.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Error} from 'tslint/lib/error';
-import {isNullOrUndefined} from 'util';
 import {HttpStatus} from '../dto/HttpStatus';
+import {hasNot} from './common-function.service';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,7 @@ export class ErrorNotifierService implements ErrorHandler {
           default : break;
         }
 
-        if (isNullOrUndefined(messageKey)) {
+        if (hasNot(messageKey)) {
           // TODO handle later 500 separately, when ARE error is refactored
           notificationService.notifyByRawText(`${error.status} - ${error.message}`);
         } else {

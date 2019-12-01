@@ -1,0 +1,158 @@
+.gb-column-1 {
+  width: 100%;
+}
+
+.gb-column-2 {
+  width: 48%;
+  padding-right: 2%;
+  display: inline-grid;
+}
+
+.gb-column-2:last-child {
+  width: 50%;
+  padding-right: 0%;
+}
+
+:host ::ng-deep gb-country-agent-autocomplete .ui-g-6 {
+  float: none;
+  display: inline-block;
+}
+
+.gb-column-3 {
+  width: 31%;
+  padding-right: 2%;
+  display: inline-grid;
+}
+
+.gb-column-3:last-child {
+  width: 33%;
+  padding-right: 0%;
+}
+
+.gb-column-4 {
+  width: 24%;
+  padding-right: 1%;
+  display: inline-grid;
+}
+
+.gb-column-4:last-child {
+  width: 25%;
+  padding-right: 0%;
+}
+
+.gb-column-5 {
+  width: 19%;
+  padding-right: 1%;
+  display: inline-grid;
+}
+
+.gb-column-6 {
+  width: 16%;
+  padding-right: 0.5%;
+  display: inline-grid;
+}
+
+.gb-column-6:last-child {
+  width: 17%;
+  padding-right: 0;
+}
+
+.gb-column-7 {
+  width: 14.2%;
+  padding-right: 0.5%;
+  display: inline-grid;
+}
+
+.gb-column-8 {
+  width: 12.5%;
+  padding-right: 0.5%;
+  display: inline-grid;
+}
+
+#clear-all-filters {
+  float: right;
+}
+
+.gb-dynamic-search {
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.mat-form-field {
+  width: 88%;
+}
+
+.mat-slide-toggle {
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+mat-select .mat-select-arrow-wrapper {
+  display: none !important;
+}
+
+// remove  mat select arraw when  arrow-down is enabled
+::ng-deep .arrow-down .mat-select-arrow {
+  border: none;
+}
+
+// when inlineElements  class is defined internal html elements will have inline row style
+.inlineElements {
+  display: flex;
+  flex-direction: row;
+}
+
+// in the center of input height not top or bottom
+.tooltipIcon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-chevron-down:before {
+  float: right;
+  text-align: right;
+}
+
+.uploadIcon {
+  font-size: 29px;
+  padding: 22px;
+}
+
+.uploadfilecontainer {
+  border: 2px dashed #000;
+  max-width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.uploadfilecontainer:hover {
+  cursor: pointer;
+  background-color: lightgray !important;
+  opacity: 0.8;
+}
+
+.files-list {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 10px auto;
+  background: #ffffff;
+  border: 1px dashed;
+  border-radius: 12px;
+  padding: 5px;
+  color: #1c8adb;
+}
+
+.files-list .delete-file {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.files-list .delete-file img {
+  width: 30px;
+}

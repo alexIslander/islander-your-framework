@@ -33,7 +33,7 @@ export class FirstComponent implements OnInit, OnDestroy {
     // NOOP
   }
 
-  onDialogOpen(event: any, card: any) {
+  onDialogOpen(event: any, card?: any) {
     const dialogRef = this.dialog.open(BaseDialogViewComponentComponent, {
       data: {
         values: [ this.todo.id, this.todo.userId, this.todo.title, this.todo.completed ],

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {SnackbarUtil} from './shared/utils/snackbar.util';
-import {NotificationService} from './shared/services/notification.service';
-import {HeaderMenuItem} from "./shared/dto/HeaderMenuItem";
-import {RouteUrls} from "./route-urls";
+import {NotificationService} from './shared/service/notification.service';
+import {HeaderMenuItem} from './shared/dto/HeaderMenuItem';
+import {RouteUrls} from './route-urls';
 
 @Component({
   selector: 'app-root',

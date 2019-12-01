@@ -15,7 +15,7 @@ import {FirstComponentServiceMock} from './service/impl/FirstComponentServiceMoc
 import {FirstComponentService} from './service/impl/FirstComponentService';
 import {environment} from '../../environments/environment';
 import { ThirdComponent } from './third/third.component';
-import {SandboxRoutingModule} from "./sandbox-routing.module";
+import {SandboxRoutingModule} from './sandbox-routing.module';
 
 @NgModule({
   declarations: [

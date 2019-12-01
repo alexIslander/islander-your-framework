@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from "@angular/router";
-import {SecondComponent} from "./second/second.component";
-import {FirstComponent} from "./first/first.component";
-import {RouteUrls} from "../route-urls";
-import {SandboxHomeComponent} from "./home/home.component";
-import {SandboxDashboardComponent} from "./dashboard/sandbox-dashboard.component";
+import {RouterModule, Routes} from '@angular/router';
+import {SecondComponent} from './second/second.component';
+import {FirstComponent} from './first/first.component';
+import {RouteUrls} from '../route-urls';
+import {SandboxHomeComponent} from './home/home.component';
+import {SandboxDashboardComponent} from './dashboard/sandbox-dashboard.component';
 
 const sandboxRoutes: Routes = [
   {

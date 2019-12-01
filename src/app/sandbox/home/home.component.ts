@@ -7,8 +7,8 @@ import {MatDialog} from '@angular/material';
 import {SandboxDashboardService} from '../service/impl/SandboxDashboardService';
 import {takeUntil} from 'rxjs/operators';
 import {componentDestroyed} from 'ng2-rx-componentdestroyed';
-import {isNullOrUndefined} from 'util';
 import {ConfirmationWindowComponent} from '../../shared/confirmation-window/confirmation-window.component';
+import {hasNot} from '../../shared/service/common-function.service';
 
 @Component({
   selector: 'app-home',
@@ -37,7 +37,7 @@ export class SandboxHomeComponent implements OnInit, OnDestroy {
   }
 
   onNavigate(event: any, s?: string) {
-    this.router.navigate(isNullOrUndefined(s)  ? ['/sandbox/home'] : ['/sandbox/' + s]);
+    this.router.navigate(hasNot(s)  ? ['/sandbox/home'] : ['/sandbox/' + s]);
   }
 
   getCardClass(disabled: boolean): string {
