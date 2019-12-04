@@ -1,4 +1,4 @@
-import {AppMaterialModule} from '../../shared/app-material/app-material.module';
+import {AppMaterialModule} from '../../shared/module/app-material/app-material.module';
 import {TestModuleMetadata} from '@angular/core/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -10,6 +10,7 @@ import {ToDateTimePipe} from '../../shared/utils/to-date-time.pipe';
 import {DateFormatterUtil} from '../../shared/utils/date-formatter.util';
 import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {FrameworkLoaderService} from '../../shared/service/framework-loader.service';
+import {AppTranslateModule} from '../../shared/module/app-translate/app-translate.module';
 
 export const TestConfigModuleMetadata: TestModuleMetadata = {
   imports: [
@@ -18,7 +19,8 @@ export const TestConfigModuleMetadata: TestModuleMetadata = {
     FormsModule,
     ReactiveFormsModule,
     PerfectScrollbarModule,
-    HttpClientModule
+    HttpClientModule,
+    AppTranslateModule
   ],
   declarations: [
     GetTextByKeyPipe,

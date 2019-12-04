@@ -8,7 +8,7 @@ import {DynamicSearchMapper} from './dynamic-search-mapper';
 import {DynamicSearchFormLogic} from './dynamic-search-form-logic';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AppMaterialModule} from '../app-material/app-material.module';
+import {AppMaterialModule} from '../module/app-material/app-material.module';
 import {SharedModule} from '../shared.module';
 import { DynamicFieldDirective } from './directive/dynamic-field.directive';
 

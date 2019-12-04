@@ -1,6 +1,8 @@
 export const environment = {
   production: true,
   mock: false,
+  languages: ['en', 'hu'],
+  defaultLanguage: 'en',
   islanderFrameworkServiceUrl: 'http://localhost:8080/soup',
   anyApiServiceBaseUrl: 'http://passwordutility.net:80/api',
   pageSizes: [5, 10, 25, 100],

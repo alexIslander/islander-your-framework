@@ -3,6 +3,8 @@ import {SnackbarUtil} from './shared/utils/snackbar.util';
 import {NotificationService} from './shared/service/notification.service';
 import {HeaderMenuItem} from './shared/dto/HeaderMenuItem';
 import {RouteUrls} from './route-urls';
+import {configureTranslation} from './shared/module/app-translate/app-translate.module';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +16,10 @@ export class AppComponent {
   public headerMenuItems = [];
 
   constructor(private notificationService: NotificationService,
-              private snackBar: SnackbarUtil) {
+              private snackBar: SnackbarUtil,
+              private translate: TranslateService) {
     this.appComponent = this;
+    configureTranslation(translate);
     this.headerMenuItems.push({name: 'sandBoxModulePageTitle',
       url: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home,
       headerTitle: 'sandBoxModulePageHeader'} as HeaderMenuItem);

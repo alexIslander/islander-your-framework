@@ -7,7 +7,7 @@ import { ToDateTimePipe } from './utils/to-date-time.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
-import {AppMaterialModule} from './app-material/app-material.module';
+import {AppMaterialModule} from './module/app-material/app-material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CustomSnackBarComponent } from './custom-snack-bar/custom-snack-bar.component';

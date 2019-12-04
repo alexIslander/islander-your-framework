@@ -4,7 +4,7 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { SandboxHomeComponent } from './home/home.component';
 import { SandboxDashboardComponent } from './dashboard/sandbox-dashboard.component';
-import {AppMaterialModule} from '../shared/app-material/app-material.module';
+import {AppMaterialModule} from '../shared/module/app-material/app-material.module';
 import {SharedModule} from '../shared/shared.module';
 import {SandboxDashboardService} from './service/impl/SandboxDashboardService';
 import {HttpClient} from '@angular/common/http';
@@ -16,6 +16,7 @@ import {FirstComponentService} from './service/impl/FirstComponentService';
 import {environment} from '../../environments/environment';
 import { ThirdComponent } from './third/third.component';
 import {SandboxRoutingModule} from './sandbox-routing.module';
+import {AppTranslateModule} from '../shared/module/app-translate/app-translate.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {SandboxRoutingModule} from './sandbox-routing.module';
     CommonModule,
     SandboxRoutingModule,
     SharedModule,
-    AppMaterialModule
+    AppMaterialModule,
+    AppTranslateModule
   ],
   providers: [
     SandboxHttpHelperService,

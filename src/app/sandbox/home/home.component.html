@@ -3,6 +3,9 @@
     <h1 align="center">DashBoard</h1>
   </mat-card-header>
   <mat-card-content>
+    <div>
+      <h2>{{ 'HOME.TITLE' | translate }}</h2>
+    </div>
     <div class="card-container ui-g">
       <mat-card *ngFor="let card of cards" class="example-card ui-g-3 content-centered" (click)="onCardAction($event, card)">
         <mat-card-header>
