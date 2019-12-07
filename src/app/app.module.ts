@@ -13,6 +13,7 @@ import {appRoutes, AppRoutingModule} from './app-routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {MainModule} from './main/main.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {CommonModule} from '@angular/common';
   imports: [
     CommonModule,
     SandboxModule,
+    MainModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     AppRoutingModule,

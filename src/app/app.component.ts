@@ -19,9 +19,9 @@ export class AppComponent {
     this.headerMenuItems.push({name: 'sandBoxModulePageTitle',
       url: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home,
       headerTitle: 'sandBoxModulePageHeader'} as HeaderMenuIItem);
-    this.headerMenuItems.push({name: 'xxxModulePageTitle',
-      url: RouteUrls.xxxPage.root + '/' + RouteUrls.xxxPage.home,
-      headerTitle: 'xxxModulePageHeader'} as HeaderMenuIItem);
+    this.headerMenuItems.push({name: 'mainModulePageTitle',
+      url: RouteUrls.mainModule.root + '/' + RouteUrls.mainModule.home,
+      headerTitle: 'mainModulePageHeader'} as HeaderMenuIItem);
     this.notificationService
       .onError(message => {
         if (message != null) {

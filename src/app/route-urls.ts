@@ -7,9 +7,8 @@ export const RouteUrls = {
     first: 'first',
     second: 'second'
   },
-  xxxPage: {
-    root: 'xxx',
-    home: 'home',
-    second: 'second'
+  mainModule: {
+    root: 'main',
+    home: 'home'
   }
 };

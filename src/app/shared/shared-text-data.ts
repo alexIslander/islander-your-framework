@@ -41,6 +41,6 @@ export const SharedTextData = {
   'sanBoxDialogTitle': 'Example dialog',
 
   // sandBox module:
-  'xxxModulePageTitle': 'xxx',
-  'xxxModulePageHeader': 'XXX UI'
+  'mainModulePageTitle': 'Main',
+  'mainModulePageHeader': 'Main UI'
 };
