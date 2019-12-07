@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {SnackbarUtil} from './shared/utils/snackbar.util';
 import {NotificationService} from './shared/service/notification.service';
-import {HeaderMenuItem} from './shared/dto/HeaderMenuItem';
+import {HeaderMenuIItem} from './shared/dto/header-menuI-item';
 import {RouteUrls} from './route-urls';
 
 @Component({
@@ -18,10 +18,10 @@ export class AppComponent {
     this.appComponent = this;
     this.headerMenuItems.push({name: 'sandBoxModulePageTitle',
       url: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home,
-      headerTitle: 'sandBoxModulePageHeader'} as HeaderMenuItem);
+      headerTitle: 'sandBoxModulePageHeader'} as HeaderMenuIItem);
     this.headerMenuItems.push({name: 'xxxModulePageTitle',
       url: RouteUrls.xxxPage.root + '/' + RouteUrls.xxxPage.home,
-      headerTitle: 'xxxModulePageHeader'} as HeaderMenuItem);
+      headerTitle: 'xxxModulePageHeader'} as HeaderMenuIItem);
     this.notificationService
       .onError(message => {
         if (message != null) {

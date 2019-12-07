@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
-import {AppConstants} from '../helpers/AppConstants';
+import {AppConstants} from '../helpers/app-constants';
 import {MatAutocompleteSelectedEvent, MatAutocompleteTrigger} from '@angular/material';
 import {BaseAutocomplete} from './BaseAutocomplete';
 import {CommonFunctionService} from '../service/common-function.service';

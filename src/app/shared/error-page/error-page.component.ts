@@ -2,7 +2,7 @@ import {takeUntil} from 'rxjs/operators';
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-import {HttpStatus} from '../service/HttpStatus';
+import {HttpStatus} from '../service/http-status';
 import {MatDialog} from '@angular/material';
 import {CommonFunctionService} from '../service/common-function.service';
 import {UnsubscribeComponent} from '../component/unsubscribe-base.js';

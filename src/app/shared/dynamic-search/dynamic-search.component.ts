@@ -2,13 +2,13 @@ import {
   AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component,
   EventEmitter, Input, OnInit, Output
 } from '@angular/core';
-// import {RexStorageManager} from '../../auth/helpers/RexStorageManager';
+// import {YourStorageManager} from '../../auth/helpers/YourStorageManager';
 import {CommonFunctionService, has} from '../service/common-function.service';
 import {AllowedInputTypes, DynamicSearchConfiguration} from './dynamic-search-configuration';
 import {DynamicSearchMapper} from './dynamic-search-mapper';
 import {DynamicSearchFormLogic} from './dynamic-search-form-logic';
 import {DynamicSearchValidator} from './dynamic-search-validator';
-import {AppConstants} from '../helpers/AppConstants';
+import {AppConstants} from '../helpers/app-constants';
 
 @Component({
   selector: 'app-dynamic-search',
@@ -30,7 +30,7 @@ export class DynamicSearchComponent implements OnInit, AfterViewChecked, AfterVi
               public formLogic: DynamicSearchFormLogic,
               private dynamicSearchValidator: DynamicSearchValidator
               // ,
-              // private storageManager: RexStorageManager
+              // private storageManager: YourStorageManager
   ) {
     // NOOP
   }

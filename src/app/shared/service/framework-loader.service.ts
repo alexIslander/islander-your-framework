@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoaderState } from '../dto/LoaderState';
+import { LoaderState } from '../dto/loader-state';
 import { Subject } from 'rxjs';
 
 @Injectable()

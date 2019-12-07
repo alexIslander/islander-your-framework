@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {CommonFunctionService, has, hasNot} from '../service/common-function.service';
-import {AppConstants} from '../helpers/AppConstants';
+import {AppConstants} from '../helpers/app-constants';
 import {DynamicSearchMapper} from './dynamic-search-mapper';
 import {DynamicSearchValidator} from './dynamic-search-validator';
 import {AllowedInputTypes, DynamicSearchConfiguration} from './dynamic-search-configuration';
-// import {RexStorageManager} from '../../auth/helpers/RexStorageManager';
+import {YourStorageManager} from '../helpers/your-storage-manager.service';
 
 @Injectable()
 export class DynamicSearchFormLogic {
@@ -16,10 +16,8 @@ export class DynamicSearchFormLogic {
   constructor(private commonFunctions: CommonFunctionService,
               private mapper: DynamicSearchMapper,
               private dynamicSearchValidator: DynamicSearchValidator,
-              public formBuilder: FormBuilder
-              // ,
-              // private storageManager: RexStorageManager
-  ) {
+              public formBuilder: FormBuilder,
+              private storageManager: YourStorageManager) {
     // NOOP
   }
 
@@ -62,32 +60,32 @@ export class DynamicSearchFormLogic {
     }
   }
 
-  // /**
-  //  * if localstorage has stored value(s) from specific component name , it means we can patch these values
-  //  * directly into our form inputs
-  //  */
-  // loadLocalStorageValues(componentName: string): object {
-  //   const storageValue = this.storageManager.getLocalStorageItem(componentName);
-  //   if (has(storageValue) && has(storageValue.value)) {
-  //     const savedControllers = Object.entries(storageValue.value);
-  //     for (const [name, controllerValue] of savedControllers) {
-  //       if (this.form.controls.hasOwnProperty('countryAgentAutocomplete') && name === 'country' || name === 'agent') {
-  //         (<FormGroup>this.form.controls['countryAgentAutocomplete']).get(name).patchValue(controllerValue);
-  //       } else {
-  //         this.form.get(name).patchValue(controllerValue);
-  //         this.form.get(name).markAsTouched();
-  //       }
-  //     }
-  //   }
-  //   if (this.dynamicSearchValidator.hasValidPrimaryField(this.dynamicField, this.form)) {
-  //     const validMappedFormValues = this.mapper.getValidFormValues(this.form, this.dynamicField);
-  //     if (has(validMappedFormValues)) {
-  //       if (Object.keys(validMappedFormValues).length > 0) {
-  //         return validMappedFormValues;
-  //       }
-  //     }
-  //   }
-  // }
+  /**
+   * if localstorage has stored value(s) from specific component name , it means we can patch these values
+   * directly into our form inputs
+   */
+  loadLocalStorageValues(componentName: string): object {
+    const storageValue = this.storageManager.getLocalStorageItem(componentName);
+    if (has(storageValue) && has(storageValue.value)) {
+      const savedControllers = Object.entries(storageValue.value);
+      for (const [name, controllerValue] of savedControllers) {
+        if (this.form.controls.hasOwnProperty('countryAgentAutocomplete') && name === 'country' || name === 'agent') {
+          (<FormGroup>this.form.controls['countryAgentAutocomplete']).get(name).patchValue(controllerValue);
+        } else {
+          this.form.get(name).patchValue(controllerValue);
+          this.form.get(name).markAsTouched();
+        }
+      }
+    }
+    if (this.dynamicSearchValidator.hasValidPrimaryField(this.dynamicField, this.form)) {
+      const validMappedFormValues = this.mapper.getValidFormValues(this.form, this.dynamicField);
+      if (has(validMappedFormValues)) {
+        if (Object.keys(validMappedFormValues).length > 0) {
+          return validMappedFormValues;
+        }
+      }
+    }
+  }
 
   /**
    * clear and update validator for each controller
@@ -121,16 +119,16 @@ export class DynamicSearchFormLogic {
     return this.form.controls[mainController]['controls'][internalController];
   }
 
-  // /**
-  //  * If form is filled  ,is emitting only  filled , unique and valid values
-  //  */
-  // saveLocalStorageValues(componentName, criteria?): void {
-  //   if (this.commonFunctions.isNullOrUndefinedOrEmpty(criteria)) {
-  //     this.storageManager.removeLocalStorageItem(criteria);
-  //   } else {
-  //     this.storageManager.setLocalStorageItem(componentName, [criteria]);
-  //   }
-  // }
+  /**
+   * If form is filled  ,is emitting only  filled , unique and valid values
+   */
+  saveLocalStorageValues(componentName, criteria?): void {
+    if (this.commonFunctions.isNullOrUndefinedOrEmpty(criteria)) {
+      this.storageManager.removeLocalStorageItem(criteria);
+    } else {
+      this.storageManager.setLocalStorageItem(componentName, [criteria]);
+    }
+  }
 
   patchControlValue(selector: string, value?): void {
     this.form.controls[selector].patchValue(value);

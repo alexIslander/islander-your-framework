@@ -5,7 +5,7 @@ import {componentDestroyed} from 'ng2-rx-componentdestroyed';
 import { takeUntil } from 'rxjs/operators';
 
 import {has} from '../service/common-function.service';
-import {HeaderMenuItem} from '../dto/HeaderMenuItem.js';
+import {HeaderMenuIItem} from '../dto/header-menuI-item.js';
 
 @Component({
   selector: 'app-common-site-header',
@@ -13,7 +13,7 @@ import {HeaderMenuItem} from '../dto/HeaderMenuItem.js';
   styleUrls: ['./site-header.component.scss']
 })
 export class SiteHeaderComponent implements OnInit, OnDestroy {
-  @Input() items: HeaderMenuItem[];
+  @Input() items: HeaderMenuIItem[];
   @Input() default: string;
   headerText: string;
   imgUrl: string;

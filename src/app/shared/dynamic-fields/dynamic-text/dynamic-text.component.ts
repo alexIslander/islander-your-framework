@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DynamicField} from '../dynamic.field';
-import {AppConstants} from '../../helpers/AppConstants';
+import {AppConstants} from '../../helpers/app-constants';
 
 @Component({
   selector: 'app-dynamic-text',

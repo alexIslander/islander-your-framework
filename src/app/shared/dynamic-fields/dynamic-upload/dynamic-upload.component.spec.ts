@@ -1,6 +1,6 @@
 import { DynamicUploadComponent } from './dynamic-upload.component';
 import {initContext, TestContext} from '../../../test/test-context';
-import {SearchInputFormatter} from '../../helpers/SearchInputFormatter';
+import {SearchInputFormatter} from '../../helpers/search-input-formatter';
 
 describe('DynamicUploadComponent', () => {
   type Context = TestContext<DynamicUploadComponent>;

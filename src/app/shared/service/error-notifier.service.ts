@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {NotificationService} from './notification.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Error} from 'tslint/lib/error';
-import {HttpStatus} from '../dto/HttpStatus';
+import {HttpStatus} from '../dto/http-status';
 import {hasNot} from './common-function.service';
 
 @Injectable({

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { LoaderState } from '../dto/LoaderState';
+import { LoaderState } from '../dto/loader-state';
 import {debounceTime, distinctUntilChanged, takeUntil} from 'rxjs/operators';
 import {UnsubscribeComponent} from '../component/unsubscribe-base';
 import {CommonFunctionService} from '../service/common-function.service';

@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 import {initContext, TestContext} from '../../test-context';
 import {APP_BASE_HREF, Location, LocationStrategy} from '@angular/common';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MockActivatedRoute} from '../../MockActivatedRoute';
+import {MockActivatedRoute} from '../../mock-activated-route';
 
 import {SandboxDashboardComponent} from '../../../sandbox/dashboard/sandbox-dashboard.component';
 import {SandboxHomeComponent} from '../../../sandbox/home/home.component';

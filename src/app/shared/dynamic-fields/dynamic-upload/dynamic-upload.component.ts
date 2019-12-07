@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DynamicField} from '../dynamic.field';
-import {SearchInputFormatter} from '../../helpers/SearchInputFormatter';
+import {SearchInputFormatter} from '../../helpers/search-input-formatter';
 
 @Component({
   selector: 'app-dynamic-upload',
