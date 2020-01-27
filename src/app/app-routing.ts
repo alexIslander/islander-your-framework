@@ -5,7 +5,7 @@ import {ErrorPageComponent} from './shared/error-page/error-page.component';
 import {SecondComponent} from './sandbox/second/second.component';
 import {SandboxDashboardComponent} from './sandbox/dashboard/sandbox-dashboard.component';
 import {SandboxHomeComponent} from './sandbox/home/home.component';
-import {FirstComponent} from "./sandbox/first/first.component";
+import {FirstComponent} from './sandbox/first/first.component';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home, pathMatch: 'full'},

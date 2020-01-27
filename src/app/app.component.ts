@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import {SnackbarUtil} from './shared/utils/snackbar.util';
-import {NotificationService} from './shared/services/notification.service';
-import {HeaderMenuItem} from "./shared/dto/HeaderMenuItem";
-import {RouteUrls} from "./route-urls";
+import {NotificationService} from './shared/service/notification.service';
+import {HeaderMenuItem} from './shared/dto/HeaderMenuItem';
+import {RouteUrls} from './route-urls';
+import {configureTranslation} from './shared/module/app-translate/app-translate.module';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +16,16 @@ export class AppComponent {
   public headerMenuItems = [];
 
   constructor(private notificationService: NotificationService,
-              private snackBar: SnackbarUtil) {
+              private snackBar: SnackbarUtil,
+              private translate: TranslateService) {
     this.appComponent = this;
-    this.headerMenuItems.push({name: 'sandBoxModulePageTitle',
+    configureTranslation(translate);
+    this.headerMenuItems.push({name: 'SANDBOX.PAGE_HEADER',
       url: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home,
-      headerTitle: 'sandBoxModulePageHeader'} as HeaderMenuItem);
-    this.headerMenuItems.push({name: 'xxxModulePageTitle',
+      headerTitle: 'SANDBOX.PAGE_TITLE'} as HeaderMenuItem);
+    this.headerMenuItems.push({name: 'SANDBOX.XXX_MODULE_PAGE_TITLE',
       url: RouteUrls.xxxPage.root + '/' + RouteUrls.xxxPage.home,
-      headerTitle: 'xxxModulePageHeader'} as HeaderMenuItem);
+      headerTitle: 'SANDBOX.XXX_MODULE_PAGE_HEADER'} as HeaderMenuItem);
     this.notificationService
       .onError(message => {
         if (message != null) {

@@ -4,13 +4,13 @@ import { SiteHeaderComponent } from '../../../shared/site-header/site-header.com
 import { SidebarMenuComponent } from '../../../shared/sidebar-menu/sidebar-menu.component';
 
 import { APP_BASE_HREF } from '@angular/common';
-import {SiteHeaderService} from '../../../shared/services/site-header.service';
+import {SiteHeaderService} from '../../../shared/service/site-header.service';
 import {ErrorPageComponent} from '../../../shared/error-page/error-page.component';
 import {FirstComponent} from '../../../sandbox/first/first.component';
 import {SandboxDashboardComponent} from '../../../sandbox/dashboard/sandbox-dashboard.component';
 import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
 import {SecondComponent} from '../../../sandbox/second/second.component';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 describe('SiteHeaderComponent', () => {
 

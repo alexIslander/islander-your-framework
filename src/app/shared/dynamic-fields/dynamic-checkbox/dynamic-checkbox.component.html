@@ -1,0 +1,11 @@
+<div [formGroup]="formGroupParam">
+  <mat-form-field>
+    <mat-label> {{ config.inputLabelDefinition| translate }}</mat-label>
+    <mat-select  [formControlName]="config.inputDefinition" multiple>
+      <mat-option  *ngFor="let checkbox of config.options" [value]="checkbox">{{checkbox}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <ng-container
+    *ngTemplateOutlet="tooltipTemplate; context: {entry: config.tooltipInfo}">
+  </ng-container>
+</div>

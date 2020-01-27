@@ -1,6 +1,14 @@
-<mat-form-field class="{{componentStyle}}">
-  <input type="text" placeholder="{{componentTitle}}" aria-label="{{componentTitle}}" matInput [formControl]="innerFormGroup.controls.autoCompleteControl" [matAutocomplete]="auto">
-  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onSendSelection($event)">
+<mat-form-field class="{{componentStyle}}" #autocompleteFormField>
+  <input #autocompleteInput type="text" placeholder="{{componentTitle}}" matInput
+         [formControl]="innerFormGroup.controls['autoCompleteControl']"
+         [matAutocomplete]="auto" [required]="required"
+         (keydown.enter)="onFocusLost($event)"
+         (keydown.tab)="onFocusLost($event)">
+  <mat-icon matSuffix *ngIf="formGroupParam.enabled" class="fa"
+            [ngClass]="displayIcon()"
+            (click)="onIconAction($event)"></mat-icon>
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" [autoActiveFirstOption]="true"
+                    (optionSelected)="onSendSelection($event);">
     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
       {{ option.displayName }}
     </mat-option>

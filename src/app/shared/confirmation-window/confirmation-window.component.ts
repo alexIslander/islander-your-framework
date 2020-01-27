@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { GetTextByKeyPipe } from '../utils/get-text-by-key.pipe';
 
 @Component({
   selector: 'app-confirmation-window',
@@ -13,32 +12,29 @@ export class ConfirmationWindowComponent {
   public yesButtonText;
   public noButtonText;
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Object,
-    private textPipe: GetTextByKeyPipe
-  ) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Object) {
     if (data['title']) {
       this.title = data['title'];
     } else {
-      this.title = this.textPipe.transform('confirmation');
+      this.title = 'COMMON.CONFIRMATION';
     }
 
     if (data['confirmationText']) {
       this.confirmationText = data['confirmationText'];
     } else {
-      this.confirmationText = this.textPipe.transform('confirmationMessage');
+      this.confirmationText = 'CONFIRMATION_MESSAGE';
     }
 
     if (data['yesButtonText']) {
       this.yesButtonText = data['yesButtonText'];
     } else {
-      this.yesButtonText = this.textPipe.transform('yesButtonLabel');
+      this.yesButtonText = 'COMMON.YES_BUTTON_LABEL';
     }
 
     if (data['noButtonText']) {
       this.noButtonText = data['noButtonText'];
     } else {
-      this.noButtonText = this.textPipe.transform('noButtonLabel');
+      this.noButtonText = 'COMMON.NO_BUTTON_LABEL';
     }
   }
 

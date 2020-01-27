@@ -1,0 +1,14 @@
+<div [formGroup]="formGroupParam">
+  {{ config.inputLabelDefinition|translate }}
+  <mat-radio-group [required]="validator.isFieldRequired(this.formGroupParam, config.inputDefinition)"
+                   (change)="onValueSelect($event)" [labelPosition]="config.position"
+                   [formControlName]="config.inputDefinition">
+    <mat-radio-button [checked]="radioOption === config.preselectedOption" color="primary"
+                      *ngFor="let radioOption of config.options" [value]="radioOption">
+      {{radioOption}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <ng-container
+    *ngTemplateOutlet="tooltipTemplate; context: {entry: config.tooltipInfo}">
+  </ng-container>
+</div>

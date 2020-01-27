@@ -1,0 +1,58 @@
+{
+  "COMMON": {
+    "YES_BUTTON_LABEL": "Yes",
+    "NO_BUTTON_LABEL": "No",
+    "OK_BUTTON_LABEL": "Ok",
+    "SEARCH_BUTTON_LABEL": "Search",
+    "REFRESH_BUTTON_LABEL": "Refresh",
+    "CLOSE_BUTTON_LABEL": "Close",
+    "CLEAR_ALL_BUTTON_LABEL": "Clear all",
+    "CANCEL_BUTTON_LABEL": "Cancel",
+    "NEXT_BUTTON_LABEL": "Next",
+    "BACK_BUTTON_LABEL": "Back",
+    "RESET_BUTTON_LABEL": "Reset",
+    "CREATE_BUTTON_LABEL": "Create",
+    "SUBMIT_BUTTON_LABEL": "Submit",
+    "GENERATE_BUTTON_LABEL": "Generate",
+    "NAVIGATE_BUTTON_LABEL": "Navigate",
+    "COPY_TO_CLIPBOARD_BUTTON_LABEL": "Copy to clipboard",
+    "CONFIRMATION": "Confirmation",
+    "CONFIRMATION_MESSAGE": "Are you sure you want to perform this action?",
+    "ACTION_PERFORMED_SUCCESSFUL_MESSAGE": "Action performed successfully!",
+    "DEFAULT_MODULE_PAGE_HEADER": "No title",
+    "NO_DATA_TO_DISPLAY": "No data to display.",
+
+    "CARD_IS_NOT_AVAILABLE": "This option is not available!",
+
+    "ERROR_PAGE_NOT_FOUND_MESSAGE": "404 - Page not found",
+    "ERROR_PAGE_DEFAULT_MESSAGE": "This page could not be loaded.",
+    "NO_INTERNET_CONNECTION": "No Internet Connection",
+    "INTERNAL_SERVER_ERROR": "Internal Server Error. Please try again later.",
+    "BAD_REQUEST_ERROR": "Invalid Parameters have been found in the request.",
+    "RESOURCE_NOT_FOUND_ERROR": "The server has not found anything matching the Request-URI.",
+    "METHOD_NOT_ALLOWED_ERROR": "The server has not found anything matching the Request method."
+  },
+  "APP": {
+    "HOME": {
+      "TITLE": "Hello Angular with ngx-translate!",
+      "SELECT": "Change language"
+    }
+  },
+  "SANDBOX": {
+    "PAGE_TITLE": "Sandbox",
+    "PAGE_HEADER": "Sandbox UI",
+    "SIDEBAR_MENU_DASHBOARD": "Home",
+    "SIDEBAR_MENU_FIRST": "First",
+    "SIDEBAR_MENU_SECOND": "Second",
+    "SANDBOX_DIALOG_TITLE": "Example dialog",
+    "EXPAND_BUTTON_TOOLTIP": "Expand",
+    "COLLAPSE_BUTTON_TOOLTIP": "Collapse",
+
+    "XXX_MODULE_PAGE_TITLE": "xxx",
+    "XXX_MODULE_PAGE_HEADER": "XXX UI",
+    "HOME": {
+      "TITLE": "Hello Angular with ngx-translate!",
+      "SELECT": "Change language"
+    }
+  }
+}

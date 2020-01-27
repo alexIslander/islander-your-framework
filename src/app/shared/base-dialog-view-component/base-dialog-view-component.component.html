@@ -1,13 +1,14 @@
 <section class="confirmation-window">
-  <h2 class="confirmation-title" mat-dialog-title>{{ dialogTitle | getTextByKey}}</h2>
+  <h2 class="confirmation-title" mat-dialog-title>{{ dialogTitle | translate }}</h2>
   <div class="input-group">
     <p class="form-control centered-content">
       This is a really long content, where we put the data we want to display: {{generatedTransactionValues}}
     </p>
     <div id="button-section" class="input-group-btn">
+      <input type="text" hidden="true" #inputTarget />
       <button type="button" class="custom-button" mat-button (click)="onClose($event)"
               [ngxClipboard]="inputTarget" >
-        {{'closeButtonLabel' | getTextByKey}}
+        {{'COMMON.CLOSE_BUTTON_LABEL' | translate }}
       </button>
     </div>
   </div>

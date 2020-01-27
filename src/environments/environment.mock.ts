@@ -1,6 +1,8 @@
 export const environment = {
   production: true,
   mock: true,
+  languages: ['en', 'hu'],
+  defaultLanguage: 'en',
   islanderFrameworkServiceUrl: '/assets/mock',
   anyApiServiceBaseUrl: '/assets/mock',
   pageSizes: [5, 10, 25, 100],

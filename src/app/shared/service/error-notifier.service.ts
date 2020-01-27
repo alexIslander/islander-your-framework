@@ -3,8 +3,8 @@ import {Router} from '@angular/router';
 import {NotificationService} from './notification.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Error} from 'tslint/lib/error';
-import {isNullOrUndefined} from 'util';
 import {HttpStatus} from '../dto/HttpStatus';
+import {hasNot} from './common-function.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,15 +22,15 @@ export class ErrorNotifierService implements ErrorHandler {
       if (navigator.onLine) {
         let messageKey: string;
         switch (error.status) {
-          case HttpStatus.BAD_REQUEST_ERROR : messageKey = 'badRequestError';  break;
-          case HttpStatus.RESOURCE_NOT_FOUND_ERROR : messageKey = 'resourceNotFoundError';  break;
-          case HttpStatus.METHOD_NOT_ALLOWED_ERROR : messageKey = 'methodNotAllowedError';  break;
-          case HttpStatus.NO_HTTP_CODE : messageKey = 'internalServerError';
+          case HttpStatus.BAD_REQUEST_ERROR : messageKey = 'COMMON.BAD_REQUEST_ERROR';  break;
+          case HttpStatus.RESOURCE_NOT_FOUND_ERROR : messageKey = 'COMMON.RESOURCE_NOT_FOUND_ERROR';  break;
+          case HttpStatus.METHOD_NOT_ALLOWED_ERROR : messageKey = 'COMMON.METHOD_NOT_ALLOWED_ERROR';  break;
+          case HttpStatus.NO_HTTP_CODE : messageKey = 'COMMON.INTERNAL_SERVER_ERROR';
             console.error('ErrorNotifierService.handleError(): ' + error.message); break;
           default : break;
         }
 
-        if (isNullOrUndefined(messageKey)) {
+        if (hasNot(messageKey)) {
           // TODO handle later 500 separately, when ARE error is refactored
           notificationService.notifyByRawText(`${error.status} - ${error.message}`);
         } else {
@@ -38,14 +38,14 @@ export class ErrorNotifierService implements ErrorHandler {
         }
       } else {
         // Handle offline error
-        notificationService.notify('noInternetConnection');
+        notificationService.notify('COMMON.NO_INTERNET_CONNECTION');
       }
 
     } else {
       console.error(error.message, error);
       notificationService.notifyByRawText(`${error.message}`);
       router.navigate(['error-page'],
-        {queryParams: {errorCode: '404', errorDetails: 'errorPageDefaultMessage'}}
+        {queryParams: {errorCode: '404', errorDetails: 'COMMON.ERROR_PAGE_DEFAULT_MESSAGE'}}
       );
     }
   }
