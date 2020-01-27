@@ -1,6 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GetTextByKeyPipe } from './utils/get-text-by-key.pipe';
 import { ToDatePipe } from './utils/to-date.pipe';
 import { ToDateTimePipe } from './utils/to-date-time.pipe';
 // import {Routing} from '../app-routing';
@@ -26,6 +25,7 @@ import { DynamicAutocompleteComponent } from './dynamic-fields/dynamic-autocompl
 import {DynamicTableWithSelectionComponent} from './component/dynamic-table-with-selection/dynamic-table-with-selection.component';
 import {DynamicTableComponent} from './dynamic-table/dynamic-table.component';
 import {ClipboardModule} from 'ngx-clipboard';
+import {AppTranslateModule} from './module/app-translate/app-translate.module';
 
 @NgModule({
   imports: [
@@ -35,10 +35,10 @@ import {ClipboardModule} from 'ngx-clipboard';
     BrowserAnimationsModule,
     RouterModule,
     AppMaterialModule,
-    ClipboardModule
+    ClipboardModule,
+    AppTranslateModule
   ],
   declarations: [
-    GetTextByKeyPipe,
     ToDatePipe,
     ToDateTimePipe,
     SiteHeaderComponent,
@@ -65,7 +65,6 @@ import {ClipboardModule} from 'ngx-clipboard';
     ErrorPageComponent,
     CustomSnackBarComponent,
     ConfirmationWindowComponent,
-    GetTextByKeyPipe,
     ToDatePipe,
     ToDateTimePipe,
     LoaderComponent,
@@ -81,7 +80,6 @@ import {ClipboardModule} from 'ngx-clipboard';
     DynamicTableWithSelectionComponent
   ],
   providers: [
-    GetTextByKeyPipe,
     ToDatePipe,
     ToDateTimePipe
   ],

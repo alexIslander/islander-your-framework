@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppMaterialModule} from '../module/app-material/app-material.module';
 import {SharedModule} from '../shared.module';
 import { DynamicFieldDirective } from './directive/dynamic-field.directive';
+import {AppTranslateModule} from '../module/app-translate/app-translate.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DynamicFieldDirective } from './directive/dynamic-field.directive';
     ReactiveFormsModule,
     FormErrorMessageModule.forRoot(StandardErrorMessageMappings),
     AppMaterialModule,
+    AppTranslateModule,
     FormsModule,
     SharedModule
   ],

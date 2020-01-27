@@ -5,11 +5,11 @@
       <i class="snack-bar-icon {{ contentStyle }} fa {{ iconParam }}"></i>
     </div>
     <div class="ui-g-10 snack-bar-message-content">
-      {{ messageContent }}
+      {{ isRawText ? messageContent : messageContent | translate }}
     </div>
     <div class="ui-g-1">
       <span *ngIf="snackBarAction">
-        <button mat-button type="button" class="mat-button {{ contentStyle }}" (click)="buttonAction()">{{snackBarAction}}</button>
+        <button mat-button type="button" class="mat-button {{ contentStyle }}" (click)="buttonAction()">{{ snackBarAction | translate }}</button>
       </span>
     </div>
   </div>

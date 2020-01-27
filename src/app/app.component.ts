@@ -20,12 +20,12 @@ export class AppComponent {
               private translate: TranslateService) {
     this.appComponent = this;
     configureTranslation(translate);
-    this.headerMenuItems.push({name: 'sandBoxModulePageTitle',
+    this.headerMenuItems.push({name: 'SANDBOX.PAGE_HEADER',
       url: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home,
-      headerTitle: 'sandBoxModulePageHeader'} as HeaderMenuItem);
-    this.headerMenuItems.push({name: 'xxxModulePageTitle',
+      headerTitle: 'SANDBOX.PAGE_TITLE'} as HeaderMenuItem);
+    this.headerMenuItems.push({name: 'SANDBOX.XXX_MODULE_PAGE_TITLE',
       url: RouteUrls.xxxPage.root + '/' + RouteUrls.xxxPage.home,
-      headerTitle: 'xxxModulePageHeader'} as HeaderMenuItem);
+      headerTitle: 'SANDBOX.XXX_MODULE_PAGE_HEADER'} as HeaderMenuItem);
     this.notificationService
       .onError(message => {
         if (message != null) {

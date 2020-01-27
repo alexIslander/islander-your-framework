@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-card-content>
     <div>
-      <h2>{{ 'HOME.TITLE' | translate }}</h2>
+      <h2>{{ 'APP.HOME.TITLE' | translate }}</h2>
     </div>
     <div class="card-container ui-g">
       <mat-card *ngFor="let card of cards" class="example-card ui-g-3 content-centered" (click)="onCardAction($event, card)">
@@ -26,12 +26,12 @@
         <div class="pull-right">
           <button id="generateDocIdButton" mat-button class="custom-button-left-margin" *ngIf="card.icon === 'fa-check'"
                   (click)="onDonothing($event)"
-                  matTooltip="{{'generateButtonLabel' | getTextByKey }}" [disabled]="card.disabled">
+                  matTooltip="{{'COMMON.GENERATE_BUTTON_LABEL' | translate }}" [disabled]="card.disabled">
             <i class="fa {{card.icon}}"></i>
           </button>
           <button id="navigateButton" mat-button class="custom-button-left-margin" *ngIf="card.icon !== 'fa-check'"
                   (click)="onDonothing($event)"
-                  matTooltip="{{'navigateButtonLabel' | getTextByKey }}" [disabled]="card.disabled">
+                  matTooltip="{{'COMMON.NAVIGATE_BUTTON_LABEL' | translate }}" [disabled]="card.disabled">
             <i class="fa {{card.icon}}"></i>
           </button>
         </div>

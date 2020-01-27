@@ -5,7 +5,7 @@
               (mouseleave)="optionOverlay.hide($event)"></span>
       <p-overlayPanel #optionOverlay appendTo="body">
         <section class="box-tooltip">
-          <div>{{ entry | getTextByKey}}</div>
+          <div>{{ entry | translate }}</div>
         </section>
       </p-overlayPanel>
     </div>
@@ -30,7 +30,7 @@
   mat-button
   class="custom-button"
   type="button"
-  matTooltip="{{'clearAllButtonTooltip' | getTextByKey}}"
-  (click)="onClearAllButtonClick()">{{'clearAllButton' | getTextByKey }}
+  matTooltip="{{ 'COMMON.CLEAR_ALL_BUTTON' | translate }}"
+  (click)="onClearAllButtonClick()">{{ 'COMMON.CLEAR_ALL_BUTTON' | translate }}
 </button>
 

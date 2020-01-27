@@ -28,8 +28,8 @@ export class ErrorPageComponent extends UnsubscribeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.errorTitle = 'errorPageNotFoundMessage';
-    this.errorDetails = 'errorPageDefaultMessage';
+    this.errorTitle = 'COMMON.ERROR_PAGE_NOT_FOUND_MESSAGE';
+    this.errorDetails = 'COMMON.ERROR_PAGE_DEFAULT_MESSAGE';
 
     this.route.queryParams.pipe(
       takeUntil(this.ngUnsubscribe))

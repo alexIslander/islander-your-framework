@@ -37,7 +37,7 @@ export class FirstComponent implements OnInit, OnDestroy {
     const dialogRef = this.dialog.open(BaseDialogViewComponentComponent, {
       data: {
         values: [ this.todo.id, this.todo.userId, this.todo.title, this.todo.completed ],
-        title: 'sanBoxDialogTitle'
+        title: 'SANDBOX.SANDBOX_DIALOG_TITLE'
       },
       disableClose: true
     });

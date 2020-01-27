@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 import {SnackbarUtil} from '../utils/snackbar.util';
-import {GetTextByKeyPipe} from '../utils/get-text-by-key.pipe';
 import {publish} from 'rxjs/internal/operators';
 
 @Injectable({
@@ -13,7 +12,7 @@ export class NotificationService {
   // readonly notification$: Observable<string> = this._notification.asObservable().publish().refCount();
   // readonly notification$: Observable<string> = of(this._notification).pipe(publish()).refCount();
 
-  constructor(private snackBar: SnackbarUtil, public textPipe: GetTextByKeyPipe ) {
+  constructor(private snackBar: SnackbarUtil) {
     // NOOP
   }
 
@@ -22,7 +21,7 @@ export class NotificationService {
    * @param messageKey - constant key of text to display.
    */
   notify(messageKey) {
-    this._notification.next(this.textPipe.transform(messageKey));
+    this._notification.next(messageKey);
   }
 
   /**

@@ -3,7 +3,6 @@ import {initContext, TestContext} from '../../../../test/test-context';
 import {FormErrorMessageService} from '../../service';
 import {of as observableOf} from 'rxjs';
 import {TestBed} from '@angular/core/testing';
-import {TextTranslatePipe} from '../../service/text-translate.pipe';
 import {FormControl, ValidationErrors} from '@angular/forms';
 
 xdescribe('FormMessageComponent', () => {
@@ -16,10 +15,6 @@ xdescribe('FormMessageComponent', () => {
         useValue: {
           getErrorMessages: () => observableOf({})
         }
-      },
-      {
-        provide: TextTranslatePipe,
-        useValue: ''
       }
     ]
   });
@@ -49,7 +44,7 @@ xdescribe('FormMessageComponent', () => {
     const spy = spyOn(this.component, 'errorMessage').and.stub();
 
     // call
-    this.component.errorMessage();
+    this.component.getValidatorErrorMessage('required');
     expect(spy).toHaveBeenCalled();
   });
 

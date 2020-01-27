@@ -4,7 +4,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {HttpClientModule} from '@angular/common/http';
-import {GetTextByKeyPipe} from '../../shared/utils/get-text-by-key.pipe';
 import {ToDatePipe} from '../../shared/utils/to-date.pipe';
 import {ToDateTimePipe} from '../../shared/utils/to-date-time.pipe';
 import {DateFormatterUtil} from '../../shared/utils/date-formatter.util';
@@ -23,11 +22,9 @@ export const TestConfigModuleMetadata: TestModuleMetadata = {
     AppTranslateModule
   ],
   declarations: [
-    GetTextByKeyPipe,
     ToDatePipe,
     ToDateTimePipe],
   providers: [
-    GetTextByKeyPipe,
     ToDatePipe,
     ToDateTimePipe,
     DateFormatterUtil,

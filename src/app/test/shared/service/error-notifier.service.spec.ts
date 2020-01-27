@@ -47,7 +47,7 @@ describe('ErrorNotifierService', () => {
       const queryParams = {
         queryParams: {
           errorCode: '404',
-          errorDetails: 'errorPageDefaultMessage'
+          errorDetails: 'COMMON.ERROR_PAGE_DEFAULT_MESSAGE'
         }
       };
 

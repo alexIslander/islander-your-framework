@@ -1,6 +1,6 @@
 <div [formGroup]="formGroupParam">
   <mat-form-field>
-    <mat-label>{{ config.inputLabelDefinition | getTextByKey }}</mat-label>
+    <mat-label>{{ config.inputLabelDefinition | translate }}</mat-label>
     <mat-select
       [ngClass]="{'arrow-down': validator.showRemoveIcon(this.formGroupParam, config.inputDefinition)}"
       [formControlName]="config.inputDefinition" [value]="config.preselectedOption"

@@ -26,7 +26,7 @@
       <ng-template #nonActions>
         <mat-header-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matHeaderCellDef mat-sort-header
                          [disabled]="!cols.sortable">
-          {{cols.columnTitleTextKey | getTextByKey}}
+          {{cols.columnTitleTextKey | translate }}
         </mat-header-cell>
         <mat-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matCellDef="let element">
           <p *ngIf="cols.dataType === 'date'" matTooltip="{{ cols.tooltip ? cols.cell(element):''}}">{{cols.cell(element) | toDate }} </p>
@@ -36,7 +36,7 @@
       <ng-template #actions>
         <mat-header-cell [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}" *matHeaderCellDef mat-sort-header
                          [disabled]="!cols.sortable">
-          {{cols.columnTitleTextKey | getTextByKey}}
+          {{cols.columnTitleTextKey | translate }}
         </mat-header-cell>
         <mat-cell *matCellDef="let element" [ngStyle]="{ 'flex': '0 0'+(cols.columnWidth)}">
           <span *ngFor="let elementAction of cols.cell(element)">
@@ -44,7 +44,7 @@
               <span *ngIf="elementAction === action.type">
                 <button *ngIf="action.icon && action.label" mat-button class="table-icon-button"
                         (click)="$event.stopPropagation(); onActionClick(action.type, element)"
-                        matTooltip="{{ action.label | getTextByKey }}">
+                        matTooltip="{{ action.label | translate }}">
                   <em class="{{action.icon}}"></em>
                 </button>
                 <button *ngIf="action.icon && !action.label" mat-button class="table-icon-button"
@@ -53,12 +53,12 @@
                 </button>
                 <button *ngIf="action.text && action.label" mat-button class="mat-button-small"
                         (click)="$event.stopPropagation(); onActionClick(action.type, element)"
-                        matTooltip="{{ action.label | getTextByKey }}">
-                  <span>{{action.text | getTextByKey}}</span>
+                        matTooltip="{{ action.label | translate }}">
+                  <span>{{action.text | translate }}</span>
                 </button>
                 <button *ngIf="action.text && !action.label" mat-button class="mat-button-small"
                         (click)="$event.stopPropagation(); onActionClick(action.type, element)">
-                  <span>{{action.text | getTextByKey}}</span>
+                  <span>{{action.text | translate }}</span>
                 </button>
               </span>
             </span>
@@ -71,7 +71,7 @@
   <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)"></mat-row>
 </mat-table>
 <div class="no-data" *ngIf="(dataSource === undefined || dataSource.data === undefined) || dataSource.data.length < 1">
-  {{ 'noDataToDisplay' | getTextByKey }}
+  {{ 'COMMON.NO_DATA_TO_DISPLAY' | translate }}
 </div>
 <mat-paginator #paginator
                [length]="dataSource === undefined || dataSource.data === undefined ? 0 : dataSource.data.length"

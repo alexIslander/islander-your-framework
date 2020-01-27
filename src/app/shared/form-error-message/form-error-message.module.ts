@@ -2,21 +2,20 @@ import {CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule, NO_ERRORS_SCHEMA}
 import {FormErrorMessageConfigService, FormErrorMessageService} from './service';
 import {FormMessageComponent} from './component/form-message/form-message.component';
 import {CommonModule} from '@angular/common';
-import {TextTranslatePipe} from './service/text-translate.pipe';
+import {AppTranslateModule} from '../module/app-translate/app-translate.module';
 
 @NgModule({
     imports: [
-      CommonModule
+      CommonModule,
+      AppTranslateModule
     ],
     declarations: [
-      FormMessageComponent,
-      TextTranslatePipe
+      FormMessageComponent
     ],
     exports: [
       FormMessageComponent
     ],
     providers: [
-      TextTranslatePipe
     ],
     schemas: [
       NO_ERRORS_SCHEMA,

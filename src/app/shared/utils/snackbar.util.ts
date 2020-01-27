@@ -1,6 +1,5 @@
 import {Injectable, NgZone} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
-import {GetTextByKeyPipe} from './get-text-by-key.pipe';
 import {CustomSnackBarComponent} from '../custom-snack-bar/custom-snack-bar.component';
 import {FrameworkLoaderService} from '../service/framework-loader.service';
 
@@ -23,8 +22,7 @@ export class SnackbarUtil {
 
   constructor(private zone: NgZone,
               public loaderService: FrameworkLoaderService,
-              public snackBar: MatSnackBar,
-              public textPipe: GetTextByKeyPipe) {
+              public snackBar: MatSnackBar) {
     // NOOP
   }
 
@@ -35,7 +33,7 @@ export class SnackbarUtil {
    * @param snackbarMessageDuration - duration
    */
   showErrorSnackBar(snackbarContent: string, buttonText = 'closeButtonLabel', snackbarMessageDuration = SnackbarUtil.INFINITE_DURATION) {
-    this.showRawSnackBar(this.textPipe.transform(snackbarContent), SnackbarUtil.ERROR_STYLE, buttonText, snackbarMessageDuration);
+    this.showRawSnackBar(snackbarContent, SnackbarUtil.ERROR_STYLE, buttonText, snackbarMessageDuration);
   }
 
   /**
@@ -45,7 +43,7 @@ export class SnackbarUtil {
    * @param snackbarMessageDuration  - duration
    */
   showWarningSnackBar(snackbarContent: string, buttonText = 'okButtonLabel', snackbarMessageDuration = this.snackbarMessageDuration) {
-    this.showRawSnackBar(this.textPipe.transform(snackbarContent), SnackbarUtil.WARNING_STYLE, buttonText, snackbarMessageDuration);
+    this.showRawSnackBar(snackbarContent, SnackbarUtil.WARNING_STYLE, buttonText, snackbarMessageDuration);
   }
 
   /**
@@ -55,7 +53,7 @@ export class SnackbarUtil {
    * @param snackbarMessageDuration - duration
    */
   showSuccessSnackBar(snackbarContent: string, buttonText = 'okButtonLabel', snackbarMessageDuration = this.snackbarMessageDuration) {
-    this.showRawSnackBar(this.textPipe.transform(snackbarContent), SnackbarUtil.SUCCESS_STYLE, buttonText, snackbarMessageDuration);
+    this.showRawSnackBar(snackbarContent, SnackbarUtil.SUCCESS_STYLE, buttonText, snackbarMessageDuration);
   }
 
   /**
@@ -74,24 +72,23 @@ export class SnackbarUtil {
     switch (contentStyle) {
       case SnackbarUtil.ERROR_STYLE:
         icon = SnackbarUtil.ERROR_ICON;
-        button = 'closeButtonLabel';
+        button = 'COMMON.CLOSE_BUTTON_LABEL';
         waitForUserInput = true;
         break;
       case SnackbarUtil.WARNING_STYLE:
         icon = SnackbarUtil.WARNING_ICON;
-        button = 'okButtonLabel';
+        button = 'COMMON.OK_BUTTON_LABEL';
         break;
       case SnackbarUtil.SUCCESS_STYLE:
         icon = SnackbarUtil.SUCCESS_ICON;
-        button = 'okButtonLabel';
+        button = 'COMMON.OK_BUTTON_LABEL';
         break;
       default:
         icon = SnackbarUtil.WARNING_ICON;
         button = buttonText;
     }
 
-    this.showCustomSnackbar(snackbarContent, contentStyle, icon, this.textPipe.transform(button)
-      , snackbarMessageDuration, waitForUserInput);
+    this.showCustomSnackbar(snackbarContent, false, contentStyle, icon, button, snackbarMessageDuration, waitForUserInput);
   }
 
   /**
@@ -103,14 +100,15 @@ export class SnackbarUtil {
    * @param snackbarMessageDuration - duration
    * @param waitForUserInput - waitForUserInput
    */
-  showCustomSnackbar(snackbarContent: string, contentStyle: string, icon: string, buttonText: string, snackbarMessageDuration =
+  showCustomSnackbar(snackbarContent: string, isRawText = true, contentStyle: string, icon: string, buttonText: string, snackbarMessageDuration =
     this.snackbarMessageDuration, waitForUserInput = false) {
     this.zone.run(() => {
       const snackBarRef = this.snackBar.openFromComponent(CustomSnackBarComponent, {
-        // How long the snacbar will be showing
+        // How long the snackbar will be showing
         duration: snackbarMessageDuration,
         data: {
           'messageContent': snackbarContent,
+          'isRawText': isRawText,
           'contentStyle': contentStyle,
           'iconParam': icon,
           'snackBarAction': buttonText,

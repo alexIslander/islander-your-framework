@@ -2,7 +2,6 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DashboardCard} from '../dto/DashboardCard';
 import {SnackbarUtil} from '../../shared/utils/snackbar.util';
 import {Router} from '@angular/router';
-import {GetTextByKeyPipe} from '../../shared/utils/get-text-by-key.pipe';
 import {MatDialog} from '@angular/material';
 import {SandboxDashboardService} from '../service/impl/SandboxDashboardService';
 import {takeUntil} from 'rxjs/operators';
@@ -22,7 +21,6 @@ export class SandboxHomeComponent implements OnInit, OnDestroy {
 
   constructor(private sandBoxDashboardService: SandboxDashboardService,
               private snackBar: SnackbarUtil,
-              public textPipe: GetTextByKeyPipe,
               private router: Router,
               private dialog: MatDialog) {
     // NOOP
@@ -59,7 +57,7 @@ export class SandboxHomeComponent implements OnInit, OnDestroy {
   onDialogOpen(event: any, card: any) {
     const dialogRef = this.dialog.open(ConfirmationWindowComponent, {
       data: {
-        'confirmationText': this.textPipe.transform('confirmationMessage')
+        'confirmationText': 'COMMON.CONFIRMATION_MESSAGE'
       },
       disableClose: true
     });
@@ -67,7 +65,7 @@ export class SandboxHomeComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed()
       .pipe(takeUntil(componentDestroyed(this)))
       .subscribe((out) => {
-        this.snackBar.showSuccessSnackBar('actionPerformedSuccessfulMessage');
+        this.snackBar.showSuccessSnackBar('COMMON.ACTION_PERFORMED_SUCCESSFUL_MESSAGE');
       });
   }
 

@@ -2,7 +2,6 @@ import {Component, Input} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {FormErrorMessageService} from '../../service';
 import {CommonFunctionService} from '../../../service/common-function.service';
-import {TextTranslatePipe} from '../../service/text-translate.pipe';
 
 @Component({
   selector: 'app-form-message',
@@ -14,7 +13,7 @@ export class FormMessageComponent {
   public messageParam;
   private errorMessages: Object;
 
-  constructor(private service: FormErrorMessageService, public translatePipe: TextTranslatePipe) {
+  constructor(private service: FormErrorMessageService) {
     this.service.getErrorMessages().subscribe( res => this.errorMessages = res);
   }
 
