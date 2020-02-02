@@ -1,0 +1,12 @@
+<div [formGroup]="formGroupParam">
+  <div [formArrayName]="config.formControlName" *ngFor="let item of formControl.controls; let i = index;">
+    <mat-checkbox [id]="config.formControlName + '_' + i"
+                  [checked]="item.value"
+                  [color]="config.color"
+                  [labelPosition]="config.labelPosition"
+                  (change)="onChange($event, i)">
+      {{ config.translateOptionContent ? (options[i] | translate) :
+      config.fieldToDisplay ? options[i][config.fieldToDisplay] : options[i] }}
+    </mat-checkbox>
+  </div>
+</div>

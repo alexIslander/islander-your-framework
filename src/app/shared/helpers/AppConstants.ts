@@ -35,6 +35,7 @@ export class AppConstants {
   public static TAB_EVENT = 'Tab';
 
   // Punctuation marks
+  public static EMPTY_STRING: '';
   public static DASH = '-';
   public static DASH_WITH_SPACE = ' - ';
 

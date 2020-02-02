@@ -2,6 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpParams} from '@angular/common/http';
 import {AbstractControl} from '@angular/forms';
 
+/**
+ * Utilities.
+ *
+ * @deprecated
+ * [#3] Will be deleted in next versions.
+ */
 @Injectable({
   providedIn: 'root'
 })

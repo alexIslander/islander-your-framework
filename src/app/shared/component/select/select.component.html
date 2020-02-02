@@ -1,0 +1,16 @@
+<mat-form-field [formGroup]="formGroupParam" appearance="{{config.matFormFieldAppearance}}">
+  <mat-label>{{ config.label | translate }}</mat-label>
+  <mat-select
+    #select
+    [id]="config.id"
+    formControlName="{{ config.formControlName }}"
+    [required]="config.required">
+    <mat-option *ngIf="config.resetOption">--</mat-option>
+    <mat-option *ngFor="let option of config.options" [value]="option">
+      {{ config.translateOptionContent ? (option | translate) :
+      config.fieldToDisplay ? option[config.fieldToDisplay] : option}}
+    </mat-option>
+  </mat-select>
+  <mat-hint *ngIf="!fieldValue && !formControl.touched">{{ !config.translateContent ? config.hint : config.hint | translate }}</mat-hint>
+</mat-form-field>
+<app-form-message [control]="formControl"></app-form-message>
