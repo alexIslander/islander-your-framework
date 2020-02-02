@@ -26,6 +26,12 @@ import {DynamicTableWithSelectionComponent} from './component/dynamic-table-with
 import {DynamicTableComponent} from './dynamic-table/dynamic-table.component';
 import {ClipboardModule} from 'ngx-clipboard';
 import {AppTranslateModule} from './module/app-translate/app-translate.module';
+import { InputComponent } from './component/input/input.component';
+import { SelectComponent } from './component/select/select.component';
+import { DatePickerComponent } from './component/date-picker/date-picker.component';
+import {CustomDatePickerHeaderComponent} from './component/date-picker/custom-date-picker-header/custom-date-picker-header.component';
+import {FormErrorMessageModule} from './form-error-message/form-error-message.module';
+import { CheckboxGroupComponent } from './component/checkbox-group/checkbox-group.component';
 
 @NgModule({
   imports: [
@@ -36,7 +42,8 @@ import {AppTranslateModule} from './module/app-translate/app-translate.module';
     RouterModule,
     AppMaterialModule,
     ClipboardModule,
-    AppTranslateModule
+    AppTranslateModule,
+    FormErrorMessageModule
   ],
   declarations: [
     ToDatePipe,
@@ -57,7 +64,12 @@ import {AppTranslateModule} from './module/app-translate/app-translate.module';
     DynamicUploadComponent,
     DynamicAutocompleteComponent,
     DynamicTableComponent,
-    DynamicTableWithSelectionComponent
+    DynamicTableWithSelectionComponent,
+    InputComponent,
+    SelectComponent,
+    DatePickerComponent,
+    CustomDatePickerHeaderComponent,
+    CheckboxGroupComponent
   ],
   exports: [
     SiteHeaderComponent,
@@ -77,7 +89,9 @@ import {AppTranslateModule} from './module/app-translate/app-translate.module';
     DynamicUploadComponent,
     DynamicAutocompleteComponent,
     DynamicTableComponent,
-    DynamicTableWithSelectionComponent
+    DynamicTableWithSelectionComponent,
+    CustomDatePickerHeaderComponent,
+    CheckboxGroupComponent
   ],
   providers: [
     ToDatePipe,
