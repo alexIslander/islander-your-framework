@@ -1,0 +1,8 @@
+<p>radio-group works!</p>
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let x of [0,1,2]; let i = index">
+    <mat-radio-button color="primary" [checked]="i == defaultSelected" [value]="i" (change)="selection = $event.value">
+      Item {{x}}
+    </mat-radio-button>
+  </mat-list-item>
+</mat-list>

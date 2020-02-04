@@ -32,6 +32,7 @@ import { DatePickerComponent } from './component/date-picker/date-picker.compone
 import {CustomDatePickerHeaderComponent} from './component/date-picker/custom-date-picker-header/custom-date-picker-header.component';
 import {FormErrorMessageModule} from './form-error-message/form-error-message.module';
 import { CheckboxGroupComponent } from './component/checkbox-group/checkbox-group.component';
+import { RadioGroupComponent } from './component/radio-group/radio-group.component';
 
 @NgModule({
   imports: [
@@ -69,7 +70,8 @@ import { CheckboxGroupComponent } from './component/checkbox-group/checkbox-grou
     SelectComponent,
     DatePickerComponent,
     CustomDatePickerHeaderComponent,
-    CheckboxGroupComponent
+    CheckboxGroupComponent,
+    RadioGroupComponent
   ],
   exports: [
     SiteHeaderComponent,
@@ -91,7 +93,8 @@ import { CheckboxGroupComponent } from './component/checkbox-group/checkbox-grou
     DynamicTableComponent,
     DynamicTableWithSelectionComponent,
     CustomDatePickerHeaderComponent,
-    CheckboxGroupComponent
+    CheckboxGroupComponent,
+    RadioGroupComponent
   ],
   providers: [
     ToDatePipe,

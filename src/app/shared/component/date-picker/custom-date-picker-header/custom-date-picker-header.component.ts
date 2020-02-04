@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy} from '@angular/core';
-import {DateAdapter, MatCalendar} from '@angular/material';
+import {DateAdapter, MAT_DATE_FORMATS, MatCalendar, MatDateFormats} from '@angular/material';
 import {Subject} from 'rxjs';
-import {MAT_DATE_FORMATS, MatDateFormats} from '@angular/material/typings/core';
+
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
