@@ -24,7 +24,7 @@ import {AppTranslateModule} from '../module/app-translate/app-translate.module';
   }
 )
 export class FormErrorMessageModule {
-  static forRoot(config: Object): ModuleWithProviders {
+  static forRoot(config: Object): ModuleWithProviders<FormErrorMessageModule> {
     return {
       ngModule: FormErrorMessageModule,
       providers: [

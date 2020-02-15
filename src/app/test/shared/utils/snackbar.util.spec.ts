@@ -1,5 +1,5 @@
 import { inject, TestBed } from '@angular/core/testing';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import {SnackbarUtil} from '../../../shared/utils/snackbar.util';
 import {FrameworkLoaderService} from '../../../shared/service/framework-loader.service';
 

@@ -1,0 +1,20 @@
+<mat-form-field class="{{config.styleClass}}" appearance="{{config.matFormFieldAppearance}}">
+  <mat-label>{{ config.label | translate }}</mat-label>
+  <input matInput #dateInput [id]="config.id"
+         [(ngModel)]="fieldValue"
+         [matDatepicker]="picker"
+         [formControl]="formControl"
+         [readonly]="readOnly"
+         [required]="config.required"
+         [placeholder]="!config.translateContent ? config.placeholder : config.placeholder | translate"
+         [min]="config.validation && config.validation.minDate ? config.validation.minDate : null"
+         [max]="config.validation && config.validation.maxDate ? config.validation.maxDate : null"
+         [matDatepickerFilter]="config.validation && config.validation.dateFilter ? config.validation.dateFilter : null">
+  <mat-icon matPrefix *ngIf="config.prefixIcon">{{ config.prefixIcon }}</mat-icon>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker [startView]="config.startView" [startAt]="config.startAt"
+                  [calendarHeaderComponent]="customHeader"
+                  [dateClass]="config.highlightingDates"></mat-datepicker>
+  <mat-hint *ngIf="!fieldValue && !formControl.touched">{{ !config.translateContent ? config.hint : config.hint | translate }}</mat-hint>
+</mat-form-field>
+<app-form-message [control]="formControl"></app-form-message>

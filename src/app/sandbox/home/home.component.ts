@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {DashboardCard} from '../dto/DashboardCard';
 import {SnackbarUtil} from '../../shared/utils/snackbar.util';
 import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import {SandboxDashboardService} from '../service/impl/SandboxDashboardService';
 import {takeUntil} from 'rxjs/operators';
 import {componentDestroyed} from 'ng2-rx-componentdestroyed';

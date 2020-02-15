@@ -17,6 +17,7 @@ import {environment} from '../../environments/environment';
 import { ThirdComponent } from './third/third.component';
 import {SandboxRoutingModule} from './sandbox-routing.module';
 import {AppTranslateModule} from '../shared/module/app-translate/app-translate.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {AppTranslateModule} from '../shared/module/app-translate/app-translate.m
     ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     SandboxRoutingModule,
     SharedModule,
     AppMaterialModule,

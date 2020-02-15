@@ -6,7 +6,7 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 
 import {TestBed} from '@angular/core/testing';
 import {Named} from '../../../shared/dto/Named';
-import {MatAutocompleteSelectedEvent} from '@angular/material';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 describe('AutocompleteComponent', () => {
 
