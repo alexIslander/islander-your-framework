@@ -22,6 +22,6 @@ import {Observable} from 'rxjs';
 export interface OptionConfig extends ComponentConfig {
   options?: Observable<any> | Array<any>;
   translateOptionContent?: boolean;
-  defaultValue?: string | object | [];
+  defaultValue?: string | object | Array<any>;
   fieldToDisplay?: string;
 }

@@ -6,6 +6,8 @@ import {componentDestroyed} from 'ng2-rx-componentdestroyed';
 import {BaseDialogViewComponentComponent} from '../../shared/base-dialog-view-component/base-dialog-view-component.component';
 import {MatDialog} from '@angular/material';
 import {environment} from '../../../environments/environment';
+import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {RadioGroupConfig} from '../../shared/dto/component-config/radio-group/radio-group-config';
 
 @Component({
   selector: 'app-first',
@@ -15,11 +17,28 @@ import {environment} from '../../../environments/environment';
 export class FirstComponent implements OnInit, OnDestroy {
 
   [key: string]: any; // componentDestroyed
-  todo = new Object() as Todo;
+  todo = {} as Todo;
   sourceUrl: string;
+  personForm: FormGroup;
+
+  radioGroupConfig = {
+    id: 'idRadios',
+    formControlName: 'radioGroup',
+    label: 'SANDBOX.LABEL.RADIOS',
+    disabled: false,
+    options: [
+      {id: 'HU', name: 'Hungarian'},
+      {id: 'EN', name: 'English'}
+      ],
+    fieldToDisplay: 'name',
+    defaultValue: {id: 'HU', name: 'Hungarian'},
+  } as RadioGroupConfig;
 
   constructor(private firstComponentService: FirstComponentService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,
+              private fb: FormBuilder) {
+    // NOOP
+  }
 
   ngOnInit() {
     this.sourceUrl = environment.anyApiServiceBaseUrl;
@@ -27,6 +46,12 @@ export class FirstComponent implements OnInit, OnDestroy {
     this.firstComponentService.getInitialData()
       .pipe(takeUntil(componentDestroyed(this)))
       .subscribe(data => this.todo = data );
+
+    // const controls: FormControl[] = [];
+    const controls = {};
+    // controls['radioGroup'] = this.fb.array([]);
+    controls['radioGroup'] = [this.radioGroupConfig.defaultValue];
+    this.personForm = this.fb.group(controls);
   }
 
   ngOnDestroy(): void {

@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {InputConfig} from '../../dto/component-config/input/input-config';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
 import {CheckboxGroupConfig} from '../../dto/component-config/checkbox-group/checkbox-group-config';
 import {of} from 'rxjs';
