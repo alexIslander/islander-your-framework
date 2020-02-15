@@ -4,7 +4,7 @@ import {Todo} from '../dto/Todo';
 import {takeUntil} from 'rxjs/operators';
 import {componentDestroyed} from 'ng2-rx-componentdestroyed';
 import {BaseDialogViewComponentComponent} from '../../shared/base-dialog-view-component/base-dialog-view-component.component';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import {environment} from '../../../environments/environment';
 import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {RadioGroupConfig} from '../../shared/dto/component-config/radio-group/radio-group-config';

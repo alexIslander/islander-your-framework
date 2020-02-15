@@ -1,5 +1,5 @@
 import {Injectable, NgZone} from '@angular/core';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {CustomSnackBarComponent} from '../custom-snack-bar/custom-snack-bar.component';
 import {FrameworkLoaderService} from '../service/framework-loader.service';
 

@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
 import {CheckboxGroupConfig} from '../../dto/component-config/checkbox-group/checkbox-group-config';
 import {of} from 'rxjs';
-import {MatCheckboxChange} from '@angular/material';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import {AppUtils} from '../../helpers/app-utils';
 
 @Component({

@@ -1,6 +1,7 @@
 import { DynamicTableWithSelectionComponent } from './dynamic-table-with-selection.component';
 import {initContext, TestContext} from '../../../test/test-context';
-import {MatPaginator, MatSort} from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 describe('DynamicTableWithSelectionComponent', () => {
     type Context = TestContext<DynamicTableWithSelectionComponent>;

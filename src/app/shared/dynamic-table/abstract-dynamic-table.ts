@@ -1,6 +1,7 @@
 import { EventEmitter, Input, Output, ViewChild, Directive } from '@angular/core';
 import {DynamicTableColumnConfig} from './dynamic-table-column-config';
-import {MatPaginator, MatSort} from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import {DynamicTableDataSource} from './dynamic-table-datasource';
 import {hasNot} from '../service/common-function.service';
 

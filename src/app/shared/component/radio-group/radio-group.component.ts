@@ -3,7 +3,7 @@ import {FormArray, FormControl, FormGroup} from '@angular/forms';
 import {of} from 'rxjs/index';
 import {RadioGroupConfig} from '../../dto/component-config/radio-group/radio-group-config';
 import {AppUtils} from '../../helpers/app-utils';
-import {MatRadioChange} from '@angular/material';
+import { MatRadioChange } from '@angular/material/radio';
 import * as R from 'ramda';
 
 @Component({

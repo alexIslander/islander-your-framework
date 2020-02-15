@@ -1,7 +1,7 @@
 import {AppConstants} from '../helpers/AppConstants';
 import {FormControl} from '@angular/forms';
 import { Input, ViewChild, Directive } from '@angular/core';
-import {MatAutocompleteTrigger} from '@angular/material';
+import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import {Named} from '../dto/Named';
 import {debounceTime, distinctUntilChanged, map, startWith} from 'rxjs/operators';
 import {Observable} from 'rxjs';

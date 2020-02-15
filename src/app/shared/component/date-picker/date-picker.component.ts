@@ -3,7 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {ComponentDisabled} from '../../dto/component-config/component-disabled';
 import {DatepickerConfig} from '../../dto/component-config/datepicker/datepicker-config';
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import {DatepickerHeaderDisplayType} from '../../dto/component-config/datepicker/datepicker-header-display-type';
 import {CustomDatePickerHeaderComponent} from './custom-date-picker-header/custom-date-picker-header.component';
 

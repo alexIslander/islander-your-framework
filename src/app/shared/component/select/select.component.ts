@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
-import {MatSelect} from '@angular/material';
+import { MatSelect } from '@angular/material/select';
 import {FormControl, FormGroup} from '@angular/forms';
 import {SelectConfig} from '../../dto/component-config/select/select-config';
 
