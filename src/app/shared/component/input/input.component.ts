@@ -12,7 +12,7 @@ import {AppConstants} from '../../helpers/AppConstants';
 })
 export class InputComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('inputField', {static: false}) input: ElementRef<HTMLInputElement>;
+  @ViewChild('inputField') input: ElementRef<HTMLInputElement>;
 
   @Input()
   config: InputConfig;

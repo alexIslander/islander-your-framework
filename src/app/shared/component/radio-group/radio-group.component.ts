@@ -35,8 +35,8 @@ export class RadioGroupComponent implements OnInit {
       // this.addRadioButtons(this.findSelection());
     });
   }
-  public defaultSelected = 0
-  public selection: number;
+  // public defaultSelected = 0
+  // public selection: number;
 
   selection($event: MatRadioChange) {
     console.log($event, this.formGroupParam.get(this.config.formControlName));

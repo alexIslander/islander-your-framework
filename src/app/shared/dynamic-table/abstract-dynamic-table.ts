@@ -1,9 +1,10 @@
-import {EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import { EventEmitter, Input, Output, ViewChild, Directive } from '@angular/core';
 import {DynamicTableColumnConfig} from './dynamic-table-column-config';
 import {MatPaginator, MatSort} from '@angular/material';
 import {DynamicTableDataSource} from './dynamic-table-datasource';
 import {hasNot} from '../service/common-function.service';
 
+@Directive()
 export abstract class AbstractDynamicTable {
   private DEFAULT_COLUMNS: string[] = ['id', 'name'];
   private DEFAULT_COLUMN_DEFINITION: DynamicTableColumnConfig[] = [

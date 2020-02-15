@@ -36,8 +36,8 @@ export const MY_FORMATS = {
 })
 export class DatePickerComponent implements OnInit {
 
-  @ViewChild('dateInput', {static: false}) inputElement: ElementRef<HTMLInputElement>;
-  @ViewChild('picker', {static: false}) datePickerElement: ElementRef<HTMLInputElement>;
+  @ViewChild('dateInput') inputElement: ElementRef<HTMLInputElement>;
+  @ViewChild('picker') datePickerElement: ElementRef<HTMLInputElement>;
 
   @Input()
   config: DatepickerConfig;

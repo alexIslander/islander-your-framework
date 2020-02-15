@@ -10,7 +10,7 @@ import {SelectConfig} from '../../dto/component-config/select/select-config';
 })
 export class SelectComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('select', {static: false}) selector: MatSelect;
+  @ViewChild('select') selector: MatSelect;
 
   @Input()
   config: SelectConfig;
