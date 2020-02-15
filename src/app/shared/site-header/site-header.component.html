@@ -4,12 +4,12 @@
         <mat-menu #menu="matMenu">
           <a class="router-link-btn" [routerLink]="elem.url" *ngFor="let elem of headerMenu">
             <button mat-menu-item (click)="onMenuElemClick(elem.headerTitle)">
-              {{ elem.name | getTextByKey }}
+              {{ elem.name | translate }}
             </button>
           </a>
         </mat-menu>
     </span>
-  <span id="header-title">{{ headerText | getTextByKey }}</span>
+  <span id="header-title">{{ headerText | translate }}</span>
   <span class="logo-container"><img src="{{imgUrl}}" class="header-logo" /></span>
   <!--TODO place for logout button-->
 </mat-toolbar>

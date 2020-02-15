@@ -3,6 +3,6 @@
     { "id": 4, "active": true, "icon": "fa-check", "disabled": false, "name": "Active card", "detail": "Action performed, after click!", "countryAlpha2Code": "ESP", "config" : [724, 6 , 1], "nav" : [] },
     { "id": 3, "active": true, "icon": "fa-check", "disabled": true, "name": "Disabled card", "detail": "It does nothing, when you click.", "countryAlpha2Code": "PRT", "config" : [620, 6 , 1], "nav" : [] },
     { "id": 4, "active": true, "icon": "fa-arrow-right", "disabled": false, "name": "First", "detail": "First component details, navigate there and do your things...", "countryAlpha2Code": "", "config" : [], "nav" : ["first"] },
-    { "id": 5, "active": true, "icon": "fa-arrow-right", "disabled": false, "name": "Second", "detail": "Second component details, navigate there and do your things...", "countryAlpha2Code": "", "config" : [], "nav" : ["second"] },
+    { "id": 5, "active": true, "icon": "fa-arrow-right", "disabled": false, "name": "Second", "detail": "Second component details, navigate there...", "countryAlpha2Code": "", "config" : [], "nav" : ["second"] },
     { "id": 6, "active": true, "icon": "fa-arrow-right", "disabled": true, "name": "Saved templates", "detail": "Manage Dashboard cards...", "countryAlpha2Code": "", "config" : [], "nav" : [] }
 ]

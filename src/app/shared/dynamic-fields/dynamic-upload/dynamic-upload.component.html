@@ -1,0 +1,9 @@
+<div [formGroup]="formGroupParam">
+  <div class="uploadfilecontainer " (click)="fileInput.click()" gbGbDragDrop (onFileDropped)="uploadFile($event , config.inputDefinition)">
+    <input  hidden type="file" #fileInput (change)="uploadFile($event.target.files , config.inputDefinition)">
+    <i class="fa uploadIcon fa-upload" aria-hidden="true"></i>
+  </div>
+  <ng-container
+    *ngTemplateOutlet="tooltipTemplate; context: {entry: config.tooltipInfo}">
+  </ng-container>
+</div>

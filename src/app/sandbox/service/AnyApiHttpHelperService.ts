@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpHelperService} from '../../shared/services/HttpHelperService';
-import {FrameworkLoaderService} from '../../shared/services/framework-loader.service';
+import {HttpHelperService} from '../../shared/service/HttpHelperService';
+import {FrameworkLoaderService} from '../../shared/service/framework-loader.service';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 

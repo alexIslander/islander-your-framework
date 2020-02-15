@@ -1,11 +1,11 @@
 <mat-card>
   <mat-card-content>
     <div class="header">
-      <h1>{{ errorTitle | getTextByKey }}</h1>
+      <h1>{{ errorTitle | translate }}</h1>
     </div>
-    <h3>{{ errorDetails | getTextByKey }}</h3>
-    <button id="back-button" mat-button class="custom-button" (click)="goBack()" >
-      {{'backButtonLabel' | getTextByKey }}
+    <h3>{{ errorDetails | translate }}</h3>
+    <button id="back-button" mat-button class="custom-button" (click)="goBack()">
+      {{'COMMON.BACK_BUTTON_LABEL' | translate }}
     </button>
   </mat-card-content>
 </mat-card>

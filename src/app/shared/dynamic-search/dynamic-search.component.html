@@ -1,0 +1,36 @@
+<form class="dynamic-form" [formGroup]="this.formLogic.form">
+  <ng-template class="element-tooltip" #prerequisitesFieldsTooltip let-entry="entry">
+    <div class="tooltipIcon" *ngIf="entry">
+        <span class="box-tooltip-icon" (mouseenter)="optionOverlay.show($event)"
+              (mouseleave)="optionOverlay.hide($event)"></span>
+      <p-overlayPanel #optionOverlay appendTo="body">
+        <section class="box-tooltip">
+          <div>{{ entry | translate }}</div>
+        </section>
+      </p-overlayPanel>
+    </div>
+  </ng-template>
+<div *ngFor="let field of fields;" class="{{field.columnWidth}}">
+  <ng-container
+    gbDynamicField
+    [config]="field"
+    [group]="this.formLogic.form"
+    [validator]="dynamicSearchValidator"
+    [tooltipTemplate]="prerequisitesFieldsTooltip"
+    (selectionEvent)="onValueChange($event)"
+    (deletionEvent)="onValueRemove()"
+    (actionEvent)="performAction($event)"
+    (keyEvent)="onValueSelect($event)"
+    (reset)="this.formLogic.resetController($event)">
+  </ng-container>
+</div>
+</form>
+<button
+  id="clear-all-filters"
+  mat-button
+  class="custom-button"
+  type="button"
+  matTooltip="{{ 'COMMON.CLEAR_ALL_BUTTON' | translate }}"
+  (click)="onClearAllButtonClick()">{{ 'COMMON.CLEAR_ALL_BUTTON' | translate }}
+</button>
+

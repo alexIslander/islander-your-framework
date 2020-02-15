@@ -1,0 +1,10 @@
+<div [formGroup]="formGroupParam">
+  <mat-slide-toggle
+    [required]="validator.isFieldRequired(this.formGroupParam, config.inputDefinition)"
+    [formControlName]="config.inputDefinition" color="primary" (change)="onValueSelect($event)">
+    {{ config.inputLabelDefinition | translate }}
+  </mat-slide-toggle>
+  <ng-container
+    *ngTemplateOutlet="tooltipTemplate; context: {entry: config.tooltipInfo}">
+  </ng-container>
+</div>

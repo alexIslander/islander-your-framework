@@ -4,15 +4,15 @@
       <mat-sidenav id="sidenav" #sidenav mode="side" [(opened)]="opened">
         <section id="fr-sidebar">
           <div class="sidebar-link" *ngFor="let elem of sidebarMenu">
-            <a [routerLink]="elem.url">
+            <a [routerLink]="'/' + elem.url">
               <button mat-button class="sidebar-button" (click)="onToggleClick(false)" type="button">
                 <i class="fa {{elem.icon}} sidebar-icon" aria-hidden="true"></i>
-                {{elem.name | getTextByKey}}
+                {{elem.name | translate}}
               </button>
             </a>
           </div>
           <section class="sidebar-collapse-button">
-            <button type="button" mat-button class="mat-button mat-button-small" matTooltip="{{ 'collapseButtonTooltip' | getTextByKey}}" [matTooltipPosition]="'right'" (click)="onToggleClick(false);">
+            <button type="button" mat-button class="mat-button mat-button-small" matTooltip="{{ 'SANDBOX.COLLAPSE_BUTTON_TOOLTIP' | translate }}" [matTooltipPosition]="'right'" (click)="onToggleClick(false);">
               <i class="fa fa-angle-double-left"></i>
             </button>
           </section>
@@ -23,15 +23,15 @@
 </section>
 <section id="sidebar-collapsed" [ngClass]="{'open': opened}">
   <div class="sidebar-link" *ngFor="let elem of sidebarMenu">
-    <a [routerLink]="elem.url">
-      <button mat-button class="sidebar-button-small" matTooltip="{{elem.name | getTextByKey}}" [matTooltipPosition]="'right'" type="button">
+    <a [routerLink]="'/' + elem.url">
+      <button mat-button class="sidebar-button-small" matTooltip="{{elem.name | translate }}" [matTooltipPosition]="'right'" type="button">
         <i class="fa {{elem.icon}} sidebar-icon" aria-hidden="true"></i>
       </button>
     </a>
   </div>
 </section>
 <section id="sidebar-toggle-button" *ngIf="!opened && sidebarMenu && sidebarMenu.length > 0">
-  <button type="button" mat-button class="mat-button mat-button-small" matTooltip="{{ 'expandButtonTooltip' | getTextByKey}}" [matTooltipPosition]="'right'" (click)="onToggleClick(true);">
+  <button type="button" mat-button class="mat-button mat-button-small" matTooltip="{{ 'SANDBOX.EXPAND_BUTTON_TOOLTIP' | translate }}" [matTooltipPosition]="'right'" (click)="onToggleClick(true);">
     <i class="fa fa-angle-double-right"></i>
   </button>
 </section>

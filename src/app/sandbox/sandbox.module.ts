@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { SandboxHomeComponent } from './home/home.component';
-import { SandboxDashboardComponent } from './dashboard/dashboard.component';
-import {RouterModule} from '@angular/router';
-import {AppMaterialModule} from '../shared/app-material/app-material.module';
+import { SandboxDashboardComponent } from './dashboard/sandbox-dashboard.component';
+import {AppMaterialModule} from '../shared/module/app-material/app-material.module';
 import {SharedModule} from '../shared/shared.module';
 import {SandboxDashboardService} from './service/impl/SandboxDashboardService';
 import {HttpClient} from '@angular/common/http';
@@ -16,6 +15,9 @@ import {FirstComponentServiceMock} from './service/impl/FirstComponentServiceMoc
 import {FirstComponentService} from './service/impl/FirstComponentService';
 import {environment} from '../../environments/environment';
 import { ThirdComponent } from './third/third.component';
+import {SandboxRoutingModule} from './sandbox-routing.module';
+import {AppTranslateModule} from '../shared/module/app-translate/app-translate.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import { ThirdComponent } from './third/third.component';
     ],
   imports: [
     CommonModule,
-    RouterModule,
+    ReactiveFormsModule,
+    SandboxRoutingModule,
     SharedModule,
-    AppMaterialModule
+    AppMaterialModule,
+    AppTranslateModule
   ],
   providers: [
     SandboxHttpHelperService,
@@ -44,6 +48,19 @@ import { ThirdComponent } from './third/third.component';
       useFactory: firstComponentServiceUseFactory,
       deps: [HttpClient, AnyApiHttpHelperService]
     }
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+  exports: [
+    SandboxDashboardComponent,
+    SandboxHomeComponent,
+    FirstComponent,
+    SecondComponent,
+    ThirdComponent
+  ],
+  entryComponents: [
+    SandboxDashboardComponent
   ]
 })
 export class SandboxModule { }

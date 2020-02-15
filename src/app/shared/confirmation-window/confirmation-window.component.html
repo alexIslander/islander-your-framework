@@ -1,7 +1,7 @@
 <div class="confirmation-window fixed">
-  <h2 class="confirmation-title" mat-dialog-title>{{confirmationText}}</h2>
+  <h2 class="confirmation-title" mat-dialog-title>{{ confirmationText | translate }}</h2>
   <div class="confirmation-description">
-    <button mat-button class="custom-button-left-margin" type="submit" (click)="onNoClick($event)" [mat-dialog-close]="false">{{noButtonText}}</button>
-    <button mat-button class="custom-button-left-margin" type="submit" (click)="onYesClick($event)" [mat-dialog-close]="true">{{yesButtonText}}</button>
+    <button mat-button class="custom-button-left-margin" type="submit" (click)="onNoClick($event)" [mat-dialog-close]="false">{{ noButtonText | translate }}</button>
+    <button mat-button class="custom-button-left-margin" type="submit" (click)="onYesClick($event)" [mat-dialog-close]="true">{{ yesButtonText | translate }}</button>
   </div>
 </div>

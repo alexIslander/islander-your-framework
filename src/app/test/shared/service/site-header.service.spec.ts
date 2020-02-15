@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { SiteHeaderService } from '../../../shared/services/site-header.service';
+import { SiteHeaderService } from '../../../shared/service/site-header.service';
 
 describe('SiteHeaderService', () => {
   beforeEach(() => {

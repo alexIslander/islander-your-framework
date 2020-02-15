@@ -1,18 +1,20 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {SiteHeaderService} from '../services/site-header.service';
-import {RouteUrls} from '../utils/route-urls';
+import {SiteHeaderService} from '../service/site-header.service';
 import {componentDestroyed} from 'ng2-rx-componentdestroyed';
 import { takeUntil } from 'rxjs/operators';
-import {isNullOrUndefined} from 'util';
+
+import {has} from '../service/common-function.service';
+import {HeaderMenuItem} from '../dto/HeaderMenuItem.js';
 
 @Component({
   selector: 'app-common-site-header',
   templateUrl: './site-header.component.html',
   styleUrls: ['./site-header.component.scss']
 })
-export class SiteHeaderComponent implements OnDestroy {
-
+export class SiteHeaderComponent implements OnInit, OnDestroy {
+  @Input() items: HeaderMenuItem[];
+  @Input() default: string;
   headerText: string;
   imgUrl: string;
   [key: string]: any; // componentDestroyed
@@ -21,27 +23,23 @@ export class SiteHeaderComponent implements OnDestroy {
   constructor(private router: Router,
               private headerService: SiteHeaderService) {
     this.imgUrl = window.location.origin + '/assets/img/logo.png';
-
-    this.headerMenu.push({name: 'sandBoxModulePageTitle'
-      , url: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home, headerTitle: 'sandBoxModulePageHeader'});
-
-    if (!isNullOrUndefined(router.config[0])) {
-      this.headerText = this.headerMenu.find(m => router.config[0].redirectTo === m.url).headerTitle;
-    }
-
     // Sets the header upon refresh according to the current url
-
     this.headerService.onSiteHeaderTextChange
       .pipe(takeUntil(componentDestroyed(this)))
       .subscribe(
-        (headerText) => {
-          if (headerText.match(RouteUrls.sandboxPage.root)) {
-            this.headerText = 'sandBoxModulePageHeader';
-          } else {
-            this.headerText = '';
-          }
+        (urlPath) => {
+          const menuItem = this.headerMenu.find(hm => urlPath.includes(hm.url));
+          this.headerText = has(menuItem) ? menuItem.headerTitle : this.default;
         }
       );
+  }
+
+  ngOnInit(): void {
+    if (has(this.items)) {
+      this.headerMenu = this.items;
+      const item = this.headerMenu.find(m => this.router.config[0].redirectTo === m.url);
+      this.headerText = has(item) ? item.headerTitle : this.default;
+    }
   }
 
   /**
@@ -63,4 +61,5 @@ export class SiteHeaderComponent implements OnDestroy {
   ngOnDestroy(): void {
     // NOOP
   }
+
 }

@@ -1,10 +1,12 @@
 import {AutoCompleteComponent} from '../../../shared/autocomplete/autocomplete.component';
-import {FrameworkLoaderService} from '../../../shared/services/framework-loader.service';
+import {FrameworkLoaderService} from '../../../shared/service/framework-loader.service';
 import {initContext, TestContext} from '../../test-context';
-import {EventEmitter, Input, Output, SimpleChange, SimpleChanges} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Named} from '../../../shared/autocomplete/Named';
+import {EventEmitter, SimpleChange} from '@angular/core';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
+
 import {TestBed} from '@angular/core/testing';
+import {Named} from '../../../shared/dto/Named';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 describe('AutocompleteComponent', () => {
 
@@ -78,7 +80,7 @@ describe('AutocompleteComponent', () => {
   it('should fire onSendSelection', function (this: Context) {
     spyOn(this.component, 'onSendSelection').and.callThrough();
     // call
-    this.component.onSendSelection({option: { value: 'aa'}});
+    this.component.onSendSelection({option: { value: 'aa'}} as MatAutocompleteSelectedEvent);
     // verify
     expect(this.component.onSendSelection).toHaveBeenCalled();
   });

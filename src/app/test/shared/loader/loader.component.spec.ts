@@ -1,6 +1,6 @@
-import { FrameworkLoaderService } from '../../../shared/services/framework-loader.service';
 import { LoaderComponent } from '../../../shared/loader/loader.component';
 import {initContext, TestContext} from '../../test-context';
+import {FrameworkLoaderService} from '../../../shared/service/framework-loader.service';
 
 describe('LoaderComponent', () => {
 

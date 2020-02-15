@@ -1,0 +1,17 @@
+<mat-form-field [formGroup]="formGroupParam" appearance="{{config.matFormFieldAppearance}}">
+  <mat-label>{{ config.label | translate }}</mat-label>
+  <input matInput
+         #inputField
+         [id]="config.id"
+         formControlName="{{ config.formControlName }}"
+         [placeholder]="!config.translateContent ? config.placeholder : config.placeholder | translate"
+         [type]="config.inputType"/>
+  <mat-icon matPrefix *ngIf="config.prefixIcon">{{ config.prefixIcon }}</mat-icon>
+  <span [id]="config.id + '_removeIcon'" matSuffix (click)="clearInputField()">
+      <mat-icon *ngIf="fieldValue && !this.config.disabled"
+                class="fa mat-icon material-icons mat-icon-no-color ng-star-inserted fa-times">close</mat-icon>
+  </span>
+  <mat-hint
+    *ngIf="!fieldValue && !formControl.touched">{{ !config.translateContent ? config.hint : config.hint | translate }}</mat-hint>
+</mat-form-field>
+<app-form-message [control]="formControl"></app-form-message>

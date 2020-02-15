@@ -1,80 +1,55 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
-import {Named} from './Named';
-import {isNullOrUndefined} from 'util';
+import {Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {AppConstants} from '../helpers/AppConstants';
+import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import {BaseAutocomplete} from './BaseAutocomplete';
+import {CommonFunctionService} from '../service/common-function.service';
 
 @Component({
   selector: 'app-autocomplete',
   templateUrl: './autocomplete.component.html',
   styleUrls: ['./autocomplete.component.scss']
 })
-export class AutoCompleteComponent implements OnInit, OnChanges {
+export class AutoCompleteComponent extends BaseAutocomplete implements OnInit, OnChanges {
 
-  @Input() options: Named[];
-  @Input() displayTitle: string;
-  @Input() styleParam: string;
-  @Input() formGroupParam: FormGroup;
-  @Output() selectionEvent = new EventEmitter<Named>();
-
-  componentTitle = 'Please fill in';
-  componentStyle;
-
-  innerFormGroup: FormGroup;
-  displayOptions: Named[];
-  filteredOptions: Observable<Named[]>;
+  @ViewChild('autocompleteFormField', {static: true}) formField: ElementRef;
+  @ViewChild('autocompleteInput', {static: true, read: MatAutocompleteTrigger}) autoCompleteInput: MatAutocompleteTrigger;
 
   constructor() {
-    // NOOP
+    super();
   }
 
   ngOnInit() {
-    if (!isNullOrUndefined(this.displayTitle)) {
-      this.componentTitle = this.displayTitle;
-    }
-
-    if (isNullOrUndefined(this.styleParam)) {
-      this.componentStyle = this.styleParam;
-    }
-
-    if (!isNullOrUndefined(this.formGroupParam)) {
-      this.innerFormGroup = this.formGroupParam;
-      if (!this.formGroupParam.contains('autoCompleteControl')) {
-        console.log('AutoCompleteControl must be defined in the incoming FormGroup!');
-      }
-    }
-  }
-
-  private processOptions(anies = this.options) {
-    this.filteredOptions = (this.formGroupParam.get('autoCompleteControl') as FormControl).valueChanges
-      .pipe(
-        startWith<string | any>(''),
-        map(value => typeof value === 'string' || isNullOrUndefined(value) ? value : value['displayName']),
-        map(name => name ? this.filter(name) : anies.slice())
-      );
+    this.init();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['options']) {
-      if (!isNullOrUndefined(this.options)) {
-        this.displayOptions = this.options;
-        this.processOptions();
-      }
+    if (changes['options'] && !CommonFunctionService.isNullOrUndefined(this.options)) {
+      this.displayOptions = this.options;
+      this.processOptions();
     }
   }
 
-  filter(name: string): Named[] {
-    return this.displayOptions.filter(option =>
-      option['displayName'].toLowerCase().indexOf(name.toLowerCase()) === 0);
+  onIconAction(res: MouseEvent) {
+    if (this.allowInputDelete && !this.disabledSection) {
+      this.innerFormGroup.controls[AppConstants.AUTOCOMPLETE_CONTROL_KEY].patchValue('');
+      this.setItemIconStyle(null);
+      this.onSendDeletion(res);
+    }
   }
 
-  displayFn(option?: Named): string | undefined {
-    return option ? option['displayName'] : undefined;
-  }
-
-  onSendSelection(res): void {
+  onSendSelection(res: MatAutocompleteSelectedEvent): void {
     this.selectionEvent.emit(res.option.value);
+  }
+
+  onSendDeletion(event): void {
+    this.deletionEvent.emit(event);
+  }
+
+  /**
+   *  This method clears the search input field.
+   */
+  resetInputField() {
+    this.innerFormGroup.controls[AppConstants.AUTOCOMPLETE_CONTROL_KEY].reset();
   }
 
 }
