@@ -4,7 +4,7 @@ import {Named} from '../dto/Named';
 import {CommonFunctionService} from '../service/common-function.service';
 
 @Directive()
-export abstract class BaseCustomComponent {
+export abstract class BaseCustomComponentDirective {
   @Input() options: Named[];
   @Input() displayTitle: string;
   @Input() styleParam: string;

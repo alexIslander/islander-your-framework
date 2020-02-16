@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, Directive } from '@angular/core';
-import {BaseCustomComponent} from '../component/BaseCustomComponent';
+import {BaseCustomComponentDirective} from '../component/base-custom-component.directive';
 import {FormGroup} from '@angular/forms';
 import {DynamicSearchValidator} from '../dynamic-search/dynamic-search-validator';
 import {DynamicSearchConfiguration} from '../dynamic-search/dynamic-search-configuration';
 
 @Directive()
-export class DynamicField extends BaseCustomComponent implements OnInit {
+export class DynamicFieldDirective extends BaseCustomComponentDirective implements OnInit {
 
   @Input()
   validator: DynamicSearchValidator;

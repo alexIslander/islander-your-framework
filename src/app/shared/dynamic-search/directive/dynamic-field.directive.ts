@@ -3,7 +3,6 @@ import {AllowedInputComponents, AllowedInputTypes, DynamicSearchConfiguration} f
 import {FormGroup} from '@angular/forms';
 import {DynamicSearchValidator} from '../dynamic-search-validator';
 import {Named} from '../../dto/Named';
-import {DynamicField} from '../../dynamic-fields/dynamic.field';
 import {hasNot} from '../../service/common-function.service';
 
 @Directive({
@@ -31,6 +30,7 @@ export class DynamicFieldDirective implements OnChanges, OnInit {
   @Output() reset = new EventEmitter<boolean>();
   @Output() keyEvent = new EventEmitter<KeyboardEvent>();
   component: ComponentRef<any>;
+  private formGroupParam: FormGroup;
 
   constructor(
     private resolver: ComponentFactoryResolver,
@@ -44,7 +44,7 @@ export class DynamicFieldDirective implements OnChanges, OnInit {
   }
 
   ngOnInit() {
-    const isDynamicField = this.config.component instanceof DynamicField;
+    const isDynamicField = this.config.component instanceof DynamicFieldDirective;
     if (!Object.values(AllowedInputTypes).includes(this.config.inputType) || (isDynamicField && !AllowedInputTypes[this.config.inputType])) {
       const supportedTypes = Object.keys(AllowedInputTypes).join(', ');
       throw new Error(
@@ -58,7 +58,7 @@ export class DynamicFieldDirective implements OnChanges, OnInit {
 
     const component = this.resolver.resolveComponentFactory<any>(this.config.component);
     this.component = this.container.createComponent(component);
-    const dynamicField = <DynamicField> this.component.instance;
+    const dynamicField = <DynamicFieldDirective> this.component.instance;
     dynamicField.config = this.config;
     dynamicField.formGroupParam = this.config.inputType === this.COUNTRY_AGENT_AUTOCOMPLETE ? <FormGroup>this.group.get(this.COUNTRY_AGENT_AUTOCOMPLETE) : this.group;
     dynamicField.validator = this.validator;
@@ -73,10 +73,10 @@ export class DynamicFieldDirective implements OnChanges, OnInit {
     dynamicField.actionEvent.subscribe(res => {
       this.actionEvent.emit(res);
     });
-    dynamicField.resetEvent.subscribe(res => {
+    dynamicField.reset.subscribe(res => {
       this.reset.emit(res);
     });
-    dynamicField.keyChangeEvent.subscribe(res => {
+    dynamicField.keyEvent.subscribe(res => {
       this.keyEvent.emit(res);
     });
   }

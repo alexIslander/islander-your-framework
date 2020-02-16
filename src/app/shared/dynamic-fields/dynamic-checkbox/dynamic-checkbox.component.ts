@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicField} from '../dynamic.field';
+import {DynamicFieldDirective} from '../dynamic-field.directive';
 
 @Component({
   selector: 'app-dynamic-checkbox',
   templateUrl: './dynamic-checkbox.component.html',
   styleUrls: ['./dynamic-checkbox.component.scss']
 })
-export class DynamicCheckboxComponent extends DynamicField implements OnInit {
+export class DynamicCheckboxComponent extends DynamicFieldDirective implements OnInit {
 
   constructor() {
     super();

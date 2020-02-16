@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicField} from '../dynamic.field';
+import {DynamicFieldDirective} from '../dynamic-field.directive';
 import {MatRadioChange} from '@angular/material/radio';
 import {has} from '../../service/common-function.service';
 
@@ -8,7 +8,7 @@ import {has} from '../../service/common-function.service';
   templateUrl: './dynamic-radio-group.component.html',
   styleUrls: ['./dynamic-radio-group.component.scss']
 })
-export class DynamicRadioGroupComponent extends DynamicField implements OnInit {
+export class DynamicRadioGroupComponent extends DynamicFieldDirective implements OnInit {
 
   constructor() {
     super();

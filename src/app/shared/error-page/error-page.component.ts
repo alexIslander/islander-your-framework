@@ -1,4 +1,4 @@
-import {takeUntil} from 'rxjs/operators';
+import {take, takeUntil} from 'rxjs/operators';
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
@@ -13,7 +13,7 @@ import {FrameworkLoaderService} from '../service/framework-loader.service';
   templateUrl: './error-page.component.html',
   styleUrls: ['./error-page.component.scss']
 })
-export class ErrorPageComponent extends UnsubscribeComponent implements OnInit {
+export class ErrorPageComponent /*extends UnsubscribeComponent*/ implements OnInit {
 
   public errorTitle: string;
   public errorDetails: string;
@@ -24,7 +24,7 @@ export class ErrorPageComponent extends UnsubscribeComponent implements OnInit {
               private loader: FrameworkLoaderService,
               private commonFunctionService: CommonFunctionService) {
     // NOOP
-    super();
+    // super();
   }
 
   ngOnInit() {
@@ -32,7 +32,8 @@ export class ErrorPageComponent extends UnsubscribeComponent implements OnInit {
     this.errorDetails = 'COMMON.ERROR_PAGE_DEFAULT_MESSAGE';
 
     this.route.queryParams.pipe(
-      takeUntil(this.ngUnsubscribe))
+      // takeUntil(this.ngUnsubscribe))
+      take(1))
       .subscribe(params => {
 
         if (this.commonFunctionService.isNullOrUndefined(params)) {

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicField} from '../dynamic.field';
+import {DynamicFieldDirective} from '../dynamic-field.directive';
 
 @Component({
   selector: 'app-dynamic-option',
   templateUrl: './dynamic-option.component.html',
   styleUrls: ['./dynamic-option.component.scss']
 })
-export class DynamicOptionComponent extends DynamicField implements OnInit {
+export class DynamicOptionComponent extends DynamicFieldDirective implements OnInit {
 
   constructor() {
     super();
