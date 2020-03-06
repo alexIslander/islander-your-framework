@@ -7,7 +7,7 @@ import {DynamicRadioGroupComponent} from '../dynamic-fields/dynamic-radio-group/
 import {DynamicCheckboxComponent} from '../dynamic-fields/dynamic-checkbox/dynamic-checkbox.component';
 import {DynamicAutocompleteComponent} from '../dynamic-fields/dynamic-autocomplete/dynamic-autocomplete.component';
 import {DynamicUploadComponent} from '../dynamic-fields/dynamic-upload/dynamic-upload.component';
-import {DynamicField} from '../dynamic-fields/dynamic.field';
+import {DynamicField} from '../dynamic-fields/dynamic-field';
 
 export enum AllowedInputTypes {
   TEXT = 'text',

@@ -25,21 +25,14 @@ export class RadioGroupComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('f: ', this.formGroupParam, this.config);
     this.formControl = this.formGroupParam.controls[this.config.formControlName] as FormArray;
-    // this.formControl.patchValue(this.config.defaultValue);
     of(this.config.options).subscribe(orders => {
-      console.log('o: ', orders);
       this.options = orders as Array<any>;
-      console.log('findIndex: ', this.findSelection());
-      // this.addRadioButtons(this.findSelection());
     });
   }
-  // public defaultSelected = 0
-  // public selection: number;
 
   selection($event: MatRadioChange) {
-    console.log($event, this.formGroupParam.get(this.config.formControlName));
+    // console.log($event, this.formGroupParam.get(this.config.formControlName));
   }
 
   isChecked(value: any, option: string | object ) {
@@ -63,12 +56,4 @@ export class RadioGroupComponent implements OnInit {
     }
   }
 
-  // private addRadioButtons(radioIndex = [0]) {
-  //   // tslint:disable-next-line:forin
-  //   for (const index in this.options) {
-  //     // default first item set to true, else checkedIndex content
-  //     const control = new FormControl(radioIndex.includes(+index));
-  //     (this.formGroupParam.controls[this.config.formControlName] as FormArray).push(control);
-  //   }
-  // }
 }

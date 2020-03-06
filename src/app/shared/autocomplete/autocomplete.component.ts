@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {AppConstants} from '../helpers/AppConstants';
 import { MatAutocompleteSelectedEvent, MatAutocompleteTrigger } from '@angular/material/autocomplete';
-import {BaseAutocomplete} from './BaseAutocomplete';
+import {BaseAutocompleteDirective} from './base-autocomplete.directive';
 import {CommonFunctionService} from '../service/common-function.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {CommonFunctionService} from '../service/common-function.service';
   templateUrl: './autocomplete.component.html',
   styleUrls: ['./autocomplete.component.scss']
 })
-export class AutoCompleteComponent extends BaseAutocomplete implements OnInit, OnChanges {
+export class AutoCompleteComponent extends BaseAutocompleteDirective implements OnInit, OnChanges {
 
   @ViewChild('autocompleteFormField', {static: true}) formField: ElementRef;
   @ViewChild('autocompleteInput', {static: true, read: MatAutocompleteTrigger}) autoCompleteInput: MatAutocompleteTrigger;

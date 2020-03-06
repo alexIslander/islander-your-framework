@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicField} from '../dynamic.field';
+import {DynamicField} from '../dynamic-field';
 import {MatSlideToggleChange} from '@angular/material/slide-toggle';
 import {has} from '../../service/common-function.service';
 

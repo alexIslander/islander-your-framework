@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {SelectionModel} from '@angular/cdk/collections';
-import {AbstractDynamicTable} from '../../dynamic-table/abstract-dynamic-table';
+import {AbstractDynamicTableDirective} from '../../dynamic-table/abstract-dynamic-table.directive';
 import {has} from '../../service/common-function.service';
 
 const DEFAULT_COLUMN_DEFINITION = [
@@ -30,7 +30,7 @@ const DEFAULT_COLUMNS = ['select', 'id', 'name'];
   templateUrl: './dynamic-table-with-selection.component.html',
   styleUrls: ['./dynamic-table-with-selection.component.scss']
 })
-export class DynamicTableWithSelectionComponent extends AbstractDynamicTable implements OnChanges {
+export class DynamicTableWithSelectionComponent extends AbstractDynamicTableDirective implements OnChanges {
   @Input() selectionCondition: string;
   selection = new SelectionModel<any>(true, []);
 

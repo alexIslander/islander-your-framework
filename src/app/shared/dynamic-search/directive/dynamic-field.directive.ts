@@ -3,8 +3,8 @@ import {AllowedInputComponents, AllowedInputTypes, DynamicSearchConfiguration} f
 import {FormGroup} from '@angular/forms';
 import {DynamicSearchValidator} from '../dynamic-search-validator';
 import {Named} from '../../dto/Named';
-import {DynamicField} from '../../dynamic-fields/dynamic.field';
 import {hasNot} from '../../service/common-function.service';
+import {DynamicField} from '../../dynamic-fields/dynamic-field';
 
 @Directive({
   selector: '[appDynamicField]'
@@ -44,7 +44,7 @@ export class DynamicFieldDirective implements OnChanges, OnInit {
   }
 
   ngOnInit() {
-    const isDynamicField = this.config.component instanceof DynamicField;
+    const isDynamicField = this.config.component instanceof DynamicFieldDirective;
     if (!Object.values(AllowedInputTypes).includes(this.config.inputType) || (isDynamicField && !AllowedInputTypes[this.config.inputType])) {
       const supportedTypes = Object.keys(AllowedInputTypes).join(', ');
       throw new Error(

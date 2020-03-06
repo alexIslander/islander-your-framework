@@ -5,13 +5,13 @@ import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import {Named} from '../dto/Named';
 import {debounceTime, distinctUntilChanged, map, startWith} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {BaseCustomComponent} from '../component/BaseCustomComponent';
+import {BaseCustomComponent} from '../component/base-custom.component';
 import {CommonFunctionService, has} from '../service/common-function.service';
 import {combineLatest} from 'rxjs/internal/observable/combineLatest';
 import {of} from 'rxjs/internal/observable/of';
 
 @Directive()
-export abstract class BaseAutocomplete extends BaseCustomComponent {
+export abstract class BaseAutocompleteDirective extends BaseCustomComponent {
   @ViewChild(MatAutocompleteTrigger, {static: true}) autoComplete: MatAutocompleteTrigger;
 
   @Input() allowInputDelete: boolean;

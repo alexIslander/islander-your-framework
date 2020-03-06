@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RadioGroupComponent } from './radio-group.component';
+import {FormGroup} from '@angular/forms';
+import {RadioGroupConfig} from '../../dto/component-config/radio-group/radio-group-config';
 
 describe('RadioGroupComponent', () => {
   let component: RadioGroupComponent;
@@ -16,6 +18,8 @@ describe('RadioGroupComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RadioGroupComponent);
     component = fixture.componentInstance;
+    component.formGroupParam = new FormGroup({});
+    component.config = {formControlName: '', options: []} as RadioGroupConfig;
     fixture.detectChanges();
   });
 

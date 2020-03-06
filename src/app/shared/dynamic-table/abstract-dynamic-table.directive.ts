@@ -6,7 +6,7 @@ import {DynamicTableDataSource} from './dynamic-table-datasource';
 import {hasNot} from '../service/common-function.service';
 
 @Directive()
-export abstract class AbstractDynamicTable {
+export abstract class AbstractDynamicTableDirective {
   private DEFAULT_COLUMNS: string[] = ['id', 'name'];
   private DEFAULT_COLUMN_DEFINITION: DynamicTableColumnConfig[] = [
     {

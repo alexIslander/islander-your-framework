@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicField} from '../dynamic.field';
+import {DynamicField} from '../dynamic-field';
 import {MatRadioChange} from '@angular/material/radio';
 import {has} from '../../service/common-function.service';
 

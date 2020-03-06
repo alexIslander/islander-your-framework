@@ -5,15 +5,15 @@ import {Location} from '@angular/common';
 import {HttpStatus} from '../service/HttpStatus';
 import { MatDialog } from '@angular/material/dialog';
 import {CommonFunctionService} from '../service/common-function.service';
-import {UnsubscribeComponent} from '../component/unsubscribe-base.js';
 import {FrameworkLoaderService} from '../service/framework-loader.service';
+import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestroyed';
 
 @Component({
   selector: 'app-error-page',
   templateUrl: './error-page.component.html',
   styleUrls: ['./error-page.component.scss']
 })
-export class ErrorPageComponent extends UnsubscribeComponent implements OnInit {
+export class ErrorPageComponent extends OnDestroyMixin implements OnInit {
 
   public errorTitle: string;
   public errorDetails: string;
@@ -32,7 +32,7 @@ export class ErrorPageComponent extends UnsubscribeComponent implements OnInit {
     this.errorDetails = 'COMMON.ERROR_PAGE_DEFAULT_MESSAGE';
 
     this.route.queryParams.pipe(
-      takeUntil(this.ngUnsubscribe))
+      untilComponentDestroyed(this))
       .subscribe(params => {
 
         if (this.commonFunctionService.isNullOrUndefined(params)) {

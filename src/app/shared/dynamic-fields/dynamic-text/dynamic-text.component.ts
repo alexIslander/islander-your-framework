@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicField} from '../dynamic.field';
+import {DynamicField} from '../dynamic-field';
 import {AppConstants} from '../../helpers/AppConstants';
 
 @Component({
