@@ -12,7 +12,7 @@
   </ng-template>
 <div *ngFor="let field of fields;" class="{{field.columnWidth}}">
   <ng-container
-    gbDynamicField
+    appDynamicField
     [config]="field"
     [group]="this.formLogic.form"
     [validator]="dynamicSearchValidator"

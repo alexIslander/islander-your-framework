@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicFieldDirective} from '../dynamic-field.directive';
+import {DynamicField} from '../dynamic-field';
 import {AppConstants} from '../../helpers/AppConstants';
 
 @Component({
@@ -7,7 +7,7 @@ import {AppConstants} from '../../helpers/AppConstants';
   templateUrl: './dynamic-text.component.html',
   styleUrls: ['./dynamic-text.component.scss']
 })
-export class DynamicTextComponent extends DynamicFieldDirective implements OnInit {
+export class DynamicTextComponent extends DynamicField implements OnInit {
 
   constructor() {
     super();

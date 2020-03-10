@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicFieldDirective} from '../dynamic-field.directive';
+import {DynamicField} from '../dynamic-field';
 
 @Component({
   selector: 'app-dynamic-autocomplete',
   templateUrl: './dynamic-autocomplete.component.html',
   styleUrls: ['./dynamic-autocomplete.component.scss']
 })
-export class DynamicAutocompleteComponent extends DynamicFieldDirective implements OnInit {
+export class DynamicAutocompleteComponent extends DynamicField implements OnInit {
 
   constructor() {
     super();

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicFieldDirective} from '../dynamic-field.directive';
+import {DynamicField} from '../dynamic-field';
 import {SearchInputFormatter} from '../../helpers/SearchInputFormatter';
 
 @Component({
@@ -7,7 +7,7 @@ import {SearchInputFormatter} from '../../helpers/SearchInputFormatter';
   templateUrl: './dynamic-upload.component.html',
   styleUrls: ['./dynamic-upload.component.scss']
 })
-export class DynamicUploadComponent extends DynamicFieldDirective implements OnInit {
+export class DynamicUploadComponent extends DynamicField implements OnInit {
   uploadSearchCriteria: string;
   uploadFiles: any = [];
 

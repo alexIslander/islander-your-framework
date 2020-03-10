@@ -5,16 +5,16 @@ import {Router} from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import {SandboxDashboardService} from '../service/impl/SandboxDashboardService';
 import {takeUntil} from 'rxjs/operators';
-import {componentDestroyed} from 'ng2-rx-componentdestroyed';
 import {ConfirmationWindowComponent} from '../../shared/confirmation-window/confirmation-window.component';
 import {hasNot} from '../../shared/service/common-function.service';
+import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestroyed';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class SandboxHomeComponent implements OnInit, OnDestroy {
+export class SandboxHomeComponent extends OnDestroyMixin implements OnInit, OnDestroy {
 
   [key: string]: any; // componentDestroyed
   cards: DashboardCard[];
@@ -23,7 +23,7 @@ export class SandboxHomeComponent implements OnInit, OnDestroy {
               private snackBar: SnackbarUtil,
               private router: Router,
               private dialog: MatDialog) {
-    // NOOP
+    super();
   }
 
   ngOnInit() {
@@ -63,7 +63,7 @@ export class SandboxHomeComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed()
-      .pipe(takeUntil(componentDestroyed(this)))
+      .pipe(untilComponentDestroyed(this))
       .subscribe((out) => {
         this.snackBar.showSuccessSnackBar('COMMON.ACTION_PERFORMED_SUCCESSFUL_MESSAGE');
       });

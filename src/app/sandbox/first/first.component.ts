@@ -1,12 +1,11 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FirstComponentService} from '../service/impl/FirstComponentService';
 import {Todo} from '../dto/Todo';
-import {takeUntil} from 'rxjs/operators';
-import {componentDestroyed} from 'ng2-rx-componentdestroyed';
+import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestroyed';
 import {BaseDialogViewComponentComponent} from '../../shared/base-dialog-view-component/base-dialog-view-component.component';
 import { MatDialog } from '@angular/material/dialog';
 import {environment} from '../../../environments/environment';
-import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
 import {RadioGroupConfig} from '../../shared/dto/component-config/radio-group/radio-group-config';
 
 @Component({
@@ -14,7 +13,7 @@ import {RadioGroupConfig} from '../../shared/dto/component-config/radio-group/ra
   templateUrl: './first.component.html',
   styleUrls: ['./first.component.scss']
 })
-export class FirstComponent implements OnInit, OnDestroy {
+export class FirstComponent extends OnDestroyMixin implements OnInit, OnDestroy {
 
   [key: string]: any; // componentDestroyed
   todo = {} as Todo;
@@ -37,14 +36,14 @@ export class FirstComponent implements OnInit, OnDestroy {
   constructor(private firstComponentService: FirstComponentService,
               private dialog: MatDialog,
               private fb: FormBuilder) {
-    // NOOP
+    super();
   }
 
   ngOnInit() {
     this.sourceUrl = environment.anyApiServiceBaseUrl;
 
     this.firstComponentService.getInitialData()
-      .pipe(takeUntil(componentDestroyed(this)))
+      .pipe(untilComponentDestroyed(this))
       .subscribe(data => this.todo = data );
 
     // const controls: FormControl[] = [];
@@ -68,7 +67,7 @@ export class FirstComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed()
-      .pipe(takeUntil(componentDestroyed(this)))
+      .pipe(untilComponentDestroyed(this))
       .subscribe((out) => {  });
   }
 

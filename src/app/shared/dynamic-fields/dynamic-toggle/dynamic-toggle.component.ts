@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DynamicFieldDirective} from '../dynamic-field.directive';
+import {DynamicField} from '../dynamic-field';
 import {MatSlideToggleChange} from '@angular/material/slide-toggle';
 import {has} from '../../service/common-function.service';
 
@@ -8,7 +8,7 @@ import {has} from '../../service/common-function.service';
   templateUrl: './dynamic-toggle.component.html',
   styleUrls: ['./dynamic-toggle.component.scss']
 })
-export class DynamicToggleComponent extends DynamicFieldDirective implements OnInit {
+export class DynamicToggleComponent extends DynamicField implements OnInit {
 
   constructor() {
     super();

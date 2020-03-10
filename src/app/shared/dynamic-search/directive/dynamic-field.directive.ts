@@ -4,6 +4,7 @@ import {FormGroup} from '@angular/forms';
 import {DynamicSearchValidator} from '../dynamic-search-validator';
 import {Named} from '../../dto/Named';
 import {hasNot} from '../../service/common-function.service';
+import {DynamicField} from '../../dynamic-fields/dynamic-field';
 
 @Directive({
   selector: '[appDynamicField]'
