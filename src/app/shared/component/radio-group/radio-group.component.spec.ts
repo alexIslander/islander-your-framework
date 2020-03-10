@@ -8,7 +8,7 @@ import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate
 import {Observable, of} from 'rxjs';
 import {Injector} from '@angular/core';
 
-let translations: any = {"CARDS_TITLE": "This is a test"};
+const translations: any = {'CARDS_TITLE': 'This is a test'};
 export class TranslateServiceStub implements TranslateLoader {
   getTranslation(lang: string): Observable<any> {
     return of(translations);
