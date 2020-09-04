@@ -100,18 +100,6 @@ import { RadioGroupComponent } from './component/radio-group/radio-group.compone
     ToDatePipe,
     ToDateTimePipe
   ],
-  entryComponents: [
-    CustomSnackBarComponent,
-    ConfirmationWindowComponent,
-    BaseDialogViewComponentComponent,
-    DynamicTextComponent,
-    DynamicOptionComponent,
-    DynamicToggleComponent,
-    DynamicRadioGroupComponent,
-    DynamicCheckboxComponent,
-    DynamicUploadComponent,
-    DynamicAutocompleteComponent
-  ],
   schemas: [
     NO_ERRORS_SCHEMA,
     CUSTOM_ELEMENTS_SCHEMA

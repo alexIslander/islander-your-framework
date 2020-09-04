@@ -14,7 +14,8 @@
     "lint": "ng lint",
     "lint:ci": "ng lint && ng test --code-coverage --watch=false",
     "fulltest": "ng lint && ng test --code-coverage --watch=false",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {

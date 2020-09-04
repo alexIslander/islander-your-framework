@@ -23,7 +23,7 @@ describe('AutocompleteComponent', () => {
   });
 
   it('should fire ngOnInit', function(this: Context) {
-    const f: FormBuilder = TestBed.get(FormBuilder);
+    const f: FormBuilder = TestBed.inject(FormBuilder);
     const formGroupParam = f.group({
       autoCompleteControl: new FormControl(['', Validators.required])
     });
@@ -46,7 +46,7 @@ describe('AutocompleteComponent', () => {
   });
 
   it('should fire ngOnInit without autoCompleteControl', function(this: Context) {
-    const f: FormBuilder = TestBed.get(FormBuilder);
+    const f: FormBuilder = TestBed.inject(FormBuilder);
     const formGroupParam = f.group({
       autoCompleteControl: new FormControl(['', Validators.required])
     });
@@ -97,7 +97,7 @@ describe('AutocompleteComponent', () => {
 
   it('should fire ngOnChanges', function (this: Context) {
     // prepared
-    const f: FormBuilder = TestBed.get(FormBuilder);
+    const f: FormBuilder = TestBed.inject(FormBuilder);
     const formGroupParam = f.group({
       autoCompleteControl: new FormControl(['', Validators.required])
     });

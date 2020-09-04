@@ -51,7 +51,7 @@ describe('SiteHeaderComponent', () => {
 
   // TODO test when implemented
   // it('should have onLogout', function(this: Context) {
-  //   const authService = TestBed.get(AuthService);
+  //   const authService = TestBed.inject(AuthService);
   //   spyOn(authService, 'logout');
   //   this.component.onLogout();
   //   expect(authService.logout).toHaveBeenCalled();
