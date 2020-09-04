@@ -33,6 +33,7 @@ import {CustomDatePickerHeaderComponent} from './component/date-picker/custom-da
 import {FormErrorMessageModule} from './form-error-message/form-error-message.module';
 import { CheckboxGroupComponent } from './component/checkbox-group/checkbox-group.component';
 import { RadioGroupComponent } from './component/radio-group/radio-group.component';
+import {DynamicField} from './dynamic-fields/dynamic-field';
 
 @NgModule({
   imports: [
@@ -71,7 +72,8 @@ import { RadioGroupComponent } from './component/radio-group/radio-group.compone
     DatePickerComponent,
     CustomDatePickerHeaderComponent,
     CheckboxGroupComponent,
-    RadioGroupComponent
+    RadioGroupComponent,
+    DynamicField
   ],
   exports: [
     SiteHeaderComponent,

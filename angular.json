@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IslanderUiFramework": {
+    "islander-ui-framework": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "moment-timezone"
+            ],
             "aot": true,
             "outputPath": "dist/IslanderUiFramework",
             "index": "src/index.html",
@@ -145,7 +148,7 @@
         }
       }
     },
-    "IslanderUiFramework-e2e": {
+    "islander-ui-framework-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",

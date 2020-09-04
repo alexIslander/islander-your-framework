@@ -1,6 +1,6 @@
 import {AppConstants} from '../helpers/AppConstants';
 import {FormControl} from '@angular/forms';
-import { Input, ViewChild, Directive } from '@angular/core';
+import {Input, ViewChild, Directive, Component} from '@angular/core';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import {Named} from '../dto/Named';
 import {debounceTime, distinctUntilChanged, map, startWith} from 'rxjs/operators';
@@ -10,8 +10,10 @@ import {CommonFunctionService, has} from '../service/common-function.service';
 import {combineLatest} from 'rxjs/internal/observable/combineLatest';
 import {of} from 'rxjs/internal/observable/of';
 
-@Directive()
-export abstract class BaseAutocompleteDirective extends BaseCustomComponent {
+@Component({
+  template: ''
+})
+export abstract class BaseAutocompleteComponent extends BaseCustomComponent {
   @ViewChild(MatAutocompleteTrigger, {static: true}) autoComplete: MatAutocompleteTrigger;
 
   @Input() allowInputDelete: boolean;
