@@ -4,6 +4,9 @@ import {FormGroup} from '@angular/forms';
 import {DynamicSearchValidator} from '../dynamic-search/dynamic-search-validator';
 import {DynamicSearchConfiguration} from '../dynamic-search/dynamic-search-configuration';
 
+@Component({
+  template: ''
+})
 export class DynamicField extends BaseCustomComponent implements OnInit {
 
   @Input()

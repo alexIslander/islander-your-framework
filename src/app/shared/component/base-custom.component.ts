@@ -1,8 +1,11 @@
 import {FormGroup} from '@angular/forms';
-import { EventEmitter, Input, Output, Directive } from '@angular/core';
+import {EventEmitter, Input, Output, Directive, Component} from '@angular/core';
 import {Named} from '../dto/Named';
 import {CommonFunctionService} from '../service/common-function.service';
 
+@Component({
+  template: ''
+})
 export abstract class BaseCustomComponent {
   @Input() options: Named[];
   @Input() displayTitle: string;

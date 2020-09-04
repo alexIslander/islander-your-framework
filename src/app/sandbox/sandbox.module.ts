@@ -58,9 +58,6 @@ import {ReactiveFormsModule} from '@angular/forms';
     FirstComponent,
     SecondComponent,
     ThirdComponent
-  ],
-  entryComponents: [
-    SandboxDashboardComponent
   ]
 })
 export class SandboxModule { }

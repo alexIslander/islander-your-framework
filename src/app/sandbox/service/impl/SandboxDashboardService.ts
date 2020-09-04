@@ -3,7 +3,7 @@ import {ISandboxDashboardService} from '../ISandboxDashboardService';
 import {SandboxHttpHelperService} from '../SandboxHttpHelperService';
 import {Observable} from 'rxjs/internal/Observable';
 import {DashboardCard} from '../../dto/DashboardCard';
-import {of} from 'rxjs/internal/observable/of';
+import {of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({

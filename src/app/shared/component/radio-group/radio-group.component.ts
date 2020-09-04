@@ -1,11 +1,11 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
-import {of} from 'rxjs/index';
 import {RadioGroupConfig} from '../../dto/component-config/radio-group/radio-group-config';
 import {AppUtils} from '../../helpers/app-utils';
 import { MatRadioChange } from '@angular/material/radio';
 import * as R from 'ramda';
 import {MatRadioGroup} from '@angular/material/radio';
+import {of} from 'rxjs';
 
 @Component({
   selector: 'app-radio-group',
