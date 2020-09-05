@@ -4,7 +4,6 @@ import {SnackbarUtil} from '../../shared/utils/snackbar.util';
 import {Router} from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import {SandboxDashboardService} from '../service/impl/SandboxDashboardService';
-import {takeUntil} from 'rxjs/operators';
 import {ConfirmationWindowComponent} from '../../shared/confirmation-window/confirmation-window.component';
 import {hasNot} from '../../shared/service/common-function.service';
 import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestroyed';
@@ -38,10 +37,6 @@ export class SandboxHomeComponent extends OnDestroyMixin implements OnInit, OnDe
     this.router.navigate(hasNot(s)  ? ['/sandbox/home'] : ['/sandbox/' + s]);
   }
 
-  getCardClass(disabled: boolean): string {
-    return disabled ? 'example-card-disabled ui-g-3' : 'example-card ui-g-3';
-  }
-
   onCardAction(event: any, card: any) {
     if (card.disabled) {
       this.snackBar.showWarningSnackBar('cardIsNotAvailable');
@@ -69,7 +64,7 @@ export class SandboxHomeComponent extends OnDestroyMixin implements OnInit, OnDe
       });
   }
 
-  onDonothing(event: any) {
+  onDoNothing(event: any) {
     // NOOP
   }
 }
