@@ -36,7 +36,6 @@ import {AppTranslateModule} from '../module/app-translate/app-translate.module';
   exports: [
     DynamicSearchComponent
   ],
-  entryComponents: [DynamicSearchComponent],
   schemas: [
     NO_ERRORS_SCHEMA,
     CUSTOM_ELEMENTS_SCHEMA

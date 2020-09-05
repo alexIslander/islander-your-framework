@@ -6,36 +6,11 @@
     <div>
       <h2>{{ 'APP.HOME.TITLE' | translate }}</h2>
     </div>
-    <div class="card-container ui-g">
-      <mat-card *ngFor="let card of cards" class="example-card ui-g-3 content-centered" (click)="onCardAction($event, card)">
-        <mat-card-header>
-          <div mat-card-avatar class="">
-            <div class="avatar">
-              <div class="a">
-                {{ card.countryAlpha2Code }}
-              </div>
-            </div>
-          </div>
-          <div class="my-mat-card-title">{{ card.name }}</div>
-        </mat-card-header>
-        <mat-card-content class="card-content">
-          <p>
-            {{card.detail}}
-          </p>
-        </mat-card-content>
-        <div class="pull-right">
-          <button id="generateDocIdButton" mat-button class="custom-button-left-margin" *ngIf="card.icon === 'fa-check'"
-                  (click)="onDonothing($event)"
-                  matTooltip="{{'COMMON.GENERATE_BUTTON_LABEL' | translate }}" [disabled]="card.disabled">
-            <i class="fa {{card.icon}}"></i>
-          </button>
-          <button id="navigateButton" mat-button class="custom-button-left-margin" *ngIf="card.icon !== 'fa-check'"
-                  (click)="onDonothing($event)"
-                  matTooltip="{{'COMMON.NAVIGATE_BUTTON_LABEL' | translate }}" [disabled]="card.disabled">
-            <i class="fa {{card.icon}}"></i>
-          </button>
-        </div>
-      </mat-card>
+    <div class="card-container ui-g content-centered" >
+      <app-simple-card [id]="i" *ngFor="let card of cards; let i = index" [card]="card"
+                       (cardClickEmitter)="onCardAction($event, card)"
+                       (actionClickEmitter)="onDoNothing($event)"
+                       (navigateClickEmitter)="onDoNothing($event)"></app-simple-card>
     </div>
   </mat-card-content>
 </mat-card>

@@ -20,13 +20,13 @@ xdescribe('FormMessageComponent', () => {
   });
 
   it('should be initialized', function (this: Context) {
-    const formErrorMessageService = TestBed.get(FormErrorMessageService);
+    const formErrorMessageService = TestBed.inject(FormErrorMessageService);
     spyOn(formErrorMessageService, 'getErrorMessages').and.returnValue( { subscribe: () => {} });
     expect(this.component).toBeTruthy();
   });
 
   xit('should be getValidatorErrorMessage', function (this: Context) {
-    const formErrorMessageService = TestBed.get(FormErrorMessageService);
+    const formErrorMessageService = TestBed.inject(FormErrorMessageService);
     spyOn(formErrorMessageService, 'getErrorMessages').and.returnValue( { subscribe: () => {} });
     const spy = spyOn(this.component, 'getValidatorErrorMessage').and.stub();
 
@@ -36,7 +36,7 @@ xdescribe('FormMessageComponent', () => {
   });
 
   xit('should be getValidatorErrorMessage', function (this: Context) {
-    const formErrorMessageService = TestBed.get(FormErrorMessageService);
+    const formErrorMessageService = TestBed.inject(FormErrorMessageService);
     this.component.control = {  errors: { 'minlength': true } as ValidationErrors,
                                 touched: true
                              } as FormControl;

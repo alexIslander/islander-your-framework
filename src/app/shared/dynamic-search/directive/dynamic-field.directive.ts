@@ -31,6 +31,7 @@ export class DynamicFieldDirective implements OnChanges, OnInit {
   @Output() reset = new EventEmitter<boolean>();
   @Output() keyEvent = new EventEmitter<KeyboardEvent>();
   component: ComponentRef<any>;
+  private formGroupParam: FormGroup;
 
   constructor(
     private resolver: ComponentFactoryResolver,
@@ -58,7 +59,7 @@ export class DynamicFieldDirective implements OnChanges, OnInit {
 
     const component = this.resolver.resolveComponentFactory<any>(this.config.component);
     this.component = this.container.createComponent(component);
-    const dynamicField = <DynamicField> this.component.instance;
+    const dynamicField = <DynamicFieldDirective> this.component.instance;
     dynamicField.config = this.config;
     dynamicField.formGroupParam = this.config.inputType === this.COUNTRY_AGENT_AUTOCOMPLETE ? <FormGroup>this.group.get(this.COUNTRY_AGENT_AUTOCOMPLETE) : this.group;
     dynamicField.validator = this.validator;
@@ -73,10 +74,10 @@ export class DynamicFieldDirective implements OnChanges, OnInit {
     dynamicField.actionEvent.subscribe(res => {
       this.actionEvent.emit(res);
     });
-    dynamicField.resetEvent.subscribe(res => {
+    dynamicField.reset.subscribe(res => {
       this.reset.emit(res);
     });
-    dynamicField.keyChangeEvent.subscribe(res => {
+    dynamicField.keyEvent.subscribe(res => {
       this.keyEvent.emit(res);
     });
   }

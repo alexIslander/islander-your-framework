@@ -1,31 +1,33 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {SiteHeaderService} from '../service/site-header.service';
-import {componentDestroyed} from 'ng2-rx-componentdestroyed';
-import { takeUntil } from 'rxjs/operators';
+import {takeUntil} from 'rxjs/operators';
 
 import {has} from '../service/common-function.service';
 import {HeaderMenuItem} from '../dto/HeaderMenuItem.js';
+import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestroyed';
 
 @Component({
   selector: 'app-common-site-header',
   templateUrl: './site-header.component.html',
   styleUrls: ['./site-header.component.scss']
 })
-export class SiteHeaderComponent implements OnInit, OnDestroy {
+export class SiteHeaderComponent extends OnDestroyMixin implements OnInit, OnDestroy {
   @Input() items: HeaderMenuItem[];
   @Input() default: string;
   headerText: string;
   imgUrl: string;
+
   [key: string]: any; // componentDestroyed
   headerMenu = [];
 
   constructor(private router: Router,
               private headerService: SiteHeaderService) {
+    super();
     this.imgUrl = window.location.origin + '/assets/img/logo.png';
     // Sets the header upon refresh according to the current url
     this.headerService.onSiteHeaderTextChange
-      .pipe(takeUntil(componentDestroyed(this)))
+      .pipe(untilComponentDestroyed(this))
       .subscribe(
         (urlPath) => {
           const menuItem = this.headerMenu.find(hm => urlPath.includes(hm.url));

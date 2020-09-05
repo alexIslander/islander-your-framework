@@ -1,10 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {FormArray, FormControl, FormGroup} from '@angular/forms';
-import {of} from 'rxjs/index';
 import {RadioGroupConfig} from '../../dto/component-config/radio-group/radio-group-config';
 import {AppUtils} from '../../helpers/app-utils';
 import { MatRadioChange } from '@angular/material/radio';
 import * as R from 'ramda';
+import {MatRadioGroup} from '@angular/material/radio';
+import {of} from 'rxjs';
 
 @Component({
   selector: 'app-radio-group',
@@ -12,20 +13,24 @@ import * as R from 'ramda';
   styleUrls: ['./radio-group.component.scss']
 })
 export class RadioGroupComponent implements OnInit {
+
+  @ViewChild(MatRadioGroup) group: MatRadioGroup;
+
   @Input()
   config: RadioGroupConfig;
 
   @Input()
   formGroupParam: FormGroup;
   options: Array<any> = [];
-  formControl: FormArray;
+  formControl: FormControl;
 
   constructor() {
     // NOOP
   }
 
   ngOnInit() {
-    this.formControl = this.formGroupParam.controls[this.config.formControlName] as FormArray;
+    this.formControl = this.formGroupParam.controls[this.config.formControlName] as FormControl;
+
     of(this.config.options).subscribe(orders => {
       this.options = orders as Array<any>;
     });
@@ -41,19 +46,8 @@ export class RadioGroupComponent implements OnInit {
       AppUtils.isEqualObject(this.formGroupParam.get(this.config.formControlName).value, option);
   }
 
-  private findSelection() {
-    if (typeof this.config.defaultValue === 'string') {
-      return [this.options.findIndex(o => o === this.config.defaultValue)];
-    } else if (Array.isArray(this.config.defaultValue)) {
-      return this.options.map((o, i) => {
-        if ((<Array<any>>this.config.defaultValue)
-          .find(dv => AppUtils.isEqualObject(dv, o))) {
-          return i;
-        }
-      }).filter(f => f !== undefined);
-    } else {
-      return [this.options.findIndex(o => AppUtils.isEqualObject(o, this.config.defaultValue))];
-    }
+  orientation(): string {
+    return this.config.orientation && this.config.orientation === 'vertical' ? 'radio-group-column' : 'radio-group';
   }
 
 }

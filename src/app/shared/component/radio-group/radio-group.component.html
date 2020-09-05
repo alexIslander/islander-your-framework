@@ -1,1 +1,17 @@
-<p>radio-group works!</p>
+<div [formGroup]="formGroupParam">
+<label id="radio-group-label" class="radio-group-label">{{ config.label | translate }}</label>
+<mat-radio-group #group
+  [id]="config.id"
+  [class]="orientation()"
+  [formControlName]="config.formControlName">
+  <mat-radio-button class="radio-button"
+                    *ngFor="let item of options; let i = index;"
+                    [labelPosition]="config.labelPosition"
+                    [color]="config.color"
+                    [checked]="isChecked(formGroupParam.controls[config.formControlName], item)"
+                    [value]="item">
+    {{ config.translateOptionContent ? (options[i] | translate) :
+    config.fieldToDisplay ? options[i][config.fieldToDisplay] : options[i] }}
+  </mat-radio-button>
+</mat-radio-group>
+</div>

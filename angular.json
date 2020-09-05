@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IslanderUiFramework": {
+    "islander-ui-framework": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,8 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "moment-timezone"
+            ],
             "aot": true,
-            "outputPath": "dist/IslanderUiFramework",
+            "outputPath": "dist/islander-ui-framework",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -93,21 +96,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "IslanderUiFramework:build"
+            "browserTarget": "islander-ui-framework:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "IslanderUiFramework:build:production"
+              "browserTarget": "islander-ui-framework:build:production"
             },
             "mock": {
-              "browserTarget": "IslanderUiFramework:build:mock"
+              "browserTarget": "islander-ui-framework:build:mock"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IslanderUiFramework:build"
+            "browserTarget": "islander-ui-framework:build"
           }
         },
         "test": {
@@ -145,7 +148,7 @@
         }
       }
     },
-    "IslanderUiFramework-e2e": {
+    "islander-ui-framework-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -154,11 +157,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "IslanderUiFramework:serve"
+            "devServerTarget": "islander-ui-framework:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "IslanderUiFramework:serve:production"
+              "devServerTarget": "islander-ui-framework:serve:production"
             }
           }
         },
@@ -174,5 +177,5 @@
       }
     }
   },
-  "defaultProject": "IslanderUiFramework"
+  "defaultProject": "islander-ui-framework"
 }

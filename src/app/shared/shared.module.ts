@@ -33,6 +33,8 @@ import {CustomDatePickerHeaderComponent} from './component/date-picker/custom-da
 import {FormErrorMessageModule} from './form-error-message/form-error-message.module';
 import { CheckboxGroupComponent } from './component/checkbox-group/checkbox-group.component';
 import { RadioGroupComponent } from './component/radio-group/radio-group.component';
+import {DynamicField} from './dynamic-fields/dynamic-field';
+import { SimpleCardComponent } from './simple-card/simple-card.component';
 
 @NgModule({
   imports: [
@@ -71,46 +73,37 @@ import { RadioGroupComponent } from './component/radio-group/radio-group.compone
     DatePickerComponent,
     CustomDatePickerHeaderComponent,
     CheckboxGroupComponent,
-    RadioGroupComponent
+    RadioGroupComponent,
+    DynamicField,
+    SimpleCardComponent
   ],
-  exports: [
-    SiteHeaderComponent,
-    SidebarMenuComponent,
-    ErrorPageComponent,
-    CustomSnackBarComponent,
-    ConfirmationWindowComponent,
-    ToDatePipe,
-    ToDateTimePipe,
-    LoaderComponent,
-    AutoCompleteComponent,
-    DynamicTextComponent,
-    DynamicOptionComponent,
-    DynamicToggleComponent,
-    DynamicRadioGroupComponent,
-    DynamicCheckboxComponent,
-    DynamicUploadComponent,
-    DynamicAutocompleteComponent,
-    DynamicTableComponent,
-    DynamicTableWithSelectionComponent,
-    CustomDatePickerHeaderComponent,
-    CheckboxGroupComponent,
-    RadioGroupComponent
-  ],
+    exports: [
+        SiteHeaderComponent,
+        SidebarMenuComponent,
+        ErrorPageComponent,
+        CustomSnackBarComponent,
+        ConfirmationWindowComponent,
+        ToDatePipe,
+        ToDateTimePipe,
+        LoaderComponent,
+        AutoCompleteComponent,
+        DynamicTextComponent,
+        DynamicOptionComponent,
+        DynamicToggleComponent,
+        DynamicRadioGroupComponent,
+        DynamicCheckboxComponent,
+        DynamicUploadComponent,
+        DynamicAutocompleteComponent,
+        DynamicTableComponent,
+        DynamicTableWithSelectionComponent,
+        CustomDatePickerHeaderComponent,
+        CheckboxGroupComponent,
+        RadioGroupComponent,
+        SimpleCardComponent
+    ],
   providers: [
     ToDatePipe,
     ToDateTimePipe
-  ],
-  entryComponents: [
-    CustomSnackBarComponent,
-    ConfirmationWindowComponent,
-    BaseDialogViewComponentComponent,
-    DynamicTextComponent,
-    DynamicOptionComponent,
-    DynamicToggleComponent,
-    DynamicRadioGroupComponent,
-    DynamicCheckboxComponent,
-    DynamicUploadComponent,
-    DynamicAutocompleteComponent
   ],
   schemas: [
     NO_ERRORS_SCHEMA,
