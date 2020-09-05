@@ -8,9 +8,9 @@
     </div>
     <div class="card-container ui-g content-centered" >
       <app-simple-card [id]="i" *ngFor="let card of cards; let i = index" [card]="card"
-        (onCardClickEmitter)="onCardAction($event, card)"
-        (onActionClickEmitter)="onDoNothing($event)"
-        (onNavigateClickEmitter)="onDoNothing($event)"></app-simple-card>
+                       (cardClickEmitter)="onCardAction($event, card)"
+                       (actionClickEmitter)="onDoNothing($event)"
+                       (navigateClickEmitter)="onDoNothing($event)"></app-simple-card>
     </div>
   </mat-card-content>
 </mat-card>

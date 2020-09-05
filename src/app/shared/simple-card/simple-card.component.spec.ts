@@ -1,25 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SimpleCardComponent } from './simple-card.component';
+import {DashboardCard} from '../../sandbox/dto/DashboardCard';
+import {initContext, TestContext} from '../../test/test-context';
 
 describe('SimpleCardComponent', () => {
-  let component: SimpleCardComponent;
-  let fixture: ComponentFixture<SimpleCardComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  type Context = TestContext<SimpleCardComponent>;
+  initContext(SimpleCardComponent, {
       declarations: [ SimpleCardComponent ]
-    })
-    .compileComponents();
+    });
+
+  it('should create', function(this: Context) {
+    this.component.card = {} as DashboardCard;
+    this.fixture.detectChanges();
+    expect(this.component).toBeTruthy();
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SimpleCardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

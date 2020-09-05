@@ -18,13 +18,13 @@ export class SimpleCardComponent implements OnInit {
   card: DashboardCard;
 
   @Output()
-  onCardClickEmitter = new EventEmitter<DashboardCard>();
+  cardClickEmitter = new EventEmitter<DashboardCard>();
 
   @Output()
-  onActionClickEmitter = new EventEmitter<Function>();
+  actionClickEmitter = new EventEmitter<Function>();
 
   @Output()
-  onNavigateClickEmitter = new EventEmitter<string>();
+  navigateClickEmitter = new EventEmitter<string>();
 
   constructor() {
     // NOOP
@@ -35,15 +35,15 @@ export class SimpleCardComponent implements OnInit {
   }
 
   onCardClick($event: MouseEvent, card: DashboardCard) {
-    this.onCardClickEmitter.emit(card);
+    this.cardClickEmitter.emit(card);
   }
 
   onActionClick($event: MouseEvent, action: Function) {
-    this.onActionClickEmitter.emit(action);
+    this.actionClickEmitter.emit(action);
   }
 
   onNavigateClick($event: MouseEvent, nav: any[]) {
-    this.onNavigateClickEmitter.emit(nav.length > 0 ? nav[0] : null);
+    this.navigateClickEmitter.emit(nav.length > 0 ? nav[0] : null);
   }
 
 }

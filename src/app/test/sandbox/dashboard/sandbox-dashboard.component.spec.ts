@@ -1,7 +1,6 @@
 import {initContext, TestContext} from '../../test-context';
 import {SandboxDashboardComponent} from '../../../sandbox/dashboard/sandbox-dashboard.component';
-import {Router} from '@angular/router';
-import {appRoutes, AppRoutingModule} from '../../../app-routing';
+import {appRoutes} from '../../../app-routing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
 import {FirstComponent} from '../../../sandbox/first/first.component';
