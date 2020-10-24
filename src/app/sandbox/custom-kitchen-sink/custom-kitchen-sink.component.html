@@ -1,0 +1,50 @@
+<form [formGroup]="personForm">
+  <h1>Custom Kitchen sink component works</h1>
+  <hr class="solid">
+  <div class="row">
+    <div class="column">
+      <div class="center-table">
+        <p>
+          <app-radio-group [formGroupParam]="personForm" [config]="radioGroupObjectConfig"></app-radio-group>
+          <app-radio-group [formGroupParam]="personForm" [config]="radioGroupStringArrayConfig"></app-radio-group>
+          <app-radio-group [formGroupParam]="personForm"
+                           [config]="radioGroupStringConstantArrayTranslateConfig"></app-radio-group>
+        </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="center-table">
+        <p>
+          <label>Content:</label>
+          <textarea class="rawTextArea">{{rawValue | json}}</textarea>
+        </p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="center-table">
+        <p>
+          radioGroupObject: {{control1}}<br>
+          radioGroupStringArray: {{control2}}<br>
+          radioGroupStringConstantArrayTranslate: {{control3}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr class="solid">
+  <div class="row">
+    <div class="equal-column">
+      <div>
+        <app-radio-group [formGroupParam]="personForm" [config]="radioGroupObjectConfig"></app-radio-group>
+        <app-radio-group [formGroupParam]="personForm" [config]="radioGroupStringArrayConfig"></app-radio-group>
+        <app-radio-group [formGroupParam]="personForm"
+                         [config]="radioGroupStringConstantArrayTranslateConfig"></app-radio-group>
+      </div>
+    </div>
+    <div class="equal-column">
+      <div class="center-me">
+        <label>Content:</label>
+        <textarea class="rawTextArea">{{rawValue | json}}</textarea>
+      </div>
+    </div>
+  </div>
+</form>

@@ -17,11 +17,11 @@ export class RadioGroupComponent implements OnInit {
   @ViewChild(MatRadioGroup) group: MatRadioGroup;
 
   @Input()
-  config: RadioGroupConfig;
+  config: RadioGroupConfig<string | object | unknown>;
 
   @Input()
   formGroupParam: FormGroup;
-  options: Array<any> = [];
+  options: Array<string | object | unknown> = [];
   formControl: FormControl;
 
   constructor() {
@@ -32,7 +32,7 @@ export class RadioGroupComponent implements OnInit {
     this.formControl = this.formGroupParam.controls[this.config.formControlName] as FormControl;
 
     of(this.config.options).subscribe(orders => {
-      this.options = orders as Array<any>;
+      this.options = orders as Array<string | object | unknown>;
     });
   }
 
@@ -40,7 +40,7 @@ export class RadioGroupComponent implements OnInit {
     // console.log($event, this.formGroupParam.get(this.config.formControlName));
   }
 
-  isChecked(value: any, option: string | object ) {
+  isChecked(value: any, option: string | object | unknown) {
     return R.type(option) === 'String' ?
      this.formGroupParam.get(this.config.formControlName).value === option :
       AppUtils.isEqualObject(this.formGroupParam.get(this.config.formControlName).value, option);

@@ -10,7 +10,7 @@
                     [color]="config.color"
                     [checked]="isChecked(formGroupParam.controls[config.formControlName], item)"
                     [value]="item">
-    {{ config.translateOptionContent ? (options[i] | translate) :
+    {{ config.translateOptionContent ? (options[i].toString() | translate) :
     config.fieldToDisplay ? options[i][config.fieldToDisplay] : options[i] }}
   </mat-radio-button>
 </mat-radio-group>
