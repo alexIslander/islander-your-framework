@@ -6,6 +6,7 @@ import {SecondComponent} from './sandbox/second/second.component';
 import {SandboxDashboardComponent} from './sandbox/dashboard/sandbox-dashboard.component';
 import {SandboxHomeComponent} from './sandbox/home/home.component';
 import {FirstComponent} from './sandbox/first/first.component';
+import {CustomKitchenSinkComponent} from './sandbox/custom-kitchen-sink/custom-kitchen-sink.component';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home, pathMatch: 'full'},
@@ -16,7 +17,8 @@ export const appRoutes: Routes = [
       { path: '', redirectTo: RouteUrls.sandboxPage.home, pathMatch: 'full'},
       { path: RouteUrls.sandboxPage.home, component: SandboxHomeComponent },
       { path: RouteUrls.sandboxPage.first, component: FirstComponent },
-      { path: RouteUrls.sandboxPage.second, component: SecondComponent }
+      { path: RouteUrls.sandboxPage.second, component: SecondComponent },
+      { path: RouteUrls.sandboxPage.mySink, component: CustomKitchenSinkComponent }
     ]
   },
   // {

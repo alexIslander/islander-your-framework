@@ -13,13 +13,13 @@ export class SelectComponent implements OnInit, AfterViewInit {
   @ViewChild('select') selector: MatSelect;
 
   @Input()
-  config: SelectConfig;
+  config: SelectConfig<string | object | unknown>;
 
   @Input()
   formGroupParam: FormGroup;
 
   formControl: FormControl;
-  fieldValue: any;
+  fieldValue: string | object | unknown;
 
   constructor() {
     // NOOP

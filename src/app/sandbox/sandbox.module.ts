@@ -18,6 +18,7 @@ import { ThirdComponent } from './third/third.component';
 import {SandboxRoutingModule} from './sandbox-routing.module';
 import {AppTranslateModule} from '../shared/module/app-translate/app-translate.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CustomKitchenSinkComponent } from './custom-kitchen-sink/custom-kitchen-sink.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     SecondComponent,
     SandboxHomeComponent,
     SandboxDashboardComponent,
-    ThirdComponent
+    ThirdComponent,
+    CustomKitchenSinkComponent
     ],
   imports: [
     CommonModule,

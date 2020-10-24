@@ -3,8 +3,8 @@ import {Observable} from 'rxjs';
 
 /**
  * defaultValue: this value is set when initialized
- * fieldToDisplay: this value isis selected from the item
- * options: collection as values
+ * fieldToDisplay: this value is selected from the item
+ * options: collection of values
  *
  * Example option config:
  * a) options from dynamic/static translated string values

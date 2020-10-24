@@ -1,0 +1,49 @@
+/*----Clear floats after the columns----*/
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*-----------3 columns layout-----------*/
+.column {
+  float: left;
+  width: 33.33%;
+  display: table;
+  height: 300px;
+}
+/*-----------2 columns layout-----------*/
+.equal-column {
+  float: left;
+  width: 50%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  min-width: 325px;
+  height: 300px;
+}
+/*----------Vertical alignment-----------*/
+.center-table {
+  display: table;
+  margin: 20px;
+  height: 299px;
+}
+.center-table p {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+  color: black;
+  width: 100%;
+  padding: 20px;
+  border: 10px solid white;
+}
+/*----------TextArea-----------*/
+.rawTextArea {
+  height: 155px;
+  width: 325px;
+  overflow: hidden;
+}
+/*----------Vertical and Horizontal center alignment-----------*/
+.center-me {
+  display: grid;
+}
