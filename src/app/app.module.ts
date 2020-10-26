@@ -1,17 +1,19 @@
-import { ErrorHandler, NgModule} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { SandboxModule } from './sandbox/sandbox.module';
+import {AppComponent} from './app.component';
+import {SandboxModule} from './sandbox/sandbox.module';
 import {SiteHeaderService} from './shared/service/site-header.service';
 import {ErrorNotifierService} from './shared/service/error-notifier.service';
 import {FrameworkLoaderService} from './shared/service/framework-loader.service';
 import {NotificationService} from './shared/service/notification.service';
-import {HttpClientModule} from '@angular/common/http';
-import {appRoutes, AppRoutingModule} from './app-routing';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
+import {BrowserModule} from '@angular/platform-browser';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {SharedModule} from './shared/shared.module';
+import {HttpLoaderFactory} from './shared/module/app-translate/app-translate.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,20 @@ import {CommonModule} from '@angular/common';
   ],
   imports: [
     CommonModule,
-    SandboxModule,
+    BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+
     AppRoutingModule,
-    SharedModule,
-    HttpClientModule
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    SandboxModule,
+    SharedModule
   ],
   providers: [
     SiteHeaderService,
@@ -35,6 +45,10 @@ import {CommonModule} from '@angular/common';
     FrameworkLoaderService,
     NotificationService
   ],
+  exports: [
+    TranslateModule
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

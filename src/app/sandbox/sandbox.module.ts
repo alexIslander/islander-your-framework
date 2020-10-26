@@ -16,9 +16,10 @@ import {FirstComponentService} from './service/impl/FirstComponentService';
 import {environment} from '../../environments/environment';
 import { ThirdComponent } from './third/third.component';
 import {SandboxRoutingModule} from './sandbox-routing.module';
-import {AppTranslateModule} from '../shared/module/app-translate/app-translate.module';
+import {AppTranslateModule, configureTranslation} from '../shared/module/app-translate/app-translate.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CustomKitchenSinkComponent } from './custom-kitchen-sink/custom-kitchen-sink.component';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,15 @@ import { CustomKitchenSinkComponent } from './custom-kitchen-sink/custom-kitchen
     SandboxRoutingModule,
     SharedModule,
     AppMaterialModule,
-    AppTranslateModule
+    // AppTranslateModule
+    TranslateModule.forChild({}),
+    //   .forChild({
+    //   loader: {
+    //     provide: TranslateLoader,
+    //     useFactory: HttpLoaderFactory,
+    //     deps: [HttpClient]
+    //   }
+    // })
   ],
   providers: [
     SandboxHttpHelperService,
@@ -59,10 +68,16 @@ import { CustomKitchenSinkComponent } from './custom-kitchen-sink/custom-kitchen
     SandboxHomeComponent,
     FirstComponent,
     SecondComponent,
-    ThirdComponent
+    ThirdComponent,
+    CustomKitchenSinkComponent
   ]
 })
-export class SandboxModule { }
+export class SandboxModule {
+  constructor(private translate: TranslateService) {
+    configureTranslation(translate);
+  }
+}
+
   // TODO modify when beckend provides dashboard
   export function dashboardServiceUseFactory(http: HttpClient, httpHelperService: SandboxHttpHelperService) {
     // return environment.mock ? new SandboxDashboardServiceMock(http, httpHelperService)

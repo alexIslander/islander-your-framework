@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {RadioGroupConfig} from '../../shared/dto/component-config/radio-group/radio-group-config';
 
@@ -16,7 +16,7 @@ export class CustomKitchenSinkComponent implements OnInit {
 
   personForm: FormGroup;
 
-  rawValue:string;
+  rawValue: string;
   rawValue2;
   rawValue3;
   rrr;
@@ -38,7 +38,7 @@ export class CustomKitchenSinkComponent implements OnInit {
     formControlName: 'radioGroupStringArray',
     label: 'SANDBOX.FIRST.LABEL.RADIOS',
     disabled: false,
-    options: [ 'Hungarian', 'English'],
+    options: ['Hungarian', 'English'],
     defaultValue: 'Hungarian'
   } as RadioGroupConfig<string>;
 
@@ -47,7 +47,7 @@ export class CustomKitchenSinkComponent implements OnInit {
     formControlName: 'radioGroupStringConstantArrayTranslate',
     label: 'SANDBOX.FIRST.LABEL.RADIOS',
     disabled: false,
-    options: [ 'SANDBOX.FIRST.LABEL.OPTION1', 'SANDBOX.FIRST.LABEL.OPTION2'],
+    options: ['SANDBOX.FIRST.LABEL.OPTION1', 'SANDBOX.FIRST.LABEL.OPTION2'],
     defaultValue: 'SANDBOX.FIRST.LABEL.OPTION1',
     translateOptionContent: true
   } as RadioGroupConfig<string>;
@@ -56,7 +56,8 @@ export class CustomKitchenSinkComponent implements OnInit {
   control2;
   control3;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
     const controls = {};
@@ -68,7 +69,6 @@ export class CustomKitchenSinkComponent implements OnInit {
     // this.control = controls[this.radioGroupObjectConfig.formControlName];
 
     this.personForm.valueChanges.subscribe(v => {
-      console.log(v);
       this.rawValue = v;
       this.control1 = (this.personForm.controls[this.radioGroupObjectConfig.formControlName].value as Label).name;
       this.control2 = this.personForm.controls[this.radioGroupStringArrayConfig.formControlName].value;

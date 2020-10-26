@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustomKitchenSinkComponent } from './custom-kitchen-sink.component';
+import {FormBuilder} from '@angular/forms';
 
 describe('CustomKitchensinkComponent', () => {
   let component: CustomKitchenSinkComponent;
@@ -8,7 +9,8 @@ describe('CustomKitchensinkComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomKitchenSinkComponent ]
+      declarations: [ CustomKitchenSinkComponent ],
+      providers: [FormBuilder]
     })
     .compileComponents();
   });

@@ -3,8 +3,8 @@ import {SnackbarUtil} from './shared/utils/snackbar.util';
 import {NotificationService} from './shared/service/notification.service';
 import {HeaderMenuItem} from './shared/dto/HeaderMenuItem';
 import {RouteUrls} from './route-urls';
-import {configureTranslation} from './shared/module/app-translate/app-translate.module';
 import {TranslateService} from '@ngx-translate/core';
+import {configureTranslation} from './shared/module/app-translate/app-translate.module';
 
 @Component({
   selector: 'app-root',
@@ -23,9 +23,7 @@ export class AppComponent {
     this.headerMenuItems.push({name: 'SANDBOX.PAGE_HEADER',
       url: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home,
       headerTitle: 'SANDBOX.PAGE_TITLE'} as HeaderMenuItem);
-    this.headerMenuItems.push({name: 'SANDBOX.XXX_MODULE_PAGE_TITLE',
-      url: RouteUrls.xxxPage.root + '/' + RouteUrls.xxxPage.home,
-      headerTitle: 'SANDBOX.XXX_MODULE_PAGE_HEADER'} as HeaderMenuItem);
+    // this.headerMenuItems.push({name: 'SANDBOX.XXX_MODULE_PAGE_TITLE',
     this.notificationService
       .onError(message => {
         if (message != null) {
