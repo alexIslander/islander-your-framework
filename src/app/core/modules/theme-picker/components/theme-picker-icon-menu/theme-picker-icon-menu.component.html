@@ -1,0 +1,8 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>format_color_fill</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let buttonItem of buttons" (click)="pickColor(buttonItem.cssClass)">
+    <div class="color-swatch color-swatch-{{ buttonItem.name| lowercase }}" mat-menu-item></div>
+  </button>
+</mat-menu>

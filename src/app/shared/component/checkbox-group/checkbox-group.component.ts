@@ -12,11 +12,11 @@ import {AppUtils} from '../../helpers/app-utils';
 })
 export class CheckboxGroupComponent implements OnInit {
   @Input()
-  config: CheckboxGroupConfig;
+  config: CheckboxGroupConfig<string | object | unknown>;
 
   @Input()
   formGroupParam: FormGroup;
-  options: Array<any> = [];
+  options: Array<string | object | unknown> = [];
   formControl: FormArray;
 
   constructor() {
@@ -26,7 +26,7 @@ export class CheckboxGroupComponent implements OnInit {
   ngOnInit() {
     this.formControl = this.formGroupParam.controls[this.config.formControlName] as FormArray;
     of(this.config.options).subscribe(orders => {
-      this.options = orders as Array<any>;
+      this.options = orders as Array<string | object | unknown>;
       this.addCheckboxes(this.findSelection());
     });
   }
@@ -49,7 +49,7 @@ export class CheckboxGroupComponent implements OnInit {
       return [this.options.findIndex(o => o === this.config.defaultValue)];
     } else if (Array.isArray(this.config.defaultValue)) {
       return this.options.map((o, i) => {
-        if ((<Array<any>>this.config.defaultValue)
+        if ((<Array<string | object | unknown>>this.config.defaultValue)
           .find(dv => AppUtils.isEqualObject(dv, o))) {
           return i;
         }

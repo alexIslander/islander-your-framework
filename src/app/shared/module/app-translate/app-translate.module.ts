@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import { TranslateModule, TranslateService} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {environment} from '../../../../environments/environment';
@@ -21,13 +21,7 @@ export function configureTranslation(translate: TranslateService) {
   declarations: [],
   imports: [
     CommonModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
+    TranslateModule
   ],
   exports: [
     TranslateModule

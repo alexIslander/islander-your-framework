@@ -3,8 +3,8 @@ import {Observable} from 'rxjs';
 
 /**
  * defaultValue: this value is set when initialized
- * fieldToDisplay: this value isis selected from the item
- * options: collection as values
+ * fieldToDisplay: this value is selected from the item
+ * options: collection of values
  *
  * Example option config:
  * a) options from dynamic/static translated string values
@@ -19,9 +19,9 @@ import {Observable} from 'rxjs';
  *  translateOptionContent: true, <-- must be indicated, if translation required
  *
  */
-export interface OptionConfig extends ComponentConfig {
-  options?: Observable<any> | Array<any>;
+export interface OptionConfig<T> extends ComponentConfig {
+  options?: Observable<T> | Array<T>;
   translateOptionContent?: boolean;
-  defaultValue?: string | object | Array<any>;
+  defaultValue?: string | object | Array<T>;
   fieldToDisplay?: string;
 }

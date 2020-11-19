@@ -7,10 +7,10 @@
   <mat-radio-button class="radio-button"
                     *ngFor="let item of options; let i = index;"
                     [labelPosition]="config.labelPosition"
-                    [color]="config.color"
+                    [color]="color()"
                     [checked]="isChecked(formGroupParam.controls[config.formControlName], item)"
                     [value]="item">
-    {{ config.translateOptionContent ? (options[i] | translate) :
+    {{ config.translateOptionContent ? (options[i].toString() | translate) :
     config.fieldToDisplay ? options[i][config.fieldToDisplay] : options[i] }}
   </mat-radio-button>
 </mat-radio-group>

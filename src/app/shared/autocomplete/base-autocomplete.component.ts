@@ -1,6 +1,6 @@
 import {AppConstants} from '../helpers/AppConstants';
 import {FormControl} from '@angular/forms';
-import {Input, ViewChild, Directive, Component} from '@angular/core';
+import {Input, ViewChild, Component} from '@angular/core';
 import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import {Named} from '../dto/Named';
 import {debounceTime, distinctUntilChanged, map, startWith} from 'rxjs/operators';
@@ -85,7 +85,7 @@ export abstract class BaseAutocompleteComponent extends BaseCustomComponent {
       distinctUntilChanged());
     this.filteredOptions = combineLatest([observableOptions, filterParam])
       .pipe(map(([data, param]) =>
-        data.filter(country => this.stringToLowercase(country.displayName).indexOf(this.stringToLowercase(param)) > -1)));
+        data.filter(option => this.stringToLowercase(option.displayName).indexOf(this.stringToLowercase(param)) > -1)));
   }
 
   stringToLowercase(value: String) {

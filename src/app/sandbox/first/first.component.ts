@@ -5,8 +5,6 @@ import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestro
 import {BaseDialogViewComponentComponent} from '../../shared/base-dialog-view-component/base-dialog-view-component.component';
 import { MatDialog } from '@angular/material/dialog';
 import {environment} from '../../../environments/environment';
-import { FormBuilder, FormGroup} from '@angular/forms';
-import {RadioGroupConfig} from '../../shared/dto/component-config/radio-group/radio-group-config';
 
 @Component({
   selector: 'app-first',
@@ -18,24 +16,9 @@ export class FirstComponent extends OnDestroyMixin implements OnInit, OnDestroy 
   [key: string]: any; // componentDestroyed
   todo = {} as Todo;
   sourceUrl: string;
-  personForm: FormGroup;
-
-  radioGroupConfig = {
-    id: 'idRadios',
-    formControlName: 'radioGroup',
-    label: 'SANDBOX.LABEL.RADIOS',
-    disabled: false,
-    options: [
-      {id: 'HU', name: 'Hungarian'},
-      {id: 'EN', name: 'English'}
-      ],
-    fieldToDisplay: 'name',
-    defaultValue: {id: 'HU', name: 'Hungarian'},
-  } as RadioGroupConfig;
 
   constructor(private firstComponentService: FirstComponentService,
-              private dialog: MatDialog,
-              private fb: FormBuilder) {
+              private dialog: MatDialog) {
     super();
   }
 
@@ -45,12 +28,6 @@ export class FirstComponent extends OnDestroyMixin implements OnInit, OnDestroy 
     this.firstComponentService.getInitialData()
       .pipe(untilComponentDestroyed(this))
       .subscribe(data => this.todo = data );
-
-    // const controls: FormControl[] = [];
-    const controls = {};
-    // controls['radioGroup'] = this.fb.array([]);
-    controls['radioGroup'] = [this.radioGroupConfig.defaultValue];
-    this.personForm = this.fb.group(controls);
   }
 
   ngOnDestroy(): void {

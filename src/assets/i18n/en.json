@@ -44,6 +44,8 @@
     "SIDEBAR_MENU_DASHBOARD": "Home",
     "SIDEBAR_MENU_FIRST": "First",
     "SIDEBAR_MENU_SECOND": "Second",
+    "SIDEBAR_MENU_MY_SINK": "My Sink",
+    "SIDEBAR_SETTINGS": "Settings",
     "SANDBOX_DIALOG_TITLE": "Example dialog",
     "EXPAND_BUTTON_TOOLTIP": "Expand",
     "COLLAPSE_BUTTON_TOOLTIP": "Collapse",
@@ -53,6 +55,26 @@
     "HOME": {
       "TITLE": "Hello Angular with ngx-translate!",
       "SELECT": "Change language"
+    },
+    "FIRST": {
+      "LABEL": {
+        "RADIOS": "Change language",
+        "OPTION1": "German",
+        "OPTION2": "English"
+      }
+    },
+    "CUSTOM_SINK" : {
+      "TITLE": "Custom Kitchen sink component"
+    },
+    "SETTINGS" : {
+      "LABEL" : {
+        "COLOR_PICKER" : "Select a theme"
+      }
+    }
+  },
+  "CORE": {
+    "SETTINGS" : {
+      "TITLE": "Settings"
     }
   }
 }

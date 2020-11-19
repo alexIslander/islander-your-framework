@@ -3,8 +3,10 @@ import {SnackbarUtil} from './shared/utils/snackbar.util';
 import {NotificationService} from './shared/service/notification.service';
 import {HeaderMenuItem} from './shared/dto/HeaderMenuItem';
 import {RouteUrls} from './route-urls';
-import {configureTranslation} from './shared/module/app-translate/app-translate.module';
 import {TranslateService} from '@ngx-translate/core';
+import {configureTranslation} from './shared/module/app-translate/app-translate.module';
+import {ThemePickerService} from './core/modules/theme-picker/services/theme-picker.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,18 +16,19 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent {
   public appComponent;
   public headerMenuItems = [];
+  readonly themeClass: Observable<string>;
 
   constructor(private notificationService: NotificationService,
               private snackBar: SnackbarUtil,
-              private translate: TranslateService) {
+              private translate: TranslateService,
+              private colorPicker: ThemePickerService) {
+    this.themeClass = this.colorPicker.colorClass$;
     this.appComponent = this;
     configureTranslation(translate);
     this.headerMenuItems.push({name: 'SANDBOX.PAGE_HEADER',
       url: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home,
       headerTitle: 'SANDBOX.PAGE_TITLE'} as HeaderMenuItem);
-    this.headerMenuItems.push({name: 'SANDBOX.XXX_MODULE_PAGE_TITLE',
-      url: RouteUrls.xxxPage.root + '/' + RouteUrls.xxxPage.home,
-      headerTitle: 'SANDBOX.XXX_MODULE_PAGE_HEADER'} as HeaderMenuItem);
+    // this.headerMenuItems.push({name: 'SANDBOX.XXX_MODULE_PAGE_TITLE',
     this.notificationService
       .onError(message => {
         if (message != null) {
@@ -33,4 +36,5 @@ export class AppComponent {
         }
       });
   }
+
 }

@@ -10,6 +10,8 @@ import {DateFormatterUtil} from '../../shared/utils/date-formatter.util';
 import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {FrameworkLoaderService} from '../../shared/service/framework-loader.service';
 import {AppTranslateModule} from '../../shared/module/app-translate/app-translate.module';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateServiceStub} from './TranslateServiceStub';
 
 export const TestConfigModuleMetadata: TestModuleMetadata = {
   imports: [
@@ -19,7 +21,9 @@ export const TestConfigModuleMetadata: TestModuleMetadata = {
     ReactiveFormsModule,
     PerfectScrollbarModule,
     HttpClientModule,
-    AppTranslateModule
+    TranslateModule.forRoot({
+      loader: {provide: TranslateLoader, useClass: TranslateServiceStub},
+    })
   ],
   declarations: [
     ToDatePipe,

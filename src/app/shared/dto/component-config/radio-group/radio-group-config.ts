@@ -29,7 +29,7 @@ import { ThemePalette } from '@angular/material/core';
   } as RadioGroupConfig;
  *
  */
-export interface RadioGroupConfig extends OptionConfig {
+export interface RadioGroupConfig<T> extends OptionConfig<T> {
   color?: ThemePalette;
   labelPosition?: 'before' | 'after';
   orientation?: 'horizontal' | 'vertical';

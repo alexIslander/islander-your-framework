@@ -1,5 +1,5 @@
-<app-common-site-header [items]="headerMenuItems" default="SANDBOX.PAGE_HEADER"></app-common-site-header>
-<div id="content">
+<div id="content" [ngClass]="themeClass | async">
+  <app-common-site-header [items]="headerMenuItems" default="SANDBOX.PAGE_HEADER"></app-common-site-header>
   <router-outlet></router-outlet>
 </div>
 <app-common-loader></app-common-loader>

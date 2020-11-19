@@ -1,5 +1,3 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
 import {SandboxDashboardService} from '../../../sandbox/service/impl/SandboxDashboardService';
 import {initContext, TestContext} from '../../test-context';
