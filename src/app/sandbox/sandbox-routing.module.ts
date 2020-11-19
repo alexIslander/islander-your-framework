@@ -6,6 +6,7 @@ import {RouteUrls} from '../route-urls';
 import {SandboxHomeComponent} from './home/home.component';
 import {SandboxDashboardComponent} from './dashboard/sandbox-dashboard.component';
 import {CustomKitchenSinkComponent} from './custom-kitchen-sink/custom-kitchen-sink.component';
+import {SettingsComponent} from '../core/components/settings/settings.component';
 
 const sandboxRoutes: Routes = [
   {
@@ -16,7 +17,8 @@ const sandboxRoutes: Routes = [
       { path: RouteUrls.sandboxPage.home, component: SandboxHomeComponent },
       { path: RouteUrls.sandboxPage.first, component: FirstComponent },
       { path: RouteUrls.sandboxPage.second, component: SecondComponent },
-      { path: RouteUrls.sandboxPage.mySink, component: CustomKitchenSinkComponent }
+      { path: RouteUrls.sandboxPage.mySink, component: CustomKitchenSinkComponent },
+      { path: RouteUrls.sandboxPage.settings, component: SettingsComponent }
     ]
   }
 ];

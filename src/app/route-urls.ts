@@ -6,7 +6,8 @@ export const RouteUrls = {
     home: 'home',
     first: 'first',
     second: 'second',
-    mySink: 'mySink'
+    mySink: 'mySink',
+    settings: 'settings'
   },
   xxxPage: {
     root: 'xxx',

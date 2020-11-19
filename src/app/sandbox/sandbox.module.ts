@@ -16,10 +16,10 @@ import {FirstComponentService} from './service/impl/FirstComponentService';
 import {environment} from '../../environments/environment';
 import { ThirdComponent } from './third/third.component';
 import {SandboxRoutingModule} from './sandbox-routing.module';
-import {AppTranslateModule, configureTranslation} from '../shared/module/app-translate/app-translate.module';
+import {configureTranslation} from '../shared/module/app-translate/app-translate.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CustomKitchenSinkComponent } from './custom-kitchen-sink/custom-kitchen-sink.component';
-import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -36,15 +36,7 @@ import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate
     SandboxRoutingModule,
     SharedModule,
     AppMaterialModule,
-    // AppTranslateModule
-    TranslateModule.forChild({}),
-    //   .forChild({
-    //   loader: {
-    //     provide: TranslateLoader,
-    //     useFactory: HttpLoaderFactory,
-    //     deps: [HttpClient]
-    //   }
-    // })
+    TranslateModule.forChild({})
   ],
   providers: [
     SandboxHttpHelperService,

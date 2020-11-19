@@ -19,7 +19,7 @@ export class CustomKitchenSinkComponent implements OnInit {
   rawValue: string;
   rawValue2;
   rawValue3;
-  rrr;
+
   radioGroupObjectConfig = {
     id: 'idRadios',
     formControlName: 'radioGroup',

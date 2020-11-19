@@ -1,3 +1,6 @@
+@import '../../../global-variables.scss';
+@import '../../../styles/angular-material-router-theme.scss';
+
 /*----Clear floats after the columns----*/
 .row:after {
   content: "";
@@ -7,7 +10,7 @@
 /*-----------3 columns layout-----------*/
 .column {
   float: left;
-  width: 33.33%;
+  width: 31.45%;
   display: table;
   height: 300px;
 }

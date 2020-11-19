@@ -2,7 +2,7 @@ import {ErrorHandler, NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {SandboxModule} from './sandbox/sandbox.module';
-import {SiteHeaderService} from './shared/service/site-header.service';
+import {SiteHeaderService} from './core/services/site-header.service';
 import {ErrorNotifierService} from './shared/service/error-notifier.service';
 import {FrameworkLoaderService} from './shared/service/framework-loader.service';
 import {NotificationService} from './shared/service/notification.service';
@@ -14,6 +14,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from './shared/shared.module';
 import {HttpLoaderFactory} from './shared/module/app-translate/app-translate.module';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,9 @@ import {HttpLoaderFactory} from './shared/module/app-translate/app-translate.mod
         deps: [HttpClient]
       }
     }),
+    SharedModule,
     SandboxModule,
-    SharedModule
+    CoreModule
   ],
   providers: [
     SiteHeaderService,

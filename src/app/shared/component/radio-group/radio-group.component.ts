@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import {RadioGroupConfig} from '../../dto/component-config/radio-group/radio-group-config';
 import {AppUtils} from '../../helpers/app-utils';
 import { MatRadioChange } from '@angular/material/radio';
@@ -48,6 +48,10 @@ export class RadioGroupComponent implements OnInit {
 
   orientation(): string {
     return this.config.orientation && this.config.orientation === 'vertical' ? 'radio-group-column' : 'radio-group';
+  }
+
+  color(): string {
+    return this.config.color === undefined ? 'primary' : this.config.color;
   }
 
 }

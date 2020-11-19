@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" id="navbar">
+    <span>
+      <button id="header-hamburgermenu-button" mat-button [matMenuTriggerFor]="menu" class="header-button"><i
+        class="fa fa-bars"></i></button>
+      <mat-menu #menu="matMenu">
+        <a class="router-link-btn" [routerLink]="elem.url" *ngFor="let elem of headerMenu">
+          <button mat-menu-item (click)="onMenuElemClick(elem.headerTitle)">
+            {{ elem.name | translate }}
+          </button>
+        </a>
+      </mat-menu>
+    </span>
+  <span id="header-title">{{ headerText | translate }}</span>
+  <span class="logo-container">
+    <img src="{{imgUrl}}" class="header-logo"/>
+  </span>
+<!--  <span>-->
+<!--      <app-theme-picker-icon-menu></app-theme-picker-icon-menu>-->
+<!--  </span>-->
+  <!--TODO place for logout button-->
+</mat-toolbar>

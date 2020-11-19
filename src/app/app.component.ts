@@ -5,6 +5,8 @@ import {HeaderMenuItem} from './shared/dto/HeaderMenuItem';
 import {RouteUrls} from './route-urls';
 import {TranslateService} from '@ngx-translate/core';
 import {configureTranslation} from './shared/module/app-translate/app-translate.module';
+import {ThemePickerService} from './core/modules/theme-picker/services/theme-picker.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +16,13 @@ import {configureTranslation} from './shared/module/app-translate/app-translate.
 export class AppComponent {
   public appComponent;
   public headerMenuItems = [];
+  readonly themeClass: Observable<string>;
 
   constructor(private notificationService: NotificationService,
               private snackBar: SnackbarUtil,
-              private translate: TranslateService) {
+              private translate: TranslateService,
+              private colorPicker: ThemePickerService) {
+    this.themeClass = this.colorPicker.colorClass$;
     this.appComponent = this;
     configureTranslation(translate);
     this.headerMenuItems.push({name: 'SANDBOX.PAGE_HEADER',
@@ -31,4 +36,5 @@ export class AppComponent {
         }
       });
   }
+
 }

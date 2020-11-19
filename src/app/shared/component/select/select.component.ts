@@ -26,13 +26,13 @@ export class SelectComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.formControl = this.formGroupParam.controls[this.config.formControlName]  as FormControl;
+    this.formControl = this.formGroupParam.controls[this.config.formControlName] as FormControl;
     this.fieldValue = this.formGroupParam.controls[this.config.formControlName].value;
   }
 
   ngAfterViewInit(): void {
     const selection$ = this.selector.selectionChange;
-    selection$.subscribe(r => this.fieldValue = r.option.value );
+    selection$.subscribe(r => this.fieldValue = r.option );
   }
 
 }

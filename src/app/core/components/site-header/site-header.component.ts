@@ -1,10 +1,9 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {SiteHeaderService} from '../service/site-header.service';
-import {takeUntil} from 'rxjs/operators';
+import {SiteHeaderService} from '../../services/site-header.service';
 
-import {has} from '../service/common-function.service';
-import {HeaderMenuItem} from '../dto/HeaderMenuItem.js';
+import {has} from '../../../shared/service/common-function.service';
+import {HeaderMenuItem} from '../../../shared/dto/HeaderMenuItem.js';
 import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestroyed';
 
 @Component({

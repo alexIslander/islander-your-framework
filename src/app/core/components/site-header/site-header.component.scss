@@ -1,0 +1,80 @@
+@import 'src/global-variables';
+
+.header-button {
+  margin-top: 5px !important;
+  &>span {
+    font-size: 1.5rem;
+  }
+  &:hover {
+    background-color: $fr-light-blue;
+  }
+}
+
+.header-logout-button {
+  margin-top: 5px !important;
+  &>span {
+    font-size: 1.5rem;
+  }
+  &:hover {
+    background-color: $fr-light-blue;
+  }
+}
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  margin-left: $logo-width / -2;
+  height: $logo-height;
+
+  & .header-logo {
+    margin: 0;
+    padding: 0;
+    height: $logo-height;
+    position: relative;
+    top: 4px;
+  }
+}
+
+#navbar {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  //background-color: $navbar-header-color;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 2rem;
+  min-height: $navbar-height;
+  margin-top: -8px;
+}
+
+@media(max-width: 1199px) {
+  #navbar {
+    font-size: 1.5rem;
+  }
+}
+
+@media(max-width: 949px) {
+  #navbar {
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 760px) {
+  #navbar {
+    font-size: 0rem;
+  }
+}
+
+#header-title {
+  vertical-align: middle;
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding-top: 7px;
+  padding-left: 7px;
+  flex: 1 1 auto;
+}
+
+.router-link-btn {
+  text-decoration: none;
+}

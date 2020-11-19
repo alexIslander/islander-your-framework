@@ -1,15 +1,15 @@
-import { initContext, TestContext } from '../../test-context';
-import { SiteHeaderComponent } from '../../../shared/site-header/site-header.component';
+import { initContext, TestContext } from '../../../test-context';
+import { SiteHeaderComponent } from '../../../../core/components/site-header/site-header.component';
 
-import { SidebarMenuComponent } from '../../../shared/sidebar-menu/sidebar-menu.component';
+import { SidebarMenuComponent } from '../../../../shared/sidebar-menu/sidebar-menu.component';
 
 import { APP_BASE_HREF } from '@angular/common';
-import {SiteHeaderService} from '../../../shared/service/site-header.service';
-import {ErrorPageComponent} from '../../../shared/error-page/error-page.component';
-import {FirstComponent} from '../../../sandbox/first/first.component';
-import {SandboxDashboardComponent} from '../../../sandbox/dashboard/sandbox-dashboard.component';
-import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
-import {SecondComponent} from '../../../sandbox/second/second.component';
+import {SiteHeaderService} from '../../../../core/services/site-header.service';
+import {ErrorPageComponent} from '../../../../shared/error-page/error-page.component';
+import {FirstComponent} from '../../../../sandbox/first/first.component';
+import {SandboxDashboardComponent} from '../../../../sandbox/dashboard/sandbox-dashboard.component';
+import {SandboxHomeComponent} from '../../../../sandbox/home/home.component';
+import {SecondComponent} from '../../../../sandbox/second/second.component';
 import {Router} from '@angular/router';
 
 describe('SiteHeaderComponent', () => {
@@ -20,9 +20,7 @@ describe('SiteHeaderComponent', () => {
 
   type Context = TestContext<SiteHeaderComponent>;
   initContext(SiteHeaderComponent, {
-    imports: [
-
-    ],
+    imports: [],
     declarations: [
       SidebarMenuComponent,
       ErrorPageComponent,

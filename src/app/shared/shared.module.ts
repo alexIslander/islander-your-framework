@@ -4,7 +4,6 @@ import {ToDatePipe} from './utils/to-date.pipe';
 import {ToDateTimePipe} from './utils/to-date-time.pipe';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {SiteHeaderComponent} from './site-header/site-header.component';
 import {SidebarMenuComponent} from './sidebar-menu/sidebar-menu.component';
 import {AppMaterialModule} from './module/app-material/app-material.module';
 import {ErrorPageComponent} from './error-page/error-page.component';
@@ -52,7 +51,6 @@ import {configureTranslation} from './module/app-translate/app-translate.module'
   declarations: [
     ToDatePipe,
     ToDateTimePipe,
-    SiteHeaderComponent,
     SidebarMenuComponent,
     ErrorPageComponent,
     CustomSnackBarComponent,
@@ -79,7 +77,6 @@ import {configureTranslation} from './module/app-translate/app-translate.module'
     SimpleCardComponent
   ],
   exports: [
-    SiteHeaderComponent,
     SidebarMenuComponent,
     ErrorPageComponent,
     CustomSnackBarComponent,
@@ -101,7 +98,8 @@ import {configureTranslation} from './module/app-translate/app-translate.module'
     CheckboxGroupComponent,
     RadioGroupComponent,
     SimpleCardComponent,
-    TranslateModule
+    TranslateModule,
+    SelectComponent
   ],
   providers: [
     ToDatePipe,
