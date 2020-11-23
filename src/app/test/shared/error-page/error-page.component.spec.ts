@@ -7,7 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {MockActivatedRoute} from '../../MockActivatedRoute';
 
 import {SandboxDashboardComponent} from '../../../sandbox/dashboard/sandbox-dashboard.component';
-import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
+import {SandboxHomeComponent} from '../../../sandbox/home/sandbox-home.component';
 import {FirstComponent} from '../../../sandbox/first/first.component';
 import {SecondComponent} from '../../../sandbox/second/second.component';
 import {appRoutes} from '../../../app-routing';

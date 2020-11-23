@@ -8,7 +8,7 @@ import {SiteHeaderService} from '../../../../core/services/site-header.service';
 import {ErrorPageComponent} from '../../../../shared/error-page/error-page.component';
 import {FirstComponent} from '../../../../sandbox/first/first.component';
 import {SandboxDashboardComponent} from '../../../../sandbox/dashboard/sandbox-dashboard.component';
-import {SandboxHomeComponent} from '../../../../sandbox/home/home.component';
+import {SandboxHomeComponent} from '../../../../sandbox/home/sandbox-home.component';
 import {SecondComponent} from '../../../../sandbox/second/second.component';
 import {Router} from '@angular/router';
 

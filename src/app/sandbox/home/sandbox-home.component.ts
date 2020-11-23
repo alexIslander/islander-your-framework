@@ -9,9 +9,9 @@ import {hasNot} from '../../shared/service/common-function.service';
 import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestroyed';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-sandbox-home',
+  templateUrl: './sandbox-home.component.html',
+  styleUrls: ['./sandbox-home.component.scss']
 })
 export class SandboxHomeComponent extends OnDestroyMixin implements OnInit, OnDestroy {
 

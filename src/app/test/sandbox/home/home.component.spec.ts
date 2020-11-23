@@ -1,4 +1,4 @@
-import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
+import {SandboxHomeComponent} from '../../../sandbox/home/sandbox-home.component';
 import {SandboxDashboardService} from '../../../sandbox/service/impl/SandboxDashboardService';
 import {initContext, TestContext} from '../../test-context';
 import {Router} from '@angular/router';

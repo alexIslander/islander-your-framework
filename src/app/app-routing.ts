@@ -2,31 +2,18 @@ import {NgModule} from '@angular/core';
 import {RouteUrls} from './route-urls';
 import {RouterModule, Routes} from '@angular/router';
 import {ErrorPageComponent} from './shared/error-page/error-page.component';
-import {SecondComponent} from './sandbox/second/second.component';
-import {SandboxDashboardComponent} from './sandbox/dashboard/sandbox-dashboard.component';
-import {SandboxHomeComponent} from './sandbox/home/home.component';
-import {SandboxModule} from './sandbox/sandbox.module';
-import {FirstComponent} from './sandbox/first/first.component';
-import {CustomKitchenSinkComponent} from './sandbox/custom-kitchen-sink/custom-kitchen-sink.component';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.home, pathMatch: 'full'},
   {
     path: RouteUrls.sandboxPage.root,
     loadChildren: './sandbox/sandbox.module#SandboxModule'
-    // children: [
-    //   { path: '', redirectTo: RouteUrls.sandboxPage.home, pathMatch: 'full'},
-    //   { path: RouteUrls.sandboxPage.home, component: SandboxHomeComponent },
-    //   { path: RouteUrls.sandboxPage.first, component: FirstComponent },
-    //   { path: RouteUrls.sandboxPage.second, component: SecondComponent },
-    //   { path: RouteUrls.sandboxPage.mySink, component: CustomKitchenSinkComponent }
-    // ]
+  },
+  {
+    path: RouteUrls.experimentPage.root,
+    loadChildren: './experiment/experiment.module#ExperimentModule'
   },
   /*
-  {
-    path: 'kitchensink',
-    loadChildren: './modules/kitchensink/kitchensink.module#KitchensinkModule'
-  },
   {
     path: '',
     redirectTo: '/kitchensink',

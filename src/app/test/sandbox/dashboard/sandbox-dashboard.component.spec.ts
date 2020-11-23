@@ -2,7 +2,7 @@ import {initContext, TestContext} from '../../test-context';
 import {SandboxDashboardComponent} from '../../../sandbox/dashboard/sandbox-dashboard.component';
 import {appRoutes} from '../../../app-routing';
 import {RouterTestingModule} from '@angular/router/testing';
-import {SandboxHomeComponent} from '../../../sandbox/home/home.component';
+import {SandboxHomeComponent} from '../../../sandbox/home/sandbox-home.component';
 import {FirstComponent} from '../../../sandbox/first/first.component';
 import {SecondComponent} from '../../../sandbox/second/second.component';
 import {ThirdComponent} from '../../../sandbox/third/third.component';

@@ -9,9 +9,8 @@ export const RouteUrls = {
     mySink: 'mySink',
     settings: 'settings'
   },
-  xxxPage: {
-    root: 'xxx',
-    home: 'home',
-    second: 'second'
+  experimentPage: {
+    root: 'experiment',
+    kitchensink: 'kitchensink'
   }
 };
