@@ -34,6 +34,7 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "@w11k/ngx-componentdestroyed": "^5.0.2",
+    "compass-mixins": "^0.12.10",
     "core-js": "^3.7.0",
     "font-awesome": "^4.7.0",
     "moment": "^2.29.1",

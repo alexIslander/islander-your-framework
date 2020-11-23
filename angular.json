@@ -37,7 +37,9 @@
               "./node_modules/primeng/resources/themes/omega/theme.scss",
               "./node_modules/primeng/resources/primeng.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/brBaJs.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -124,7 +126,9 @@
               "./node_modules/primeng/resources/themes/omega/theme.scss",
               "./node_modules/primeng/resources/primeng.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/brBaJs.js"
+            ],
             "assets": [
               "src/assets",
               "src/favicon.png",
