@@ -76,5 +76,9 @@
     "SETTINGS" : {
       "TITLE": "Settings"
     }
+  },
+  "EXPERIMENT": {
+    "PAGE_TITLE": "Experiment",
+    "PAGE_HEADER": "Experiment Module"
   }
 }

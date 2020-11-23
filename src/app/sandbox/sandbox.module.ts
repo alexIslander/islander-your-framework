@@ -2,7 +2,7 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
-import { SandboxHomeComponent } from './home/home.component';
+import { SandboxHomeComponent } from './home/sandbox-home.component';
 import { SandboxDashboardComponent } from './dashboard/sandbox-dashboard.component';
 import {AppMaterialModule} from '../shared/module/app-material/app-material.module';
 import {SharedModule} from '../shared/shared.module';

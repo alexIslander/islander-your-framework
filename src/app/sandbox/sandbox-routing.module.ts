@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SecondComponent} from './second/second.component';
 import {FirstComponent} from './first/first.component';
 import {RouteUrls} from '../route-urls';
-import {SandboxHomeComponent} from './home/home.component';
+import {SandboxHomeComponent} from './home/sandbox-home.component';
 import {SandboxDashboardComponent} from './dashboard/sandbox-dashboard.component';
 import {CustomKitchenSinkComponent} from './custom-kitchen-sink/custom-kitchen-sink.component';
 import {SettingsComponent} from '../core/components/settings/settings.component';

@@ -15,6 +15,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from './shared/shared.module';
 import {HttpLoaderFactory} from './shared/module/app-translate/app-translate.module';
 import {CoreModule} from './core/core.module';
+import {ExperimentModule} from './experiment/experiment.module';
 
 @NgModule({
   declarations: [
@@ -27,16 +28,15 @@ import {CoreModule} from './core/core.module';
     HttpClientModule,
 
     AppRoutingModule,
+    SharedModule,
+    CoreModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    }),
-    SharedModule,
-    SandboxModule,
-    CoreModule
+    })
   ],
   providers: [
     SiteHeaderService,

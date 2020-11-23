@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { KitchenSinkComponent } from './kitchen-sink/kitchen-sink.component';
+import {ExperimentRoutingModule} from './experiment-routing.module';
+import {KitchensinkModule} from './kitchen-sink/kitchensink.module';
 
 @NgModule({
-  declarations: [KitchenSinkComponent],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    ExperimentRoutingModule,
+    KitchensinkModule
   ]
 })
 export class ExperimentModule { }

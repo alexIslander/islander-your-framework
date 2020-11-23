@@ -11,7 +11,7 @@ export class SandboxDashboardComponent implements OnInit {
   sidebarMenu = [];
 
   constructor() {
-    this.push('SANDBOX.SIDEBAR_MENU_DASHBOARD', RouteUrls.sandboxPage.home, 'fa-home');
+    this.push('SANDBOX.SIDEBAR_MENU_DASHBOARD', RouteUrls.sandboxPage.root, 'fa-home');
     this.push('SANDBOX.SIDEBAR_MENU_FIRST', RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.first, 'fa-magic');
     this.push('SANDBOX.SIDEBAR_MENU_SECOND', RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.second, 'fa-bolt');
     this.push('SANDBOX.SIDEBAR_MENU_MY_SINK', RouteUrls.sandboxPage.root + '/' + RouteUrls.sandboxPage.mySink, 'fa-bath');
