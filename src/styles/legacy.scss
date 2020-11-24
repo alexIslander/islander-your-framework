@@ -147,22 +147,6 @@ mat-form-field.hidden-input {
   }
 }
 
-.logo-container {
-  position: absolute;
-  left: 50%;
-  top: 15%;
-  margin-left: $logo-width / -2;
-  height: $logo-height;
-
-  & .header-logo {
-    margin: 0;
-    padding: 0;
-    height: $logo-height;
-    position: relative;
-    top: 4px;
-  }
-}
-
 .full-screen-dialog {
   & .mat-dialog-container {
     width: 60vw;

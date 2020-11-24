@@ -1,0 +1,37 @@
+.initial-logo-container {
+}
+
+.initial-bg-frame {
+  width: 65px;
+  height: 65px;
+  background-color: #9fa8da;
+
+  border-radius: 10px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.initial {
+  font-family: unquote('Arvo'); // Fantasy, Cinzel, Rokkitt, Special Elite
+  color: #2c5d17;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.double-initial {
+  font-family: unquote('Arvo');
+  color: #2c5d17;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.suffix {
+  color: black;
+  font-family: unquote('Arvo');
+  font-size: 48px;
+
+  margin-left: 8px;
+  display:inline-block;
+}

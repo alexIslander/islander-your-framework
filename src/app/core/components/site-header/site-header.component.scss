@@ -21,16 +21,19 @@
 }
 
 .logo-container {
-  position: absolute;
-  left: 50%;
-  top: 15%;
-  margin-left: $logo-width / -2;
-  height: $logo-height;
+  position: initial;
+  /* center the element */
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: 20%;
+  /* give it dimensions */
+  width: 90%;
 
   & .header-logo {
     margin: 0;
     padding: 0;
-    height: $logo-height;
+    height: 65px;
     position: relative;
     top: 4px;
   }
@@ -40,7 +43,6 @@
   position: fixed;
   z-index: 100;
   width: 100%;
-  //background-color: $navbar-header-color;
   left: 0;
   top: 0;
   color: white;

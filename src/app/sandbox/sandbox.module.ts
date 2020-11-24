@@ -20,6 +20,7 @@ import {configureTranslation} from '../shared/module/app-translate/app-translate
 import {ReactiveFormsModule} from '@angular/forms';
 import { CustomKitchenSinkComponent } from './custom-kitchen-sink/custom-kitchen-sink.component';
 import {TranslateModule, TranslateService} from '@ngx-translate/core';
+import {CoreModule} from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -30,14 +31,15 @@ import {TranslateModule, TranslateService} from '@ngx-translate/core';
     ThirdComponent,
     CustomKitchenSinkComponent
     ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    SandboxRoutingModule,
-    SharedModule,
-    AppMaterialModule,
-    TranslateModule.forChild({})
-  ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        SandboxRoutingModule,
+        SharedModule,
+        AppMaterialModule,
+        TranslateModule.forChild({}),
+        CoreModule
+    ],
   providers: [
     SandboxHttpHelperService,
     AnyApiHttpHelperService,

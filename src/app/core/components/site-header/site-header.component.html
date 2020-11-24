@@ -12,10 +12,13 @@
     </span>
   <span id="header-title">{{ headerText | translate }}</span>
   <span class="logo-container">
-    <img src="{{imgUrl}}" class="header-logo"/>
+    <app-initial-header-logo class="header-logo" [title]="applicationName"></app-initial-header-logo>
   </span>
-<!--  <span>-->
+  <span>
 <!--      <app-theme-picker-icon-menu></app-theme-picker-icon-menu>-->
-<!--  </span>-->
+  </span>
+<!--  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">-->
+<!--    <mat-icon>favorite</mat-icon>-->
+<!--  </button>-->
   <!--TODO place for logout button-->
 </mat-toolbar>

@@ -17,6 +17,7 @@ export class AppComponent {
   public appComponent;
   public headerMenuItems = [];
   readonly themeClass: Observable<string>;
+  readonly applicationName = 'YourFramework';
 
   constructor(private notificationService: NotificationService,
               private snackBar: SnackbarUtil,

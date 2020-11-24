@@ -14,9 +14,10 @@ import {OnDestroyMixin, untilComponentDestroyed} from '@w11k/ngx-componentdestro
 export class SiteHeaderComponent extends OnDestroyMixin implements OnInit, OnDestroy {
   @Input() items: HeaderMenuItem[];
   @Input() default: string;
+  @Input() applicationName: string;
   headerText: string;
-  imgUrl: string;
 
+  imgUrl: string;
   [key: string]: any; // componentDestroyed
   headerMenu = [];
 

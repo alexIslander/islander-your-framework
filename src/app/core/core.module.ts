@@ -11,11 +11,13 @@ import {StandardErrorMessageMappings} from '../config/form-error-message-config'
 import {ThemePickerModule} from './modules/theme-picker/theme-picker.module';
 import {SiteHeaderComponent} from './components/site-header/site-header.component';
 import {RouterModule} from '@angular/router';
+import { InitialHeaderLogoComponent } from './components/initial-header-logo/initial-header-logo.component';
 
 @NgModule({
   declarations: [
     SiteHeaderComponent,
-    SettingsComponent
+    SettingsComponent,
+    InitialHeaderLogoComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import {RouterModule} from '@angular/router';
   ],
   exports: [
     SiteHeaderComponent,
-    SettingsComponent
+    SettingsComponent,
+    InitialHeaderLogoComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
