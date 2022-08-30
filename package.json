@@ -37,7 +37,7 @@
     "core-js": "^3.7.0",
     "font-awesome": "^4.7.0",
     "moment": "^2.29.1",
-    "moment-timezone": "^0.5.32",
+    "moment-timezone": "^0.5.35",
     "ngx-clipboard": "^14.0.1",
     "ngx-perfect-scrollbar": "^10.0.1",
     "primeng": "^6.1.7",
